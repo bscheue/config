@@ -1,14 +1,8 @@
-set nocompatible
-filetype off
-
 filetype plugin indent on
 
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey          guibg=NONE
-set number
-
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 syntax on
-filetype plugin indent on
 
 set textwidth=0
 set mouse=a
@@ -60,6 +54,6 @@ filetype plugin indent on
 set cul!
 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
-    let &t_SR = "\<Esc>]50;CursorShape=3\x7" " Stay in block while replacing
-    let &t_ER = "\<Esc>]50;CursorShape=0\x7" "
+let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+let &t_SR = "\<Esc>]50;CursorShape=3\x7" " Stay in block while replacing
+let &t_ER = "\<Esc>]50;CursorShape=0\x7" "
