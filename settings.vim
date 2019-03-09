@@ -11,9 +11,9 @@ set nocompatible  "Kill vi-compatibility
 set t_Co=256 "256 color
 set encoding=utf-8 "UTF-8 character encoding
 
-" Indent 4 spaces
-set tabstop=2  "4 space tabs
-set shiftwidth=2  "4 space shift
+" Indent 2 spaces
+set tabstop=2  "2 space tabs
+set shiftwidth=2  "2 space shift
 set softtabstop=2  "Tab spaces in no hard tab mode
 set expandtab  " Expand tabs into spaces
 set autoindent  "autoindent on new lines
@@ -43,13 +43,11 @@ set linebreak  "Intelligently wrap long files
 set ttyfast  "Speed up vim
 set nostartofline "Vertical movement preserves horizontal position
 
-set number
+set number " add line numbering
 set laststatus=2
 " Strip whitespace from end of lines when writing file
 autocmd BufWritePre * :%s/\s\+$//e
 
-syntax on
-filetype plugin indent on
 
 set cul!
 
