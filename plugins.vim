@@ -8,6 +8,7 @@ Plugin 'mk12/vim-lean'
 Plugin 'lervag/vimtex'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'vim-python/python-syntax'
+Plugin 'tpope/vim-surround'
 
 Plugin 'chriskempson/base16-vim'
 Plugin 'morhetz/gruvbox'
