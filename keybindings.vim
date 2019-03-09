@@ -13,3 +13,6 @@ function! ExecuteMacroOverVisualRange()
     echo "@".getcmdline()
       execute ":'<,'>normal @".nr2char(getchar())
 endfunction
+
+" make escape N clear search highlights
+nnoremap <Leader>N <Esc>:nohlsearch<CR>
