@@ -1,6 +1,9 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 Plugin 'jez/vim-better-sml'
+  au FileType sml setlocal conceallevel=2
+
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ajh17/vimcompletesme'
@@ -19,10 +22,12 @@ Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'mbbill/undotree'
+  nnoremap <Leader>u :UndotreeToggle<CR>
+
 call vundle#end()
 
 "colorscheme onedark
-au FileType sml setlocal conceallevel=2
 
 set laststatus=2
 let g:airline_powerline_fonts = 0
