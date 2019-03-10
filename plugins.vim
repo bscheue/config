@@ -62,6 +62,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mbbill/undotree'
   nnoremap <Leader>u :UndotreeToggle<CR>
 
+Plugin 'arcticicestudio/nord-vim'
+
 call vundle#end()
 
 set laststatus=2
@@ -75,9 +77,9 @@ let g:lean_auto_replace = 1
 
 set background=dark
 colorscheme onedark
-let g:palenight_terminal_italics=1
 if (has("termguicolors"))
   set termguicolors
 endif
 
 
+colorscheme nord
