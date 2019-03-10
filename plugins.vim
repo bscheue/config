@@ -23,6 +23,8 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'jez/vim-better-sml'
   au FileType sml setlocal conceallevel=2
 
+Plugin 'jez/vim-superman'
+
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ajh17/vimcompletesme'
