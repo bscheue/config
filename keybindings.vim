@@ -14,5 +14,7 @@ function! ExecuteMacroOverVisualRange()
       execute ":'<,'>normal @".nr2char(getchar())
 endfunction
 
-" make escape N clear search highlights
 nnoremap <Leader>N <Esc>:nohlsearch<CR>
+
+let @c = 'yypk\ccj'
+
