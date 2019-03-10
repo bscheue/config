@@ -17,7 +17,4 @@ endfunction
 nnoremap <Leader>N <Esc>:nohlsearch<CR>
 
 " for compiling latex
-nnoremap <Leader>b <Esc>:w<CR>:VimtexView<CR>
-
-let @c = 'yypk\ccj'
 

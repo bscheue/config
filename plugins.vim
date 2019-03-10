@@ -3,10 +3,21 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'lervag/vimtex'
+  nnoremap <Leader>b <Esc>:w<CR>:VimtexCompileSS<CR>:VimtexErrors<CR>
+  let g:vimtex_view_method = 'skim'
 Plugin 'vim-syntastic/syntastic'
   set statusline+=%#warningmsg#
   set statusline+=%{SyntasticStatuslineFlag()}
   set statusline+=%*
+
+
+  "let g:syntastic_mode_map = {
+    "\ "mode": "active",
+    "\ "passive_filetypes": ["tex"] }
+  let g:syntastic_ignore_files = [ "\m*..tex$" ]
+  let g:syntastic_enable_balloons = 0
+  let g:syntastic_latex_checkers = [ 'errors-only' ]
 
   let g:syntastic_always_populate_loc_list = 1
   let g:syntastic_auto_loc_list = 1
@@ -18,19 +29,19 @@ Plugin 'vim-syntastic/syntastic'
     au FileType sml let g:syntastic_auto_loc_list = 1
   augroup END
 
-  nnoremap <Leader>S :SyntasticToggleMode<CR>
-
 Plugin 'jez/vim-better-sml'
   au FileType sml setlocal conceallevel=2
 
 Plugin 'jez/vim-superman'
 
 Plugin 'scrooloose/nerdcommenter'
+  let @c = 'yypk\ccj' " comment current line and add new copy
 Plugin 'itchyny/lightline.vim'
 Plugin 'ajh17/vimcompletesme'
 Plugin 'mk12/vim-lean'
-Plugin 'lervag/vimtex'
 Plugin 'sheerun/vim-polyglot'
+  let g:polyglot_disabled = ['latex']
+
 Plugin 'vim-python/python-syntax'
 Plugin 'tpope/vim-surround'
 

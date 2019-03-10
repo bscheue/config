@@ -50,10 +50,11 @@ set laststatus=2
 " Strip whitespace from end of lines when writing file
 autocmd BufWritePre * :%s/\s\+$//e
 
-
 set cul!
 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
 let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 let &t_SR = "\<Esc>]50;CursorShape=3\x7" " Stay in block while replacing
 let &t_ER = "\<Esc>]50;CursorShape=0\x7" "
+
+
