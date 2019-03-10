@@ -18,3 +18,12 @@ endfunction
 
 nnoremap <Leader>N <Esc>:nohlsearch<CR>
 
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-l> <C-w>l
+nnoremap <C-k> <C-w>k
+nnoremap <C-Left> <C-w><
+nnoremap <C-Right> <C-w>>
+nnoremap <C-Up> <C-w>+
+nnoremap <C-Down> <C-w>-
+

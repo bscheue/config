@@ -6,6 +6,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'lervag/vimtex'
   nnoremap <Leader>b <Esc>:w<CR>:VimtexCompileSS<CR>:VimtexErrors<CR>
   let g:vimtex_view_method = 'skim'
+
 Plugin 'vim-syntastic/syntastic'
   set statusline+=%#warningmsg#
   set statusline+=%{SyntasticStatuslineFlag()}
@@ -34,8 +35,18 @@ Plugin 'jez/vim-better-sml'
 
 Plugin 'jez/vim-superman'
 
+Plugin 'scrooloose/nerdtree'
+  " open nerdtree when no files are specified
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+  " open nerdtree when vim started on a directory
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+  nnoremap <Leader>n :NERDTreeToggle<CR>
+
 Plugin 'scrooloose/nerdcommenter'
   let @c = 'yypk\ccj' " comment current line and add new copy
+
 Plugin 'itchyny/lightline.vim'
 Plugin 'ajh17/vimcompletesme'
 Plugin 'mk12/vim-lean'
@@ -44,9 +55,7 @@ Plugin 'sheerun/vim-polyglot'
 
 Plugin 'vim-python/python-syntax'
 Plugin 'tpope/vim-surround'
-
 Plugin 'joshdick/onedark.vim'
-
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -54,8 +63,6 @@ Plugin 'mbbill/undotree'
   nnoremap <Leader>u :UndotreeToggle<CR>
 
 call vundle#end()
-
-"colorscheme onedark
 
 set laststatus=2
 let g:airline_powerline_fonts = 0
@@ -66,7 +73,6 @@ let g:airline_theme='onedark'
 
 let g:lean_auto_replace = 1
 
-"colorscheme onedark
 set background=dark
 colorscheme onedark
 let g:palenight_terminal_italics=1
