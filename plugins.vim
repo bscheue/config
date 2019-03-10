@@ -1,6 +1,25 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'vim-syntastic/syntastic'
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_auto_loc_list = 1
+  let g:syntastic_check_on_open = 0
+  let g:syntastic_check_on_wq = 0
+
+  augroup mySyntastic
+    au FileType sml let g:syntastic_always_populate_loc_list = 1
+    au FileType sml let g:syntastic_auto_loc_list = 1
+  augroup END
+
+  nnoremap <Leader>S :SyntasticToggleMode<CR>
+
 Plugin 'jez/vim-better-sml'
   au FileType sml setlocal conceallevel=2
 
@@ -13,7 +32,7 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'vim-python/python-syntax'
 Plugin 'tpope/vim-surround'
 
-Plugin 'chriskempson/base16-vim'
+"Plugin 'chriskempson/base16-vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
 Plugin 'rakr/vim-one'
@@ -35,14 +54,6 @@ let g:airline_detect_paste=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='onedark'
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
 
 let g:lean_auto_replace = 1
 
@@ -54,15 +65,4 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-augroup mySyntastic
-    " tell syntastic to always stick any detected errors into the
-    " location-list
-       au FileType sml let g:syntastic_always_populate_loc_list = 1
-    "
-    "     " automatically open and/or close the location-list
-           au FileType sml let g:syntastic_auto_loc_list = 1
-           augroup END
-    "
-    "       " press <Leader>S (i.e., \S) to not automatically check for errors
-           nnoremap <Leader>S :SyntasticToggleMode<CR>
-    "
+
