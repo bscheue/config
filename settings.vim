@@ -4,6 +4,8 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 
 syntax on
 
+let g:ale_emit_conflict_warnings = 0
+
 set textwidth=0
 set mouse=a
 let g:filetype_pl="prolog"
