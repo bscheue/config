@@ -33,13 +33,8 @@ Plugin 'lervag/vimtex'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'vim-python/python-syntax'
 Plugin 'tpope/vim-surround'
-  noremap gy yyp<Esc>k:Commentary<CR>j
 
-"Plugin 'chriskempson/base16-vim'
-Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
-Plugin 'rakr/vim-one'
-Plugin 'drewtempelmeyer/palenight.vim'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
