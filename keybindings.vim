@@ -1,3 +1,5 @@
+let mapleader = " "
+
 imap jj <Esc>
 
 noremap <silent> k gk
@@ -15,6 +17,4 @@ function! ExecuteMacroOverVisualRange()
 endfunction
 
 nnoremap <Leader>N <Esc>:nohlsearch<CR>
-
-" for compiling latex
 
