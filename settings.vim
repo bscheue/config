@@ -57,4 +57,5 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 let &t_SR = "\<Esc>]50;CursorShape=3\x7" " Stay in block while replacing
 let &t_ER = "\<Esc>]50;CursorShape=0\x7" "
 
-
+set t_ZH=[3m
+set t_ZR=[23m

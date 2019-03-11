@@ -64,6 +64,10 @@ Plugin 'mbbill/undotree'
   nnoremap <Leader>u :UndotreeToggle<CR>
 
 Plugin 'arcticicestudio/nord-vim'
+  let g:nord_italic = 1
+  let g:nord_italic_comments = 1
+  let g:nord_comment_brightness = 20
+  let g:nord_cursor_line_number_background = 1
 
 call vundle#end()
 
@@ -76,8 +80,7 @@ let g:airline_theme='nord'
 
 let g:lean_auto_replace = 1
 
-set background=dark
-colorscheme onedark
+"set background=dark
 if (has("termguicolors"))
   set termguicolors
 endif
