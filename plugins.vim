@@ -42,7 +42,7 @@ Plugin 'scrooloose/nerdtree'
   " open nerdtree when vim started on a directory
   autocmd StdinReadPre * let s:std_in=1
   autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-  nnoremap <Leader>n :NERDTreeToggle<CR>
+  nnoremap <Leader>n <Esc>:NERDTreeToggle<CR>
 
 Plugin 'scrooloose/nerdcommenter'
   let @c = 'yypk\ccj' " comment current line and add new copy
@@ -51,6 +51,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'ajh17/vimcompletesme'
 Plugin 'mk12/vim-lean'
 Plugin 'sheerun/vim-polyglot'
+  " need this to allow vimtex to work
   let g:polyglot_disabled = ['latex']
 
 Plugin 'vim-python/python-syntax'

@@ -1,0 +1,1 @@
+highlight Delimiter ctermfg=Blue
