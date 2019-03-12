@@ -1,4 +1,4 @@
-let mapleader = " "
+"let mapleader = " "
 
 imap jj <Esc>
 
