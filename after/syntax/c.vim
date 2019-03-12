@@ -1,0 +1,1 @@
+highlight type ctermfg=green
