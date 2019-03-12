@@ -12,10 +12,6 @@ Plugin 'vim-syntastic/syntastic'
   set statusline+=%{SyntasticStatuslineFlag()}
   set statusline+=%*
 
-
-  "let g:syntastic_mode_map = {
-    "\ "mode": "active",
-    "\ "passive_filetypes": ["tex"] }
   let g:syntastic_ignore_files = [ "\m*..tex$" ]
   let g:syntastic_enable_balloons = 0
   let g:syntastic_latex_checkers = [ 'errors-only' ]
