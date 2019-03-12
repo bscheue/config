@@ -70,11 +70,11 @@ Plugin 'SirVer/ultisnips'
 
 Plugin 'honza/vim-snippets'
 
-let g:UltiSnipsExpandTrigger="<c-t>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+  let g:UltiSnipsExpandTrigger="<c-t>"
+  let g:UltiSnipsJumpForwardTrigger="<c-b>"
+  let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-let g:UltiSnipsEditSplit="vertical"
+  let g:UltiSnipsEditSplit="vertical"
 
 call vundle#end()
 
@@ -87,7 +87,6 @@ let g:airline_theme='nord'
 
 let g:lean_auto_replace = 1
 
-"set background=dark
 if (has("termguicolors"))
   set termguicolors
 endif
