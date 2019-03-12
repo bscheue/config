@@ -56,6 +56,7 @@ Plugin 'sheerun/vim-polyglot'
 
 Plugin 'vim-python/python-syntax'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
 Plugin 'joshdick/onedark.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
