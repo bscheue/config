@@ -66,18 +66,14 @@ Plugin 'arcticicestudio/nord-vim'
   let g:nord_comment_brightness = 20
   let g:nord_cursor_line_number_background = 1
 
-" Track the engine.
 Plugin 'SirVer/ultisnips'
 
-" Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-t>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
 call vundle#end()
