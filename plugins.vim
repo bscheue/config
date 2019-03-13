@@ -38,7 +38,7 @@ Plugin 'scrooloose/nerdtree'
   " open nerdtree when vim started on a directory
   autocmd StdinReadPre * let s:std_in=1
   autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-  nnoremap <Leader>n <Esc>:NERDTreeToggle<CR>
+  nnoremap <Leader>t <Esc>:NERDTreeToggle<CR>
 
 Plugin 'scrooloose/nerdcommenter'
   let @c = 'yypk\ccj' " comment current line and add new copy
@@ -69,11 +69,9 @@ Plugin 'arcticicestudio/nord-vim'
 Plugin 'SirVer/ultisnips'
 
 Plugin 'honza/vim-snippets'
-
   let g:UltiSnipsExpandTrigger="<c-t>"
   let g:UltiSnipsJumpForwardTrigger="<c-b>"
   let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
   let g:UltiSnipsEditSplit="vertical"
 
 call vundle#end()
