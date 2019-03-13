@@ -13,7 +13,6 @@ set nocompatible  "Kill vi-compatibility
 set t_Co=256 "256 color
 set encoding=utf-8 "UTF-8 character encoding
 
-" Indent 2 spaces
 set tabstop=2  "2 space tabs
 set shiftwidth=2  "2 space shift
 set softtabstop=2  "Tab spaces in no hard tab mode
@@ -54,7 +53,7 @@ set cul!
 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
 let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
-
+" for ssh andrew
 try
   let &t_SR = "\<Esc>]50;CursorShape=3\x7" " Stay in block while replacing
   let &t_ER = "\<Esc>]50;CursorShape=0\x7" "
