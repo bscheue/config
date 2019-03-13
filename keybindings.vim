@@ -16,8 +16,9 @@ function! ExecuteMacroOverVisualRange()
       execute ":'<,'>normal @".nr2char(getchar())
 endfunction
 
-nnoremap <Leader>N <Esc>:nohlsearch<CR>
+nnoremap <Leader>n <Esc>:nohlsearch<CR>
 
+" for split pane navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-l> <C-w>l
