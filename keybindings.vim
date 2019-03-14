@@ -19,7 +19,7 @@ endfunction
 nnoremap <Leader>n <Esc>:nohlsearch<CR>
 " should use lex instead when no longer forced to use older
 " version of vim on andrew servers
-nnoremap <Leader>t <Esc>:Sexplore!<CR>
+nnoremap <Leader>s <Esc>:Sexplore!<CR>
 
 " for split pane navigation
 nnoremap <C-h> <C-w>h
