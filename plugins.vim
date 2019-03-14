@@ -31,14 +31,16 @@ Plugin 'jez/vim-better-sml'
 
 Plugin 'jez/vim-superman'
 
-Plugin 'scrooloose/nerdtree'
-  " open nerdtree when no files are specified
-  autocmd StdinReadPre * let s:std_in=1
-  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-  " open nerdtree when vim started on a directory
-  autocmd StdinReadPre * let s:std_in=1
-  autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-  nnoremap <Leader>t <Esc>:NERDTreeToggle<CR>
+"Plugin 'scrooloose/nerdtree'
+  "" open nerdtree when no files are specified
+  "autocmd StdinReadPre * let s:std_in=1
+  "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+  "" open nerdtree when vim started on a directory
+  "autocmd StdinReadPre * let s:std_in=1
+  "autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+  "nnoremap <Leader>t <Esc>:NERDTreeToggle<CR>
+  "" close nerdtree if it's the only thing left
+  "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 Plugin 'scrooloose/nerdcommenter'
   let @c = 'yypk\ccj' " comment current line and add new copy
