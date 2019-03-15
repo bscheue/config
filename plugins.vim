@@ -8,9 +8,6 @@ Plugin 'lervag/vimtex'
   let g:vimtex_view_method = 'skim'
 
 Plugin 'vim-syntastic/syntastic'
-  set statusline+=%#warningmsg#
-  set statusline+=%{SyntasticStatuslineFlag()}
-  set statusline+=%*
 
   let g:syntastic_ignore_files = [ "\m*..tex$" ]
   let g:syntastic_enable_balloons = 0
@@ -56,7 +53,6 @@ Plugin 'vim-python/python-syntax'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-vinegar'
-Plugin 'joshdick/onedark.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -82,9 +78,8 @@ call vundle#end()
 set laststatus=2
 let g:airline_powerline_fonts = 0
 let g:airline_detect_paste=1
-let g:airline#extensions#tabline#enabled=1
+let g:airline_extensions = ['vimtex']
 let g:airline_theme='nord'
-
 
 let g:lean_auto_replace = 1
 
