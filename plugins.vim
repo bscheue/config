@@ -44,7 +44,12 @@ Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'itchyny/lightline.vim'
 Plugin 'ajh17/vimcompletesme'
-Plugin 'mk12/vim-lean'
+Plugin 'mk12/vim-lean', { 'for': 'lean' }
+  " not sure why i need this, but without it, vim doesn't
+  " know to highlight .lean files
+  au BufNewFile,BufRead *.lean setf lean
+  let g:lean_auto_replace = 1
+
 Plugin 'sheerun/vim-polyglot'
   " need this to allow vimtex to work
   let g:polyglot_disabled = ['latex']
@@ -81,7 +86,6 @@ let g:airline_detect_paste=1
 let g:airline_extensions = ['vimtex']
 let g:airline_theme='nord'
 
-let g:lean_auto_replace = 1
 
 if (has("termguicolors"))
   set termguicolors
