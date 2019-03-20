@@ -7,6 +7,10 @@ Plugin 'lervag/vimtex'
   nnoremap <Leader>b <Esc>:w<CR>:VimtexCompileSS<CR>:VimtexErrors<CR>
   let g:vimtex_view_method = 'skim'
 
+Plugin 'KeitaNakamura/tex-conceal.vim'
+  au FileType tex setlocal conceallevel=1
+  let g:tex_conceal="abdgm"
+
 Plugin 'vim-syntastic/syntastic'
 
   let g:syntastic_ignore_files = [ "\m*..tex$" ]
