@@ -3,6 +3,8 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'scrooloose/nerdcommenter'
+  let @c = 'yypk\ccj' " comment current line and add new copy
 Plugin 'lervag/vimtex'
   nnoremap <Leader>b <Esc>:w<CR>:VimtexCompileSS<CR>:VimtexErrors<CR>
   let g:vimtex_view_method = 'skim'
@@ -44,8 +46,6 @@ Plugin 'jez/vim-superman'
   "" close nerdtree if it's the only thing left
   "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-Plugin 'scrooloose/nerdcommenter'
-  let @c = 'yypk\ccj' " comment current line and add new copy
 
 Plugin 'ajh17/vimcompletesme'
 Plugin 'mk12/vim-lean', { 'for': 'lean' }
@@ -91,8 +91,8 @@ let g:airline_extensions = ['vimtex']
 let g:airline_theme='nord'
 
 
-if (has("termguicolors"))
-  set termguicolors
-endif
+"if (has("termguicolors"))
+  "set termguicolors
+"endif
 
 colorscheme nord
