@@ -9,10 +9,9 @@ Plugin 'lervag/vimtex'
   nnoremap <Leader>b <Esc>:w<CR>:VimtexCompileSS<CR>:VimtexErrors<CR>
   let g:vimtex_view_method = 'skim'
 
-"Plugin 'KeitaNakamura/tex-conceal.vim'
-  "au FileType tex setlocal conceallevel=1
-  ""set conceallevel=2
-  "let g:tex_conceal="abdmg"
+Plugin 'KeitaNakamura/tex-conceal.vim'
+  au FileType tex setlocal conceallevel=2
+  let g:tex_conceal="abdgm"
 
 Plugin 'vim-syntastic/syntastic'
 
