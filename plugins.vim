@@ -7,9 +7,10 @@ Plugin 'lervag/vimtex'
   nnoremap <Leader>b <Esc>:w<CR>:VimtexCompileSS<CR>:VimtexErrors<CR>
   let g:vimtex_view_method = 'skim'
 
-Plugin 'KeitaNakamura/tex-conceal.vim'
-  au FileType tex setlocal conceallevel=1
-  let g:tex_conceal="abdgm"
+"Plugin 'KeitaNakamura/tex-conceal.vim'
+  "au FileType tex setlocal conceallevel=1
+  ""set conceallevel=2
+  "let g:tex_conceal="abdmg"
 
 Plugin 'vim-syntastic/syntastic'
 
@@ -46,7 +47,6 @@ Plugin 'jez/vim-superman'
 Plugin 'scrooloose/nerdcommenter'
   let @c = 'yypk\ccj' " comment current line and add new copy
 
-Plugin 'itchyny/lightline.vim'
 Plugin 'ajh17/vimcompletesme'
 Plugin 'mk12/vim-lean', { 'for': 'lean' }
   " not sure why i need this, but without it, vim doesn't
@@ -72,7 +72,6 @@ Plugin 'mbbill/undotree'
 Plugin 'arcticicestudio/nord-vim'
   let g:nord_italic = 1
   let g:nord_italic_comments = 1
-  let g:nord_comment_brightness = 20
   let g:nord_cursor_line_number_background = 1
 
 Plugin 'SirVer/ultisnips'
