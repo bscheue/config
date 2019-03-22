@@ -65,7 +65,3 @@ set t_ZR=[23m
 
 autocmd VimResized * wincmd =
 
-let g:remoteSession = ($STY == "")
-if g:remoteSession
-  echo "hello"
-endif
