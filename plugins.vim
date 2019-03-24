@@ -8,6 +8,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'lervag/vimtex'
   nnoremap <Leader>b <Esc>:w<CR>:VimtexCompileSS<CR>:VimtexErrors<CR>
   let g:vimtex_view_method = 'skim'
+  au FileType tex setlocal signcolumn=no
 
 Plugin 'KeitaNakamura/tex-conceal.vim'
   au FileType tex setlocal conceallevel=2
