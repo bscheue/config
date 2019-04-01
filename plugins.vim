@@ -14,7 +14,9 @@ Plugin 'KeitaNakamura/tex-conceal.vim'
   au FileType tex setlocal conceallevel=2
   let g:tex_conceal="abdgm"
 
-if (version < 810)
+if (has('nvim') || version >= 810)
+  Plugin 'w0rp/ale'
+else
   Plugin 'vim-syntastic/syntastic'
 
     let g:syntastic_ignore_files = [ "\m*..tex$" ]
@@ -30,9 +32,6 @@ if (version < 810)
       au FileType sml let g:syntastic_always_populate_loc_list = 1
       au FileType sml let g:syntastic_auto_loc_list = 1
     augroup END
-endif
-if has('nvim')
-  Plugin 'w0rp/ale'
 endif
 
 
