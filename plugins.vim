@@ -16,6 +16,12 @@ Plugin 'KeitaNakamura/tex-conceal.vim'
 
 if (has('nvim') || version >= 810)
   Plugin 'w0rp/ale'
+  let g:ale_open_list = 1
+  let g:ale_lint_one_save = 1
+  let g:ale_lint_on_text_changed = 0
+  let g:ale_pattern_options = {
+  \   '.*\.tex$': {'ale_enabled': 0},
+  \}
 else
   Plugin 'vim-syntastic/syntastic'
 
