@@ -14,21 +14,27 @@ Plugin 'KeitaNakamura/tex-conceal.vim'
   au FileType tex setlocal conceallevel=2
   let g:tex_conceal="abdgm"
 
-Plugin 'vim-syntastic/syntastic'
+if (version < 810)
+  Plugin 'vim-syntastic/syntastic'
 
-  let g:syntastic_ignore_files = [ "\m*..tex$" ]
-  let g:syntastic_enable_balloons = 0
-  let g:syntastic_latex_checkers = [ 'errors-only' ]
+    let g:syntastic_ignore_files = [ "\m*..tex$" ]
+    let g:syntastic_enable_balloons = 0
+    let g:syntastic_latex_checkers = [ 'errors-only' ]
 
-  let g:syntastic_always_populate_loc_list = 1
-  let g:syntastic_auto_loc_list = 1
-  let g:syntastic_check_on_open = 0
-  let g:syntastic_check_on_wq = 0
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 0
+    let g:syntastic_check_on_wq = 0
 
-  augroup mySyntastic
-    au FileType sml let g:syntastic_always_populate_loc_list = 1
-    au FileType sml let g:syntastic_auto_loc_list = 1
-  augroup END
+    augroup mySyntastic
+      au FileType sml let g:syntastic_always_populate_loc_list = 1
+      au FileType sml let g:syntastic_auto_loc_list = 1
+    augroup END
+endif
+if has('nvim')
+  Plugin 'w0rp/ale'
+endif
+
 
 Plugin 'jez/vim-better-sml'
   au FileType sml setlocal conceallevel=2
