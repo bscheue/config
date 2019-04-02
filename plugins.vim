@@ -4,7 +4,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdcommenter'
-  let @c = 'yypk\ccj' " comment current line and add new copy
+  let @c = 'yypk ccj' " comment current line and add new copy
 Plugin 'lervag/vimtex'
   nnoremap <Leader>b <Esc>:w<CR>:VimtexCompileSS<CR>:VimtexErrors<CR>
   let g:vimtex_view_method = 'skim'
