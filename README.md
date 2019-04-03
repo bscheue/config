@@ -1,1 +1,1 @@
-Links to all of the files used in my vimrc
+some of my config stuffs
