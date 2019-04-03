@@ -10,7 +10,7 @@ Plugin 'lervag/vimtex'
   let g:vimtex_view_method = 'skim'
   au FileType tex setlocal signcolumn=no
 
-Plugin 'brians1123/tex-conceal.vim'
+Plugin 'KeitaNakamura/tex-conceal.vim'
   au FileType tex setlocal conceallevel=2
   let g:tex_conceal="abdgm"
 
