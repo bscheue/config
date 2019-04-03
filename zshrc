@@ -104,7 +104,7 @@ PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 export PATH
 
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
-  compdef vman="man" # get tab completion
+compdef vman="man" # get tab completion
 export PATH="$PATH:/Users/brian/Documents/lean-3.4.2/bin"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -114,11 +114,7 @@ function cs { builtin cd "$@" && ls }
 alias vim="nvim"
 alias andrew="ssh bscheuer@unix8.andrew.cmu.edu"
 alias babyshark="ssh bscheuer@bambooshark.ics.cs.cmu.edu"
-
-function itp { ssh 5f582102dfbf49a498643e48247bc44f@ssh.cocalc.com }
-function itp-class { ssh 801cdfe0934a4c6e90309810aa8cf188@ssh.cocalc.com }
-
-function smlnj { rlwrap sml }
+alias smlnj="rlwrap sml"
 
 function scp1 { scp bscheuer@unix.andrew.cmu.edu:~/private/$1 $2 }
 function scp2 { scp $1 bscheuer@unix.andrew.cmu.edu:~/private/$2 }
@@ -159,8 +155,6 @@ export KEYTIMEOUT=20
 # vim keybindings overwrite these, so need to over over write those
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
-#bindkey '^[[D' zle-nop
-#bindkey '^[[C' zle-nop
 bindkey -M viins 'jj' vi-cmd-mode
 
 bindkey '^s' autosuggest-accept
