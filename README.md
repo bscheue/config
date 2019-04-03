@@ -1,4 +1,6 @@
-still growing, but some of my config stuffs.
+### Config
+
+still growing, but some of my config stuffs
 
 obligatory xkcd:
 
