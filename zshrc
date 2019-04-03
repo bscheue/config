@@ -112,14 +112,9 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 function cs { builtin cd "$@" && ls }
 
 alias vim="nvim"
+alias andrew="ssh bscheuer@unix8.andrew.cmu.edu"
+alias babyshark="ssh bscheuer@bambooshark.ics.cs.cmu.edu"
 
-#export VIMRUNTIME="/usr/local/Cellar/vim@7.4/7.4.2367_19/share/vim/vim74/"
-#export VIMRUNTIME="/usr/local/Cellar/vim/8.1.1000/share/vim/vim81/"
-#export PATH="/usr/local/opt/vim@7.4/bin:$PATH"
-#alias vim="/usr/local/Cellar/vim/8.1.1000/bin/vim"
-#alias vim='mvim -v'
-
-function babyshark { ssh bscheuer@bambooshark.ics.cs.cmu.edu }
 function itp { ssh 5f582102dfbf49a498643e48247bc44f@ssh.cocalc.com }
 function itp-class { ssh 801cdfe0934a4c6e90309810aa8cf188@ssh.cocalc.com }
 
