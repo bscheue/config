@@ -22,6 +22,7 @@ if (has('nvim') || version >= 810)
   let g:ale_pattern_options = {
   \   '.*\.tex$': {'ale_enabled': 0},
   \}
+  au BufRead,BufNewFile *.sig set filetype=sml
 else
   Plugin 'vim-syntastic/syntastic'
 
