@@ -10,7 +10,7 @@ Plugin 'lervag/vimtex'
   let g:vimtex_view_method = 'skim'
   au FileType tex setlocal signcolumn=no
 
-Plugin 'KeitaNakamura/tex-conceal.vim'
+Plugin 'brians1123/tex-conceal.vim'
   au FileType tex setlocal conceallevel=2
   let g:tex_conceal="abdgm"
 
@@ -42,13 +42,13 @@ else
 endif
 
 
-Plugin 'jez/vim-better-sml'
+Plugin 'brians1123/vim-better-sml'
   au FileType sml setlocal conceallevel=2
 
 Plugin 'jez/vim-superman'
 
 Plugin 'ajh17/vimcompletesme'
-Plugin 'mk12/vim-lean', { 'for': 'lean' }
+Plugin 'brians1123/vim-lean', { 'for': 'lean' }
   " not sure why i need this, but without it, vim doesn't
   " know to highlight .lean files
   au BufNewFile,BufRead *.lean setf lean
