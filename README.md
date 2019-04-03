@@ -1,4 +1,4 @@
-### Config
+# Config
 
 still growing, but some of my config stuffs
 
