@@ -1,15 +1,13 @@
-filetype plugin indent on
-
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 syntax on
 
+" I don't know why this is here, need to sheck
 let g:ale_emit_conflict_warnings = 0
 
 set textwidth=0
 set mouse=a
 let g:filetype_pl="prolog"
-set nocompatible  "Kill vi-compatibility
 set t_Co=256 "256 color
 set encoding=utf-8 "UTF-8 character encoding
 
@@ -18,6 +16,7 @@ set shiftwidth=2  "2 space shift
 set softtabstop=2  "Tab spaces in no hard tab mode
 set expandtab  " Expand tabs into spaces
 set autoindent  "autoindent on new lines
+filetype plugin indent on
 
 set showmatch  "Highlight matching braces
 
