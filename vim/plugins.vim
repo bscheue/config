@@ -3,8 +3,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'scrooloose/nerdcommenter'
-  let @c = 'yypk ccj' " comment current line and add new copy
 Plugin 'lervag/vimtex'
   nnoremap <Leader>b <Esc>:w<CR>:VimtexCompileSS<CR>:VimtexErrors<CR>
   let g:vimtex_view_method = 'skim'
@@ -60,11 +58,15 @@ Plugin 'sheerun/vim-polyglot'
   let g:polyglot_disabled = ['latex']
 
 Plugin 'vim-python/python-syntax'
+
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-commentary'
+  let @c = 'yypkgccj' " comment current line and add new copy
+
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -83,7 +85,6 @@ Plugin 'honza/vim-snippets'
   let g:UltiSnipsJumpForwardTrigger="<c-b>"
   let g:UltiSnipsJumpBackwardTrigger="<c-z>"
   let g:UltiSnipsEditSplit="vertical"
-
 
 call vundle#end()
 
