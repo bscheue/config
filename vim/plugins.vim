@@ -51,7 +51,7 @@ Plugin 'brians1123/vim-lean', { 'for': 'lean' }
   " know to highlight .lean files
   au BufNewFile,BufRead *.lean setf lean
   let g:lean_auto_replace = 1
-  nnoremap <Leader>s <Esc>:w<CR>:LeanCheck<CR>
+  nnoremap <Leader>c <Esc>:w<CR>:LeanCheck<CR>
 
 Plugin 'sheerun/vim-polyglot'
   " need this to allow vimtex to work
