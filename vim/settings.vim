@@ -1,5 +1,6 @@
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
+filetype plugin indent on
 syntax on
 
 " I don't know why this is here, need to sheck
@@ -16,7 +17,6 @@ set shiftwidth=2  "2 space shift
 set softtabstop=2  "Tab spaces in no hard tab mode
 set expandtab  " Expand tabs into spaces
 set autoindent  "autoindent on new lines
-filetype plugin indent on
 
 set showmatch  "Highlight matching braces
 
