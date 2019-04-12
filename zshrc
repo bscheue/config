@@ -112,6 +112,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 function cs { builtin cd "$@" && ls }
 
 export PATH="$PATH:/Users/brian/Documents/smlnj/bin"
+export SMLNJ_HOME="/Users/brian/Documents/smlnj"
 
 alias vim="nvim"
 alias andrew="ssh bscheuer@unix8.andrew.cmu.edu"
