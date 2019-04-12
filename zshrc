@@ -111,6 +111,8 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 function cs { builtin cd "$@" && ls }
 
+export PATH="$PATH:/Users/brian/Documents/smlnj/bin"
+
 alias vim="nvim"
 alias andrew="ssh bscheuer@unix8.andrew.cmu.edu"
 alias babyshark="ssh bscheuer@bambooshark.ics.cs.cmu.edu"
