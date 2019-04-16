@@ -30,4 +30,7 @@ syn match texMathSymbol '\\X' contained conceal cchar=𝕏
 syn match texMathSymbol '\\Y' contained conceal cchar=𝕐
 syn match texMathSymbol '\\Z' contained conceal cchar=ℤ
 
-syn match texMathSymbol '\\o' contained conceal cchar=∘
+syn match compose contained '\\o' conceal cchar=∘
+syn match texMathSymbol '\\o ' contains=compose,composeSpace
+
+syn cluster texMathSymbol add=compose,composeSpace
