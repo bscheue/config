@@ -115,8 +115,6 @@ export PATH="$PATH:/Users/brian/Documents/smlnj/bin"
 export SMLNJ_HOME="/Users/brian/Documents/smlnj"
 
 alias vim="nvim"
-alias andrew="ssh bscheuer@unix8.andrew.cmu.edu"
-alias babyshark="ssh bscheuer@bambooshark.ics.cs.cmu.edu"
 alias smlnj="rlwrap sml"
 
 function scp1 { scp bscheuer@unix.andrew.cmu.edu:~/private/$1 $2 }
