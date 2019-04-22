@@ -33,7 +33,6 @@ set smartcase  "Search using smartcase
 set incsearch  "Start searching immediately
 
 set scrolloff=5  "Never scroll off
-set wildmode=longest,list  "Better unix-like tab completion
 set clipboard=unnamed  "Copy and paste from system clipboard
 set lazyredraw  "Don't redraw while running macros (faster)
 set wrap  "Visually wrap lines
@@ -62,5 +61,10 @@ endtry
 set t_ZH=[3m
 set t_ZR=[23m
 
+" resize windows to be same proportion after resizing terminal
 autocmd VimResized * wincmd =
 
+set path+=** " allow finding files within subfolders
+
+set wildmenu " allow tab completion cycling
+set wildmode=longest:full,full
