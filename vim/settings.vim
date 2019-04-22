@@ -68,3 +68,5 @@ set path+=** " allow finding files within subfolders
 
 set wildmenu " allow tab completion cycling
 set wildmode=longest:full,full
+
+command! MakeTags !ctags -R .
