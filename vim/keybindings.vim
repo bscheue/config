@@ -31,4 +31,5 @@ nnoremap <C-Right> <C-w>>
 nnoremap <C-Up> <C-w>+
 nnoremap <C-Down> <C-w>-
 
-
+" make it easier to split line in normal mode
+nnoremap <silent> <leader><CR> i<CR><ESC>
