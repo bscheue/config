@@ -45,6 +45,7 @@ Plugin 'brians1123/vim-better-sml'
   let g:sml_auto_create_def_use='always'
 
 Plugin 'jez/vim-superman'
+  nnoremap K :!vman <cword><CR>
 
 Plugin 'ajh17/vimcompletesme'
 Plugin 'brians1123/vim-lean', { 'for': 'lean' }
