@@ -35,3 +35,6 @@ nnoremap <C-Down> <C-w>-
 nnoremap <silent> <leader><CR> i<CR><ESC>
 
 nnoremap <silent> Y y$
+
+command! MakeTags !ctags -R .
+command! Here !lcd %:p:h
