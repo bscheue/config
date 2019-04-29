@@ -114,9 +114,7 @@ function cs { builtin cd "$@" && ls }
 export PATH="$PATH:/Users/brian/Documents/smlnj/bin"
 export SMLNJ_HOME="/Users/brian/Documents/smlnj"
 
-# alias vim="nvim"
-export VIMRUNTIME="/usr/local/Cellar/vim/8.1.1000/share/vim/vim81/"
-alias vim="/usr/local/Cellar/vim/8.1.1000/bin/vim"
+alias vim="nvim"
 alias smlnj="rlwrap sml"
 
 function scp1 { scp bscheuer@unix.andrew.cmu.edu:~/private/$1 $2 }
