@@ -4,7 +4,7 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	name = Brian
+	name = Brian Scheuermann
 	email = bscheuer@andrew.cmu.edu
 [core]
 	editor = vim
