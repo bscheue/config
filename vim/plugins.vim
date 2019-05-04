@@ -95,6 +95,12 @@ Plugin 'honza/vim-snippets'
   let g:UltiSnipsJumpBackwardTrigger="<c-z>"
   let g:UltiSnipsEditSplit="vertical"
 
+Plugin 'justinmk/vim-sneak'
+  noremap f <Plug>Sneak_f
+  noremap F <Plug>Sneak_F
+  noremap t <Plug>Sneak_t
+  noremap T <Plug>Sneak_T
+
 call vundle#end()
 
 set laststatus=2
