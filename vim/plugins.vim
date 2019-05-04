@@ -70,6 +70,7 @@ Plugin 'vim-python/python-syntax'
 
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
+   command! Gwc Gwrite | Gcommit
 Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-unimpaired'
