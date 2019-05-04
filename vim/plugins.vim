@@ -5,8 +5,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'lervag/vimtex'
   nnoremap <Leader>b <Esc>:w<CR>:VimtexCompileSS<CR>:VimtexErrors<CR>
-  let g:vimtex_latexmk_progname = 'nvr'
-  let g:vimtex_view_method = 'skim'
+  let g:vimtex_view_method = 'zathura'
   let g:tex_flavor = 'latex'
   " foward search
   nnoremap <silent> <Leader>ls :silent

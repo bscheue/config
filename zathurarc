@@ -35,3 +35,6 @@ map [fullscreen] f toggle_fullscreen
 
 set window-height 1000
 set window-width 720
+
+
+set synctex true
