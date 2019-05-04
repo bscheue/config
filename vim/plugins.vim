@@ -19,7 +19,7 @@ Plugin 'KeitaNakamura/tex-conceal.vim'
   au FileType tex setlocal conceallevel=2
   let g:tex_conceal="abdgm"
 
-if (has('nvim') || version >= 810)
+if (version >= 810)
   Plugin 'w0rp/ale'
   let g:ale_open_list = 1
   let g:ale_lint_one_save = 1
