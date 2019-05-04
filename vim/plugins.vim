@@ -103,6 +103,8 @@ Plugin 'justinmk/vim-sneak'
 
 call vundle#end()
 
+let g:netrw_liststyle=3
+
 set laststatus=2
 let g:airline_powerline_fonts = 0
 let g:airline_detect_paste=1
