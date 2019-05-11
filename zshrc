@@ -156,7 +156,6 @@ export KEYTIMEOUT=20
 # vim keybindings overwrite these, so need to over over write those
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
-bindkey -M viins 'jj' vi-cmd-mode
 
 bindkey '^s' autosuggest-accept
 bindkey '^ ' autosuggest-execute
