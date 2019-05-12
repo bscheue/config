@@ -55,12 +55,6 @@ Plugin 'jez/vim-superman'
   nnoremap K :!vman <cword><CR>
 
 Plugin 'ajh17/vimcompletesme'
-Plugin 'brians1123/vim-lean', { 'for': 'lean' }
-  " not sure why i need this, but without it, vim doesn't
-  " know to highlight .lean files
-  au BufNewFile,BufRead *.lean setf lean
-  let g:lean_auto_replace = 1
-  nnoremap <Leader>c <Esc>:w<CR>:LeanCheck<CR>
 
 Plugin 'sheerun/vim-polyglot'
   " need this to allow vimtex to work
