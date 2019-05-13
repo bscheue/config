@@ -81,8 +81,8 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
 else
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   alias vim="mvim -v"
-  export PATH="$PATH:/Users/brian/Documents/smlnj/bin"
-  export SMLNJ_HOME="/Users/brian/Documents/smlnj"
+  export PATH="$PATH:/Users/brian/smlnj/bin"
+  export SMLNJ_HOME="/Users/brian/smlnj"
   function scp1 { scp bscheuer@unix.andrew.cmu.edu:~/private/$1 $2 }
   function scp2 { scp $1 bscheuer@unix.andrew.cmu.edu:~/private/$2 }
 
