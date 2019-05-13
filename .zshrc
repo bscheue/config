@@ -125,7 +125,7 @@ function zle-line-init zle-keymap-select {
 
 zle -N zle-line-init
 zle -N zle-keymap-select
-export KEYTIMEOUT=10
+export KEYTIMEOUT=25
 
 # vim keybindings overwrite these, so need to over over write those
 bindkey '^[[A' up-line-or-search
