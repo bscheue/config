@@ -12,7 +12,7 @@ ZSH_AUTOSUGGEST_USE_ASYNC=1
 export TERM="xterm-256color"
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
