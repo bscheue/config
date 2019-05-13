@@ -76,3 +76,7 @@ set path+=** " allow finding files within subfolders
 
 set wildmenu " allow tab completion cycling
 set wildmode=longest:full,full
+
+runtime! config/plugins.vim
+
+set timeoutlen=1000 ttimeoutlen=0
