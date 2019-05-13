@@ -104,6 +104,7 @@ bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
+bindkey -M viins 'jj' vi-cmd-mode
 
 function zle-line-init zle-keymap-select {
     if [ "$TERM" = "xterm-256color" ]; then
@@ -124,7 +125,7 @@ function zle-line-init zle-keymap-select {
 
 zle -N zle-line-init
 zle -N zle-keymap-select
-export KEYTIMEOUT=20
+export KEYTIMEOUT=10
 
 # vim keybindings overwrite these, so need to over over write those
 bindkey '^[[A' up-line-or-search
