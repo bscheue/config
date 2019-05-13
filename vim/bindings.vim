@@ -15,8 +15,6 @@ function! ExecuteMacroOverVisualRange()
 endfunction
 
 nnoremap <Leader>n <Esc>:nohlsearch<CR>
-" should use lex instead when no longer forced to use older
-" version of vim on andrew servers
 
 " for split pane navigation
 nnoremap <C-h> <C-w>h
