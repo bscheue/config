@@ -77,24 +77,24 @@ compdef vman="man" # get tab completion
 export PATH="$PATH:/Users/brian/Documents/lean-3.4.2/bin"
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  echo "hello"
+  source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  alias vim="mvim -v"
+  export PATH="$PATH:/Users/brian/Documents/smlnj/bin"
+  export SMLNJ_HOME="/Users/brian/Documents/smlnj"
+  function scp1 { scp bscheuer@unix.andrew.cmu.edu:~/private/$1 $2 }
+  function scp2 { scp $1 bscheuer@unix.andrew.cmu.edu:~/private/$2 }
+
+  function scp1r { scp -r bscheuer@unix.andrew.cmu.edu:~/private/$1 $2 }
+  function scp2r { scp -r $1 bscheuer@unix.andrew.cmu.edu:~/private/$2 }
 fi
 
 function cs { builtin cd "$@" && ls }
 
-export PATH="$PATH:/Users/brian/Documents/smlnj/bin"
-export SMLNJ_HOME="/Users/brian/Documents/smlnj"
 
-alias vim="mvim -v"
 alias smlnj="rlwrap sml"
 
-function scp1 { scp bscheuer@unix.andrew.cmu.edu:~/private/$1 $2 }
-function scp2 { scp $1 bscheuer@unix.andrew.cmu.edu:~/private/$2 }
-
-function scp1r { scp -r bscheuer@unix.andrew.cmu.edu:~/private/$1 $2 }
-function scp2r { scp -r $1 bscheuer@unix.andrew.cmu.edu:~/private/$2 }
 
 bindkey -v
 
