@@ -33,3 +33,5 @@ nnoremap <silent> Y y$
 
 command! MakeTags !ctags -R .
 command! Here lcd %:p:h
+
+nnoremap <CR> :
