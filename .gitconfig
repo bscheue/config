@@ -9,7 +9,7 @@
 [core]
 	editor = vim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/brian/.gitignore_global
 [color]
 	ui = auto
 [color "branch"]
