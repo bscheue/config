@@ -82,6 +82,8 @@ else
   # export PATH=/opt/local/bin:/opt/local/sbin:$PATH
   # export PATH=/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:$PATH
   alias vimtex="/opt/local/bin/vim --servername VIM"
+  export VIMRUNTIME="/usr/local/Cellar/vim/8.1.1300/share/vim/vim81/"
+  alias vim="/usr/local/Cellar/vim/8.1.1300/bin/vim"
   export MANPATH=/opt/local/share/man:$MANPATH
   export PATH="$PATH:/Users/brian/smlnj/bin"
   export SMLNJ_HOME="/Users/brian/smlnj"
