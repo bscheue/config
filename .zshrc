@@ -74,7 +74,6 @@ export PATH
 
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 compdef vman="man" # get tab completion
-export PATH="$PATH:/Users/brian/Documents/lean-3.4.2/bin"
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
