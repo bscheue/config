@@ -34,3 +34,4 @@ set window-width 720
 
 set synctex true
 
+set selection-clipboard clipboard
