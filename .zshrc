@@ -31,7 +31,7 @@ CASE_SENSITIVE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -80,7 +80,9 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  alias vim="mvim -v"
+  # alias vim="mvim -v"
+  export VIMRUNTIME="/usr/local/Cellar/vim/8.1.1000/share/vim/vim81/"
+  alias vim="/usr/local/Cellar/vim/8.1.1000/bin/vim"
   export PATH="$PATH:/Users/brian/smlnj/bin"
   export SMLNJ_HOME="/Users/brian/smlnj"
   function scp1 { scp bscheuer@unix.andrew.cmu.edu:~/private/$1 $2 }
