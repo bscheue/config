@@ -79,9 +79,9 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-  export PATH=/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:$PATH
-  alias vimtex="vim --servername VIM"
+  # export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+  # export PATH=/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:$PATH
+  alias vimtex="/opt/local/bin/vim --servername VIM"
   export MANPATH=/opt/local/share/man:$MANPATH
   export PATH="$PATH:/Users/brian/smlnj/bin"
   export SMLNJ_HOME="/Users/brian/smlnj"
