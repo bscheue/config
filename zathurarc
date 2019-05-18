@@ -1,6 +1,3 @@
-# Zathura configuration file
-# See man `man zathurarc'
-
 # Open document in fit-width mode by default
 set adjust-open "best-fit"
 
@@ -32,9 +29,8 @@ unmap f
 map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
 
-
 set window-height 1000
 set window-width 720
 
-
 set synctex true
+
