@@ -4,15 +4,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'lervag/vimtex'
-  nnoremap <Leader>b <Esc>:w<CR>:VimtexCompileSS<CR>:VimtexErrors<CR>
-  let g:latex_view_general_viewer = 'zathura'
+  nnoremap <Leader>b <Esc>:w<CR>:VimtexCompile<CR>:VimtexErrors<CR>
   let g:vimtex_view_method = 'zathura'
   let g:tex_flavor = 'latex'
-  " " foward search
-  " nnoremap <silent> <Leader>ls :silent
-  "   \ !/Applications/Skim.app/Contents/SharedSupport/displayline
-  "   \ <C-R>=line('.')<CR>
-  "   \ "<C-R>=b:vimtex.out()<CR>" "%:p"<CR>
   au FileType tex setlocal signcolumn=no
 
 Plugin 'KeitaNakamura/tex-conceal.vim'
