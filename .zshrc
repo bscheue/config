@@ -80,9 +80,9 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  # alias vim="mvim -v"
-  export VIMRUNTIME="/usr/local/Cellar/vim/8.1.1000/share/vim/vim81/"
-  alias vim="/usr/local/Cellar/vim/8.1.1000/bin/vim"
+  export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+  export PATH=/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:$PATH
+  export MANPATH=/opt/local/share/man:$MANPATH
   export PATH="$PATH:/Users/brian/smlnj/bin"
   export SMLNJ_HOME="/Users/brian/smlnj"
   function scp1 { scp bscheuer@unix.andrew.cmu.edu:~/private/$1 $2 }
