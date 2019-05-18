@@ -81,6 +81,7 @@ else
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   export PATH=/opt/local/bin:/opt/local/sbin:$PATH
   export PATH=/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:$PATH
+  alias vim="vim --servername VIM"
   export MANPATH=/opt/local/share/man:$MANPATH
   export PATH="$PATH:/Users/brian/smlnj/bin"
   export SMLNJ_HOME="/Users/brian/smlnj"
