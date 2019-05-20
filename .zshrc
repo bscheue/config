@@ -29,7 +29,6 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  alias vimtex="/opt/local/bin/vim --servername VIM"
   export VIMRUNTIME="/usr/local/Cellar/vim/8.1.1300/share/vim/vim81/"
   alias vim="/usr/local/Cellar/vim/8.1.1300/bin/vim"
   export MANPATH=/opt/local/share/man:$MANPATH
