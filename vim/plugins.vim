@@ -2,7 +2,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin
+
 Plugin 'lervag/vimtex'
   nnoremap <Leader>b <Esc>:w<CR>:VimtexCompile<CR>:VimtexErrors<CR>
   let g:vimtex_view_method = 'zathura'
@@ -14,6 +14,23 @@ Plugin 'KeitaNakamura/tex-conceal.vim'
   let g:tex_conceal="abdgm"
 
 if (version >= 801)
+  Plugin 'maralla/completor.vim'
+  function! Tab_Or_Complete() abort
+    if pumvisible()
+      return "\<C-N>"
+    elseif col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^[[:keyword:][:ident:]]'
+      return "\<C-R>=completor#do('complete')\<CR>"
+    else
+      return "\<Tab>"
+    endif
+  endfunction
+
+  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+  let g:completor_auto_trigger = 0
+  inoremap <expr> <Tab> Tab_Or_Complete()
+
   Plugin 'w0rp/ale'
   let g:ale_open_list = 1
   let g:ale_lint_one_save = 1
@@ -24,6 +41,8 @@ if (version >= 801)
 
   au BufRead,BufNewFile *.sig set filetype=sml
 else
+  Plugin 'ajh17/vimcompletesme'
+
   Plugin 'vim-syntastic/syntastic'
 
     let g:syntastic_ignore_files = [ "\m*..tex$" ]
