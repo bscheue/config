@@ -2,7 +2,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-
+Plugin
 Plugin 'lervag/vimtex'
   nnoremap <Leader>b <Esc>:w<CR>:VimtexCompile<CR>:VimtexErrors<CR>
   let g:vimtex_view_method = 'zathura'
