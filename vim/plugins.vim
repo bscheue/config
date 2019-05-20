@@ -5,7 +5,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'lervag/vimtex'
   nnoremap <Leader>b <Esc>:w<CR>:VimtexCompile<CR>:VimtexErrors<CR>
-  let g:vimtex_view_method = 'zathura'
+  let g:vimtex_view_method = 'skim'
   let g:tex_flavor = 'latex'
   au FileType tex setlocal signcolumn=no
 
