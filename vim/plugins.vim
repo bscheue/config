@@ -63,7 +63,8 @@ endif
 
 Plugin 'brians1123/vim-better-sml'
   au FileType sml setlocal conceallevel=2
-  let g:sml_auto_create_def_use='always'
+  let g:sml_auto_create_def_use='never'
+  command! Defuse let g:sml_auto_create_def_use='always'
 
 Plugin 'jez/vim-superman'
   nnoremap K :!vman <cword><CR>
