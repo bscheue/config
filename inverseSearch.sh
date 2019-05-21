@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# arguments for skim sync: "%file" %line
 file="$1"
 line="$2"
 
