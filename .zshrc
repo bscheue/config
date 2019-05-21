@@ -29,11 +29,15 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  export VIMRUNTIME="/usr/local/Cellar/vim/8.1.1300/share/vim/vim81/"
-  alias vim="/usr/local/Cellar/vim/8.1.1300/bin/vim"
+  export PATH="/usr/local/bin:$PATH"
   export MANPATH=/opt/local/share/man:$MANPATH
   export PATH="$PATH:/Users/brian/smlnj/bin"
   export SMLNJ_HOME="/Users/brian/smlnj"
+
+  # for running github io page locally
+  export RBENV_ROOT=/usr/local/var/rbenv
+  eval "$(rbenv init -)"
+
   function scp1 { scp bscheuer@unix.andrew.cmu.edu:~/private/$1 $2 }
   function scp2 { scp $1 bscheuer@unix.andrew.cmu.edu:~/private/$2 }
 
@@ -84,4 +88,5 @@ bindkey '^[[B' down-line-or-search
 
 bindkey '^s' autosuggest-accept
 bindkey '^ ' autosuggest-execute
+
 
