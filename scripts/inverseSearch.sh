@@ -26,8 +26,18 @@ exec osascript << EOF
       launch session "Default"
       tell application "System Events"
 
-        keystroke "n" using command down
-        keystroke "vim $file" & return
+      keystroke "n" using command down
+      keystroke "vim $file" & return
+
+      end tell
+
+      repeat while not (name of current session of current window contains "vim")
+      end repeat
+
+      tell application "System Events"
+
+      keystroke ":$line" & return
+      keystroke "zz"
 
       end tell
     end if
