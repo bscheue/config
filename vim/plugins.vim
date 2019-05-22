@@ -100,8 +100,8 @@ Plugin 'SirVer/ultisnips'
 
 Plugin 'honza/vim-snippets'
   let g:UltiSnipsExpandTrigger="<c-t>"
-  let g:UltiSnipsJumpForwardTrigger="<c-b>"
-  let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+  let g:UltiSnipsJumpForwardTrigger="<c-d>"
+  let g:UltiSnipsJumpBackwardTrigger="<c-a>"
   let g:UltiSnipsEditSplit="vertical"
 
 Plugin 'justinmk/vim-sneak'
