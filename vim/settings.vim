@@ -3,7 +3,7 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 filetype plugin indent on
 syntax on
 
-" I don't know why this is here, need to sheck
+" I don't know why this is here, need to check
 let g:ale_emit_conflict_warnings = 0
 
 set textwidth=0
@@ -53,7 +53,7 @@ set cul!
 " let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 " for ssh andrew
 try
-  let &t_SR = "\<Esc>]50;CursorShape=3\x7" " Stay in block while replacing
+  let &t_SR = "\<Esc>]50;CursorShape=2\x7" " Stay in block while replacing
   let &t_ER = "\<Esc>]50;CursorShape=0\x7" "
 catch
 endtry
@@ -64,8 +64,15 @@ if exists('$TMUX')
 else
     let &t_SI = "\e[5 q"
     let &t_EI = "\e[2 q"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
+" need this to start with block cursor shape
+autocmd VimEnter * silent exec "! echo -ne '\e[1 q'"
+" to clear message from previous command
+autocmd VimEnter * echo ""
+
+" for italic comments
 set t_ZH=[3m
 set t_ZR=[23m
 
@@ -76,6 +83,5 @@ set path+=** " allow finding files within subfolders
 
 set wildmenu " allow tab completion cycling
 set wildmode=longest:full,full
-
 
 
