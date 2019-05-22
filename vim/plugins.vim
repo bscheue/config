@@ -83,7 +83,8 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-commentary'
-  let @c = 'yypkgccj' " comment current line and add new copy
+  " comment current line and add new copy
+  nnoremap <Leader>c yypk:Commentary<CR>j
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
