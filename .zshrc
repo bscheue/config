@@ -27,7 +27,6 @@ compdef vman="man" # get tab completion
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  eval $(dircolors ~/.dircolors/.nord_dir_colors)
 else
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   export PATH="/usr/local/bin:$PATH"
