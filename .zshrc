@@ -38,7 +38,6 @@ else
   alias ls='gls --color=auto'
   alias ll='ls -al'
 
-
   # for running github io page locally
   export RBENV_ROOT=/usr/local/var/rbenv
   eval "$(rbenv init -)"
@@ -52,8 +51,9 @@ fi
 
 function cs { builtin cd "$@" && ls }
 
-
 alias smlnj="rlwrap sml"
+
+bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 bindkey -v
 
