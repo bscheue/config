@@ -27,12 +27,18 @@ compdef vman="man" # get tab completion
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  eval $(dircolors ~/.dircolors/.nord_dir_colors)
 else
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   export PATH="/usr/local/bin:$PATH"
   export MANPATH=/opt/local/share/man:$MANPATH
   export PATH="$PATH:/Users/brian/smlnj/bin"
   export SMLNJ_HOME="/Users/brian/smlnj"
+
+  eval $(gdircolors ~/.dircolors/.nord_dir_colors)
+  alias ls='gls --color=auto'
+  alias ll='ls -al'
+
 
   # for running github io page locally
   export RBENV_ROOT=/usr/local/var/rbenv
@@ -49,7 +55,6 @@ function cs { builtin cd "$@" && ls }
 
 
 alias smlnj="rlwrap sml"
-
 
 bindkey -v
 
