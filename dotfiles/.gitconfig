@@ -1,0 +1,36 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Brian Scheuermann
+	email = bscheuer@andrew.cmu.edu
+[core]
+	editor = vim
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = /Users/brian/.gitignore_global
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[diff]
+	tool = vimdiff
+[difftool]
+  prompt = false
+[alias]
+  lg = log --format='%w(72,0,8)%C(auto)%h%d %s'
+  lga = log --date=short --format='%w(72,0,8)%C(auto)%h %C(green)%cd \
+          %<(20,trunc)%aN%C(auto)%d%n%w(72,8,8)%s'
