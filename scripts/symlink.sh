@@ -43,8 +43,6 @@ then
 
   mv ~/.vim/after ~/config/old
   ln -s ~/config/vim/after ~/.vim/after
-
-  exit 1
 fi
 
 for file in $(ls -A ~/config/dotfiles); do
