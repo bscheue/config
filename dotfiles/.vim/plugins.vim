@@ -78,7 +78,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
   let g:UltiSnipsExpandTrigger="<c-t>"
   let g:UltiSnipsJumpForwardTrigger="<c-d>"
-  let g:UltiSnipsJumpBackwardTrigger="<c-a>"
+  let g:UltiSnipsJumpBackwardTrigger="<S-c-d>"
   let g:UltiSnipsEditSplit="vertical"
 
 Plugin 'godlygeek/tabular'
