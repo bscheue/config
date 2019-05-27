@@ -101,7 +101,9 @@ set statusline+=\ %r
 set statusline+=%=
 set statusline+=%#variable#
 set statusline+=\ ‹‹
-set statusline+=\ %l,
+set statusline+=\ %l
+set statusline+=\ /
+set statusline+=\ %L,
 set statusline+=\ %c
 set statusline+=\ ::
 set statusline+=\ %p
