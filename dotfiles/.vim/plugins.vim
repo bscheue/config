@@ -55,8 +55,6 @@ Plugin 'sheerun/vim-polyglot'
   " need this to allow vimtex to work
   let g:polyglot_disabled = ['latex']
 
-Plugin 'vim-python/python-syntax'
-
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
    command! Gwc Gwrite | Gcommit
