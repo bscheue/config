@@ -73,13 +73,16 @@ Plugin 'arcticicestudio/nord-vim'
   let g:nord_italic_comments = 1
   let g:nord_cursor_line_number_background = 1
 
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
 
-Plugin 'honza/vim-snippets'
-  let g:UltiSnipsExpandTrigger="<c-t>"
-  let g:UltiSnipsJumpForwardTrigger="<c-d>"
-  let g:UltiSnipsJumpBackwardTrigger="<S-c-d>"
-  let g:UltiSnipsEditSplit="vertical"
+" Plugin 'honza/vim-snippets'
+"   let g:UltiSnipsExpandTrigger="<c-t>"
+"   let g:UltiSnipsJumpForwardTrigger="<c-d>"
+"   let g:UltiSnipsJumpBackwardTrigger="<S-c-d>"
+"   let g:UltiSnipsEditSplit="vertical"
+
+Plugin 'tckmn/vim-minisnip'
+  let g:minisnip_trigger = '<C-j>'
 
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
