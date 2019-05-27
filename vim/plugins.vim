@@ -67,9 +67,6 @@ Plugin 'tpope/vim-commentary'
   " comment current line and add new copy
   nnoremap <Leader>c yypk:Commentary<CR>j
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
 Plugin 'mbbill/undotree'
   nnoremap <Leader>u :UndotreeToggle<CR>
 
