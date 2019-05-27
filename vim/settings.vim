@@ -85,3 +85,25 @@ set wildmenu " allow tab completion cycling
 set wildmode=longest:full,full
 
 au FileType tex setlocal complete-=i
+
+
+set laststatus=2
+set statusline=
+set statusline+=%#function#
+set statusline+=\ %*
+set statusline+=\ ‹‹
+set statusline+=\ %f\%*
+set statusline+=\ ››
+set statusline+=\ %#keyword#
+set statusline+=\ %2y
+set statusline+=\ %m
+set statusline+=\ %r
+set statusline+=%=
+set statusline+=%#variable#
+set statusline+=\ ‹‹
+set statusline+=\ %l,
+set statusline+=\ %c
+set statusline+=\ ::
+set statusline+=\ %p
+set statusline+=\ %%
+set statusline+=\ ››\ %*
