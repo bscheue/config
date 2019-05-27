@@ -86,6 +86,9 @@ set wildmode=longest:full,full
 
 au FileType tex setlocal complete-=i
 
+set completeopt=longest,menuone,menu,preview
+set omnifunc=syntaxcomplete#Complete
+
 
 set laststatus=2
 set statusline=

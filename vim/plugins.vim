@@ -93,6 +93,8 @@ Plugin 'plasticboy/vim-markdown'
   au FileType markdown setlocal conceallevel=2
   au FileType markdown setlocal nofoldenable
 
+Plugin 'ajh17/VimCompletesMe'
+
 call vundle#end()
 
 let g:netrw_liststyle=3
