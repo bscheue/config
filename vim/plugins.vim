@@ -105,8 +105,6 @@ Plugin 'honza/vim-snippets'
   let g:UltiSnipsJumpBackwardTrigger="<c-a>"
   let g:UltiSnipsEditSplit="vertical"
 
-Plugin 'justinmk/vim-sneak'
-
 call vundle#end()
 
 let g:netrw_liststyle=3
