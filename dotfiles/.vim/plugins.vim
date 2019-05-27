@@ -15,17 +15,16 @@ Plugin 'KeitaNakamura/tex-conceal.vim'
 
 if (version >= 801)
   Plugin 'w0rp/ale'
-  let g:ale_open_list = 1
-  let g:ale_lint_one_save = 1
-  let g:ale_lint_on_text_changed = 0
-  let g:ale_pattern_options = {
-  \   '.*\.tex$': {'ale_enabled': 0},
-  \}
+    let g:ale_open_list = 1
+    let g:ale_lint_one_save = 1
+    let g:ale_lint_on_text_changed = 0
+    let g:ale_pattern_options = {
+    \   '.*\.tex$': {'ale_enabled': 0},
+    \}
 
   autocmd BufRead,BufNewFile *.sig set filetype=sml
 else
   Plugin 'vim-syntastic/syntastic'
-
     let g:syntastic_ignore_files = [ "\m*..tex$" ]
     let g:syntastic_enable_balloons = 0
     let g:syntastic_latex_checkers = [ 'errors-only' ]
@@ -72,14 +71,6 @@ Plugin 'arcticicestudio/nord-vim'
   let g:nord_italic = 1
   let g:nord_italic_comments = 1
   let g:nord_cursor_line_number_background = 1
-
-" Plugin 'SirVer/ultisnips'
-
-" Plugin 'honza/vim-snippets'
-"   let g:UltiSnipsExpandTrigger="<c-t>"
-"   let g:UltiSnipsJumpForwardTrigger="<c-d>"
-"   let g:UltiSnipsJumpBackwardTrigger="<S-c-d>"
-"   let g:UltiSnipsEditSplit="vertical"
 
 Plugin 'tckmn/vim-minisnip'
   let g:minisnip_trigger = '<C-j>'
