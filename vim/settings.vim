@@ -101,11 +101,11 @@ set statusline+=\ %r
 set statusline+=%=
 set statusline+=%#variable#
 set statusline+=\ ‹‹
-set statusline+=\ %l
+set statusline+=\ %4l
 set statusline+=\ /
-set statusline+=\ %L,
-set statusline+=\ %c
+set statusline+=\ %4L,
+set statusline+=\ %3c
 set statusline+=\ ::
-set statusline+=\ %p
+set statusline+=\ %3p
 set statusline+=\ %%
 set statusline+=\ ››\ %*
