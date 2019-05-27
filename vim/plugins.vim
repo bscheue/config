@@ -7,10 +7,10 @@ Plugin 'lervag/vimtex'
   nnoremap <Leader>b <Esc>:w<CR>:VimtexCompile<CR>:VimtexErrors<CR>
   let g:vimtex_view_method = 'skim'
   let g:tex_flavor = 'latex'
-  au FileType tex setlocal signcolumn=no
+  autocmd FileType tex setlocal signcolumn=no
 
 Plugin 'KeitaNakamura/tex-conceal.vim'
-  au FileType tex setlocal conceallevel=2
+  autocmd FileType tex setlocal conceallevel=2
   let g:tex_conceal="abdgm"
 
 if (version >= 801)
@@ -22,7 +22,7 @@ if (version >= 801)
   \   '.*\.tex$': {'ale_enabled': 0},
   \}
 
-  au BufRead,BufNewFile *.sig set filetype=sml
+  autocmd BufRead,BufNewFile *.sig set filetype=sml
 else
   Plugin 'vim-syntastic/syntastic'
 
@@ -43,7 +43,7 @@ endif
 
 
 Plugin 'brians1123/vim-better-sml'
-  au FileType sml setlocal conceallevel=2
+  autocmd FileType sml setlocal conceallevel=2
   let g:sml_auto_create_def_use='never'
   command! Defuse let g:sml_auto_create_def_use='always'
 
@@ -90,8 +90,8 @@ Plugin 'plasticboy/vim-markdown'
   let g:vim_markdown_new_list_item_indent = 2
   let g:vim_markdown_autowrite = 1
   let g:vim_markdown_edit_url_in = 'vsplit'
-  au FileType markdown setlocal conceallevel=2
-  au FileType markdown setlocal nofoldenable
+  autocmd FileType markdown setlocal conceallevel=2
+  autocmd FileType markdown setlocal nofoldenable
 
 Plugin 'ajh17/VimCompletesMe'
 

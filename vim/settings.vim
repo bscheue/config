@@ -84,7 +84,7 @@ set path+=** " allow finding files within subfolders
 set wildmenu " allow tab completion cycling
 set wildmode=longest:full,full
 
-au FileType tex setlocal complete-=i
+autocmd FileType tex setlocal complete-=i
 
 set completeopt=longest,menuone,menu,preview
 set omnifunc=syntaxcomplete#Complete
