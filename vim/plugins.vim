@@ -96,7 +96,5 @@ call vundle#end()
 
 let g:netrw_liststyle=3
 
-set laststatus=2
-
 colorscheme nord
 
