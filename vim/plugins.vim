@@ -85,12 +85,13 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-  au FileType md setlocal conceallevel=2
   let g:vim_markdown_strikethrough = 1
   let g:vim_markdown_math = 1
   let g:vim_markdown_new_list_item_indent = 2
   let g:vim_markdown_autowrite = 1
   let g:vim_markdown_edit_url_in = 'vsplit'
+  au FileType markdown setlocal conceallevel=2
+  au FileType markdown setlocal nofoldenable
 
 call vundle#end()
 
