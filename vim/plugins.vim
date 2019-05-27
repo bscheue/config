@@ -105,6 +105,15 @@ Plugin 'honza/vim-snippets'
   let g:UltiSnipsJumpBackwardTrigger="<c-a>"
   let g:UltiSnipsEditSplit="vertical"
 
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+  au FileType md setlocal conceallevel=2
+  let g:vim_markdown_strikethrough = 1
+  let g:vim_markdown_math = 1
+  let g:vim_markdown_new_list_item_indent = 2
+  let g:vim_markdown_autowrite = 1
+  let g:vim_markdown_edit_url_in = 'vsplit'
+
 call vundle#end()
 
 let g:netrw_liststyle=3
