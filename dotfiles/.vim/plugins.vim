@@ -72,8 +72,13 @@ Plugin 'arcticicestudio/nord-vim'
   let g:nord_italic_comments = 1
   let g:nord_cursor_line_number_background = 1
 
-Plugin 'tckmn/vim-minisnip'
-  let g:minisnip_trigger = '<C-j>'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+  imap <C-J> <Plug>snipMateNextOrTrigger
+  smap <C-J> <Plug>snipMateNextOrTrigger
+
+Plugin 'honza/vim-snippets'
 
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
