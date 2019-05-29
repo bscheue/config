@@ -1,7 +1,7 @@
-highlight Delimiter ctermfg=gray
+" highlight Delimiter ctermfg=gray
 highlight texMath ctermfg=blue
-highlight Statement ctermfg=gray
-highlight conceal ctermbg=NONE ctermfg=green
+highlight Statement ctermfg=darkblue
+highlight conceal ctermbg=NONE ctermfg=darkgreen
 
 syn match texMathSymbol '\\A' contained conceal cchar=𝔸
 syn match texMathSymbol '\\B' contained conceal cchar=𝔹
