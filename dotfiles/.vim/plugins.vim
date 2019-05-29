@@ -92,12 +92,9 @@ Plugin 'plasticboy/vim-markdown'
 
 Plugin 'ajh17/VimCompletesMe'
 
-Plugin 'romainl/apprentice'
-
 call vundle#end()
 
 let g:netrw_liststyle=3
 
-" colorscheme nord
-colorscheme apprentice
+colorscheme nord
 
