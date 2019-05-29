@@ -9,7 +9,6 @@ let g:ale_emit_conflict_warnings = 0
 set textwidth=0
 set mouse=a
 let g:filetype_pl="prolog"
-set t_Co=256 "256 color
 set encoding=utf-8 "UTF-8 character encoding
 
 set tabstop=2  "2 space tabs
