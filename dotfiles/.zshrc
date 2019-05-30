@@ -6,8 +6,6 @@ ZSH_THEME="refined"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 
-# source ~/.zsh/custom/start.plugin.zsh
-
 
 export TERM="xterm-256color"
 
@@ -19,6 +17,7 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(
   git
   start
+  zshmarks
 )
 
 source $ZSH/oh-my-zsh.sh
