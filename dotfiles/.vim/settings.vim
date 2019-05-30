@@ -111,3 +111,11 @@ set statusline+=\ ::
 set statusline+=\ %3p
 set statusline+=\ %%
 set statusline+=\ ››\ %*
+
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
