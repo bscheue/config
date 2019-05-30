@@ -1,1 +1,0 @@
-Note: will need to create symlink to this folder at .vim
