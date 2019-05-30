@@ -6,6 +6,9 @@ ZSH_THEME="refined"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 
+# source ~/.zsh/custom/start.plugin.zsh
+
+
 export TERM="xterm-256color"
 
 # the following line toggles case sensitive completion
@@ -15,6 +18,7 @@ DISABLE_AUTO_UPDATE="true"
 
 plugins=(
   git
+  start
 )
 
 source $ZSH/oh-my-zsh.sh
