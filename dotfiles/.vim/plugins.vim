@@ -90,8 +90,6 @@ Plugin 'plasticboy/vim-markdown'
   autocmd FileType markdown setlocal conceallevel=2
   autocmd FileType markdown setlocal nofoldenable
 
-Plugin 'ajh17/VimCompletesMe'
-
 Plugin 'bscheue/apprentice'
 
 call vundle#end()
