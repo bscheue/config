@@ -3,8 +3,6 @@ export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="refined"
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_USE_ASYNC=1
 
 
 export TERM="xterm-256color"
@@ -18,7 +16,10 @@ plugins=(
   git
   start
   zshmarks
+  zsh-autosuggestions
 )
+
+ZSH_AUTOSUGGEST_USE_ASYNC=1
 
 source $ZSH/oh-my-zsh.sh
 
