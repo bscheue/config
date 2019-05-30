@@ -71,9 +71,6 @@ autocmd VimEnter * silent exec "! echo -ne '\e[1 q'"
 " to clear message from previous command
 autocmd VimEnter * echo ""
 
-" for italic comments
-set t_ZH=[3m
-set t_ZR=[23m
 
 " resize windows to be same proportion after resizing terminal
 autocmd VimResized * wincmd =
