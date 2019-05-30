@@ -12,16 +12,18 @@ CASE_SENSITIVE="true"
 
 DISABLE_AUTO_UPDATE="true"
 
+ZSH_START_MARKS=1
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+
 plugins=(
   git
-  start
   zshmarks
+  start
   zsh-autosuggestions
 )
 
 alias j="jump"
 
-ZSH_AUTOSUGGEST_USE_ASYNC=1
 
 source $ZSH/oh-my-zsh.sh
 
