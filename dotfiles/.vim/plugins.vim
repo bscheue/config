@@ -92,7 +92,7 @@ Plugin 'plasticboy/vim-markdown'
 
 Plugin 'ajh17/VimCompletesMe'
 
-Plugin 'romainl/apprentice'
+Plugin 'bscheue/apprentice'
 
 call vundle#end()
 
