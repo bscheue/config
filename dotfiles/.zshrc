@@ -19,6 +19,11 @@ plugins=(
   zsh-autosuggestions
 )
 
+alias g="jump"
+alias s="bookmark"
+alias d="deletemark"
+alias p="showmarks"
+
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 
 source $ZSH/oh-my-zsh.sh
