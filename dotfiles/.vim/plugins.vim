@@ -100,4 +100,6 @@ let g:netrw_liststyle=3
 
 " colorscheme nord
 colorscheme apprentice
+  hi Function         ctermbg=NONE        ctermfg=darkcyan      cterm=NONE
+
 
