@@ -58,8 +58,12 @@ catch
 endtry
 
 if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
+    " let &t_SI = "\<Esc>Ptmux;\<Esc>\e[4 q\<Esc>\\"
+    " let &t_SR = "\<Esc>Ptmux;\<Esc>\e[6 q\<Esc>\\"
+    " let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
+    " let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    " let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 else
     let &t_SI = "\e[5 q"
     let &t_EI = "\e[2 q"
@@ -70,7 +74,6 @@ endif
 autocmd VimEnter * silent exec "! echo -ne '\e[1 q'"
 " to clear message from previous command
 autocmd VimEnter * echo ""
-
 
 " resize windows to be same proportion after resizing terminal
 autocmd VimResized * wincmd =
@@ -116,3 +119,10 @@ function! SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
+inoremap <silent> ;l <C-x><C-l>
+inoremap <silent> ;n <C-n>
+inoremap <silent> ;i <C-i>
+inoremap <silent> ;] <C-]>
+inoremap <silent> ;f <C-f>
+inoremap <silent> ;i <C-i>
+inoremap <silent> ;o <C-o>
