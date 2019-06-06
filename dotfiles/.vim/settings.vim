@@ -118,12 +118,3 @@ function! SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
-
-inoremap <silent> ,l <C-x><C-l>
-inoremap <silent> ,n <C-n>
-inoremap <silent> ,p <C-p>
-inoremap <silent> ,i <C-i>
-inoremap <silent> ,] <C-]>
-inoremap <silent> ,f <C-f>
-inoremap <silent> ,i <C-i>
-inoremap <silent> ,o <C-o>
