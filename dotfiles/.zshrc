@@ -1,9 +1,7 @@
 # Path to oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
-ZSH_THEME="refined"
-
-
+ZSH_THEME=""
 
 export TERM="xterm-256color"
 
@@ -24,8 +22,8 @@ plugins=(
 
 alias j="jump"
 
-
 source $ZSH/oh-my-zsh.sh
+
 
 PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 export PATH
@@ -77,21 +75,23 @@ function zle-line-init zle-keymap-select {
     if [ "$TERM" = "xterm-256color" ]; then
         if [ $KEYMAP = vicmd ]; then
             # the command mode for vi
-            echo -ne "\e[2 q"
+            echo -ne "\e[0 q"
         else
             # the insert mode for vi
-            echo -ne "\e[5 q"
+            echo -ne "\e[6 q"
         fi
     fi
-    VIM_PROMPT_NORMAL="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
-    VIM_PROMPT_INS="%{$fg_bold[green]%} [% INSERT]%  %{$reset_color%}"
-    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT_NORMAL}/(main|viins)/$VIM_PROMPT_INS} $EPS1"
     zle reset-prompt
 }
 
-
 zle -N zle-line-init
 zle -N zle-keymap-select
+
+autoload -U promptinit; promptinit
+PURE_PROMPT_SYMBOL=λ
+PURE_PROMPT_VICMD_SYMBOL=Λ
+prompt pure
+
 export KEYTIMEOUT=25
 
 # vim keybindings overwrite these, so need to over over write those
@@ -100,5 +100,4 @@ bindkey '^[[B' down-line-or-search
 
 bindkey '^s' autosuggest-accept
 bindkey '^ ' autosuggest-execute
-
 
