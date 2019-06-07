@@ -41,10 +41,15 @@ else
 endif
 
 
-Plugin 'brians1123/vim-better-sml'
+Plugin 'bscheue/vim-better-sml'
   autocmd FileType sml setlocal conceallevel=2
+  " shouldn't need this, but it looks like this needs to be set manually
+  if exists('$TMUX')
+    autocmd FileType sml let g:sml_repl_backend='vimux'
+  endif
   let g:sml_auto_create_def_use='never'
   command! Defuse let g:sml_auto_create_def_use='always'
+
 
 Plugin 'jez/vim-superman'
   nnoremap K :!vman <cword><CR>
@@ -91,6 +96,12 @@ Plugin 'plasticboy/vim-markdown'
   autocmd FileType markdown setlocal nofoldenable
 
 Plugin 'bscheue/apprentice'
+
+Plugin 'machakann/vim-swap'
+
+Plugin 'benmills/vimux'
+  let g:VimuxOrientation = "h"
+  let g:VimuxHeight = "40"
 
 call vundle#end()
 
