@@ -1,6 +1,6 @@
 let mapleader = " "
 
-inoremap jj <Esc
+inoremap jj <Esc>
 
 noremap <silent> k gk
 noremap <silent> j gj
