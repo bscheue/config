@@ -118,3 +118,6 @@ function! SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+command! Onlydiff setlocal diff foldmethod=diff scrollbind nowrap foldlevel=1
+
