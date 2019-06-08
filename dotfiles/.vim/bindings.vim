@@ -1,5 +1,7 @@
 let mapleader = " "
 
+inoremap jj <Esc
+
 noremap <silent> k gk
 noremap <silent> j gj
 noremap <silent> 0 g0
@@ -32,7 +34,8 @@ nnoremap <silent> <leader><CR> i<CR><ESC>
 nnoremap <silent> Y y$
 
 command! MakeTags !ctags -R .
+" move working directory to the directory of the current file
 command! Here lcd %:p:h
-
-inoremap jj <Esc>
+" fold away lines that are the same between files
+command! Onlydiff setlocal diff foldmethod=diff scrollbind nowrap foldlevel=1
 
