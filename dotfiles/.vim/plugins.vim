@@ -103,6 +103,9 @@ Plugin 'benmills/vimux'
   let g:VimuxOrientation = "h"
   let g:VimuxHeight = "40"
 
+Plugin 'kien/rainbow_parentheses.vim'
+  nnoremap <Leader>r :RainbowParenthesesToggle<CR>
+
 call vundle#end()
 
 let g:netrw_liststyle=3
