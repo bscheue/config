@@ -82,3 +82,12 @@
 	path = dotfiles/.vim/bundle/vim-superman
 	url = https://github.com/jez/vim-superman.git
   ignore = dirty
+[submodule "dotfiles/.vim/bundle/vimux"]
+	path = dotfiles/.vim/bundle/vimux
+	url = https://github.com/benmills/vimux.git
+[submodule "dotfiles/.vim/bundle/rainbow_parentheses.vim"]
+	path = dotfiles/.vim/bundle/rainbow_parentheses.vim
+	url = https://github.com/kien/rainbow_parentheses.vim.git
+[submodule "dotfiles/.vim/bundle/vim-swap"]
+	path = dotfiles/.vim/bundle/vim-swap
+	url = https://github.com/machakann/vim-swap.git
