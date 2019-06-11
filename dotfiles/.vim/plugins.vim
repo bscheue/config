@@ -48,7 +48,6 @@ Plugin 'bscheue/vim-better-sml'
     autocmd FileType sml let g:sml_repl_backend='vimux'
   endif
   let g:sml_auto_create_def_use='never'
-  command! Defuse let g:sml_auto_create_def_use='always'
 
 
 Plugin 'jez/vim-superman'
