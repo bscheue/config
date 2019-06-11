@@ -59,6 +59,10 @@ function cs { builtin cd "$@" && ls }
 
 alias smlnj="rlwrap sml"
 
+if type 'python3' > /dev/null ; then
+  alias python='python3'
+fi
+
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 bindkey -v
@@ -87,6 +91,7 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
+# note that this must appear after the above lines
 autoload -U promptinit; promptinit
 PURE_PROMPT_SYMBOL=λ
 PURE_PROMPT_VICMD_SYMBOL=Λ
