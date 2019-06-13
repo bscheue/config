@@ -107,3 +107,7 @@ function! SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
+" disable audio and visual bells
+set noerrorbells
+set novisualbell
+set t_vb=
