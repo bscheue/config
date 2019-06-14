@@ -32,7 +32,7 @@ set smartcase  "Search using smartcase
 set incsearch  "Start searching immediately
 
 set scrolloff=5  "Never scroll off
-set clipboard=unnamed  "Copy and paste from system clipboard
+set clipboard=exclude:.* "Never clobber the system clipboard unless asked to
 set lazyredraw  "Don't redraw while running macros (faster)
 set wrap  "Visually wrap lines
 set linebreak  "Only wrap on 'good' characters for wrapping
