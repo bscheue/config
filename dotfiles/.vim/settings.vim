@@ -110,4 +110,4 @@ endfunc
 " disable audio and visual bells
 set noerrorbells
 set novisualbell
-set t_vb=
+set vb t_vb=
