@@ -66,8 +66,6 @@ autocmd VimEnter * echo ""
 " resize windows to be same proportion after resizing terminal
 autocmd VimResized * wincmd =
 
-set path+=** " allow finding files within subfolders
-
 set wildmenu " allow tab completion cycling
 set wildmode=longest:full,full
 
