@@ -105,6 +105,11 @@ Plugin 'benmills/vimux'
 Plugin 'kien/rainbow_parentheses.vim'
   nnoremap <Leader>r :RainbowParenthesesToggle<CR>
 
+Plugin 'kana/vim-textobj-user'
+Plugin 'glts/vim-textobj-comment'
+Plugin 'sgur/vim-textobj-parameter'
+Plugin 'Julian/vim-textobj-variable-segment'
+
 call vundle#end()
 
 let g:netrw_liststyle=3
