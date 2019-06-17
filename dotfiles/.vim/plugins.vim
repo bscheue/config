@@ -71,11 +71,6 @@ Plugin 'tpope/vim-commentary'
 Plugin 'mbbill/undotree'
   nnoremap <Leader>u :UndotreeToggle<CR>
 
-Plugin 'arcticicestudio/nord-vim'
-  let g:nord_italic = 1
-  let g:nord_italic_comments = 1
-  let g:nord_cursor_line_number_background = 1
-
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
