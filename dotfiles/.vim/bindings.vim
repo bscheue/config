@@ -33,7 +33,6 @@ nnoremap <silent> <leader><CR> i<CR><ESC>
 
 nnoremap <silent> Y y$
 
-command! MakeTags !ctags -R .
 " move working directory to the directory of the current file
 command! Here lcd %:p:h
 " fold away lines that are the same between files
