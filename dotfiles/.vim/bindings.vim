@@ -9,13 +9,6 @@ noremap <silent> $ g$
 noremap <silent> ^ g^
 noremap <silent> _ g_
 
-xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
-
-function! ExecuteMacroOverVisualRange()
-    echo "@".getcmdline()
-      execute ":'<,'>normal @".nr2char(getchar())
-endfunction
-
 nnoremap <Leader>n <Esc>:nohlsearch<CR>
 
 " for split pane navigation
@@ -33,9 +26,9 @@ nnoremap <silent> <leader><CR> i<CR><ESC>
 
 nnoremap <silent> Y y$
 
-command! MakeTags !ctags -R .
 " move working directory to the directory of the current file
 command! Here lcd %:p:h
+
 " fold away lines that are the same between files
 command! Onlydiff setlocal diff foldmethod=diff scrollbind nowrap foldlevel=1
 
