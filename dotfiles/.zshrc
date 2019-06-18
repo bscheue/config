@@ -73,6 +73,8 @@ bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
+
+
 bindkey -M viins 'jj' vi-cmd-mode
 
 function zle-line-init zle-keymap-select {
@@ -91,6 +93,9 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
+bindkey -M vicmd 'k' up-line-or-search
+bindkey -M vicmd 'j' down-line-or-search
+
 # note that this must appear after the above lines
 autoload -U promptinit; promptinit
 PURE_PROMPT_SYMBOL=λ
@@ -98,6 +103,7 @@ PURE_PROMPT_VICMD_SYMBOL=Λ
 prompt pure
 
 export KEYTIMEOUT=25
+
 
 # vim keybindings overwrite these, so need to over over write those
 bindkey '^[[A' up-line-or-search
