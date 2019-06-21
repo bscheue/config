@@ -22,7 +22,7 @@ if (version >= 801)
     \   '.*\.tex$': {'ale_enabled': 0},
     \}
 
-  autocmd BufRead,BufNewFile *.sig set filetype=sml
+  autocmd BufRead,BufNewFile *.sig setlocal filetype=sml
 else
   Plugin 'vim-syntastic/syntastic'
     let g:syntastic_ignore_files = [ "\m*..tex$" ]
