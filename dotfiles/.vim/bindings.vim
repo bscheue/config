@@ -32,3 +32,7 @@ command! Here lcd %:p:h
 " fold away lines that are the same between files
 command! Onlydiff setlocal diff foldmethod=diff scrollbind nowrap foldlevel=1
 
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <Up> <C-p>
+cnoremap <Down> <C-n>
