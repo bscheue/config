@@ -67,8 +67,8 @@ bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 bindkey -v
 
-bindkey '^P' up-history
-bindkey '^N' down-history
+bindkey '^P' up-line-or-search
+bindkey '^N' down-line-or-search
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
@@ -104,10 +104,10 @@ prompt pure
 
 export KEYTIMEOUT=25
 
-
-# vim keybindings overwrite these, so need to over over write those
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
+# using ctrl p and n for substring search
+# so use arrow keys for regular command history search
+bindkey '^[[A' up-history
+bindkey '^[[B' down-history
 
 bindkey '^s' autosuggest-accept
 bindkey '^ ' autosuggest-execute
