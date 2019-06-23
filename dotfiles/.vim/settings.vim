@@ -105,3 +105,9 @@ endfunc
 set noerrorbells
 set novisualbell
 set vb t_vb=
+
+augroup Linting
+	autocmd!
+	autocmd BufWritePost *.{sml,sig,c} silent make! | silent redraw!
+	autocmd QuickFixCmdPost [^l]* cwindow
+augroup END

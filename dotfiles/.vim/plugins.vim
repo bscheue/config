@@ -16,12 +16,12 @@ Plugin 'KeitaNakamura/tex-conceal.vim'
 
 Plugin 'bscheue/vim-better-sml'
   let g:sml_auto_create_def_use='never'
-  setlocal errorformat=%f\:%l.%c-%*[0-9].%*[0-9]\ %tRROR:\ %m
-  setlocal errorformat+=%f\:%l.%c-%*[0-9].%*[0-9]\ %tARNING:\ %m,%-G%.%#
   augroup SML
     autocmd!
     autocmd BufRead,BufNewFile *.sig setlocal filetype=sml
     autocmd FileType sml setlocal conceallevel=2
+    autocmd FileType sml setlocal errorformat=%f\:%l.%c-%*[0-9].%*[0-9]\ %tRROR:\ %m
+    autocmd FileType sml setlocal errorformat+=%f\:%l.%c-%*[0-9].%*[0-9]\ %tARNING:\ %m,%-G%.%#
     " shouldn't need this, but it looks like this needs to be set manually
     if exists('$TMUX')
       autocmd FileType sml let g:sml_repl_backend='vimux'
