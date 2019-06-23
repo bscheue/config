@@ -13,51 +13,30 @@ Plugin 'KeitaNakamura/tex-conceal.vim'
   autocmd FileType tex setlocal conceallevel=2
   let g:tex_conceal="abdgm"
 
-if (version >= 801)
-  Plugin 'w0rp/ale'
-    let g:ale_open_list = 1
-    let g:ale_lint_one_save = 1
-    let g:ale_lint_on_text_changed = 0
-    let g:ale_set_quickfix = 1
-    let g:ale_pattern_options = {
-    \   '.*\.tex$': {'ale_enabled': 0},
-    \}
-
-  autocmd BufRead,BufNewFile *.sig setlocal filetype=sml
-else
-  Plugin 'vim-syntastic/syntastic'
-    let g:syntastic_ignore_files = [ "\m*..tex$" ]
-    let g:syntastic_enable_balloons = 0
-    let g:syntastic_latex_checkers = [ 'errors-only' ]
-
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 0
-    let g:syntastic_check_on_wq = 0
-
-    augroup mySyntastic
-      au FileType sml let g:syntastic_always_populate_loc_list = 1
-      au FileType sml let g:syntastic_auto_loc_list = 1
-    augroup END
-endif
-
 
 Plugin 'bscheue/vim-better-sml'
-  autocmd FileType sml setlocal conceallevel=2
-  " shouldn't need this, but it looks like this needs to be set manually
-  if exists('$TMUX')
-    autocmd FileType sml let g:sml_repl_backend='vimux'
-  endif
   let g:sml_auto_create_def_use='never'
+  setlocal errorformat=%f\:%l.%c-%*[0-9].%*[0-9]\ %tRROR:\ %m
+  setlocal errorformat+=%f\:%l.%c-%*[0-9].%*[0-9]\ %tARNING:\ %m,%-G%.%#
+  augroup SML
+    autocmd!
+    autocmd BufRead,BufNewFile *.sig setlocal filetype=sml
+    autocmd FileType sml setlocal conceallevel=2
+    " shouldn't need this, but it looks like this needs to be set manually
+    if exists('$TMUX')
+      autocmd FileType sml let g:sml_repl_backend='vimux'
+    endif
+    autocmd FileType sml execute 'SMLSetCM'
+  augroup END
 
 
 Plugin 'jez/vim-superman'
   nnoremap K :!vman <cword><CR>
 
 
-Plugin 'sheerun/vim-polyglot'
-  " need this to allow vimtex to work
-  let g:polyglot_disabled = ['latex']
+" Plugin 'sheerun/vim-polyglot'
+"   " need this to allow vimtex to work
+"   let g:polyglot_disabled = ['latex']
 
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'

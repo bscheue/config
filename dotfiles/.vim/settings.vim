@@ -3,12 +3,8 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 filetype plugin indent on
 syntax on
 
-" I don't know why this is here, need to check
-let g:ale_emit_conflict_warnings = 0
-
 set textwidth=0
 set mouse=a
-let g:filetype_pl="prolog"
 set encoding=utf-8 "UTF-8 character encoding
 
 set tabstop=2  "2 space tabs
