@@ -33,11 +33,6 @@ Plugin 'bscheue/vim-better-sml'
 Plugin 'jez/vim-superman'
   nnoremap K :!vman <cword><CR>
 
-
-" Plugin 'sheerun/vim-polyglot'
-"   " need this to allow vimtex to work
-"   let g:polyglot_disabled = ['latex']
-
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
    command! Gwc Gwrite | Gcommit
