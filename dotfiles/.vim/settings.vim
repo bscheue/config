@@ -109,6 +109,5 @@ set formatoptions+=j
 
 augroup Linting
 	autocmd!
-	autocmd BufWritePost *.{sml,sig,c} silent make! | silent redraw!
 	autocmd QuickFixCmdPost [^l]* cwindow
 augroup END
