@@ -65,8 +65,6 @@ autocmd VimResized * wincmd =
 set wildmenu " allow tab completion cycling
 set wildmode=longest:full,full
 
-set complete-=i
-
 set completeopt=longest,menuone,menu,preview
 set omnifunc=syntaxcomplete#Complete
 
@@ -106,8 +104,4 @@ set novisualbell
 set vb t_vb=
 
 set formatoptions+=j
-
-augroup Linting
-	autocmd!
-	autocmd QuickFixCmdPost [^l]* cwindow
-augroup END
+set complete-=i

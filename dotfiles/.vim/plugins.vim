@@ -80,6 +80,8 @@ Plugin 'glts/vim-textobj-comment'
 Plugin 'sgur/vim-textobj-parameter'
 Plugin 'Julian/vim-textobj-variable-segment'
 
+Plugin 'romainl/vim-qf'
+
 call vundle#end()
 
 let g:netrw_liststyle=3

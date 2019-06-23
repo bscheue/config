@@ -2,10 +2,6 @@
 	path = dotfiles/.vim/bundle/tex-conceal.vim
 	url = https://github.com/KeitaNakamura/tex-conceal.vim.git
   ignore = dirty
-[submodule "vim/bundle/VimCompletesMe"]
-	path = dotfiles/.vim/bundle/VimCompletesMe
-	url = https://github.com/ajh17/VimCompletesMe.git
-  ignore = dirty
 [submodule "vim/bundle/Vundle.vim"]
 	path = dotfiles/.vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
@@ -18,25 +14,9 @@
 	path = dotfiles/.vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
   ignore = dirty
-[submodule "vim/bundle/python-syntax"]
-	path = dotfiles/.vim/bundle/python-syntax
-	url = https://github.com/vim-python/python-syntax.git
-  ignore = dirty
-[submodule "vim/bundle/ale"]
-	path = dotfiles/.vim/bundle/ale
-	url = https://github.com/w0rp/ale.git
-  ignore = dirty
 [submodule "vim/bundle/vim-repeat"]
 	path = dotfiles/.vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
-  ignore = dirty
-[submodule "vim/bundle/ultisnips"]
-	path = dotfiles/.vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
-  ignore = dirty
-[submodule "vim/bundle/vim-polyglot"]
-	path = dotfiles/.vim/bundle/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot.git
   ignore = dirty
 [submodule "vim/bundle/vim-unimpaired"]
 	path = dotfiles/.vim/bundle/vim-unimpaired
@@ -62,14 +42,10 @@
 	path = dotfiles/.vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
   ignore = dirty
-[submodule "vim/bundle/nord-vim"]
-	path = dotfiles/.vim/bundle/nord-vim
-	url = https://github.com/arcticicestudio/nord-vim.git
-  ignore = dirty
 [submodule "vim/bundle/vim-better-sml"]
 	path = dotfiles/.vim/bundle/vim-better-sml
   ignore = dirty
-	url = https://github.com/brians1123/vim-better-sml.git
+	url = https://github.com/bscheue/vim-better-sml.git
 [submodule "vim/bundle/vim-snippets"]
 	path = dotfiles/.vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
@@ -109,4 +85,8 @@
 [submodule "dotfiles/.vim/bundle/vim-textobj-parameter"]
 	path = dotfiles/.vim/bundle/vim-textobj-parameter
 	url = https://github.com/sgur/vim-textobj-parameter.git
+  ignore = dirty
+[submodule "dotfiles/.vim/dotfiles/.vim/bundle/vim-q"]
+	path = dotfiles/.vim/dotfiles/.vim/bundle/vim-q
+	url = https://github.com/romainl/vim-qf
   ignore = dirty
