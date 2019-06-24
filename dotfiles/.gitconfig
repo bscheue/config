@@ -30,6 +30,10 @@
 	tool = vimdiff
 [difftool]
   prompt = false
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+  prompt = false
 [alias]
   lg = log --format='%w(72,0,8)%C(auto)%h%d %s'
   lga = log --date=short --format='%w(72,0,8)%C(auto)%h %C(green)%cd \
