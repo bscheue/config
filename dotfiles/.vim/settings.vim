@@ -105,3 +105,5 @@ set vb t_vb=
 
 set formatoptions+=j
 set complete-=i
+
+set foldopen+=jump
