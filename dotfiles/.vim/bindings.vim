@@ -37,4 +37,4 @@ cnoremap <C-n> <Down>
 cnoremap <Up> <C-p>
 cnoremap <Down> <C-n>
 
-nnoremap <Leader>m :silent make! <bar> silent redraw! <CR>
+nnoremap <Leader>m :write <bar> silent make! <bar> silent redraw! <CR>
