@@ -113,3 +113,4 @@ bindkey '^s' autosuggest-accept
 bindkey '^ ' autosuggest-execute
 
 export PATH=$PATH:/usr/local/bin/mpv
+export PATH=$PATH:/usr/local/bin/youtube-dl
