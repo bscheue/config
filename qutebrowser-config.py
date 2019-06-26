@@ -1,0 +1,6 @@
+config.bind('J', 'tab-prev')
+config.bind('K', 'tab-next')
+config.bind('H', 'scroll left')
+config.bind('L', 'scroll right')
+config.bind('h', 'back')
+config.bind('l', 'forward')
