@@ -53,8 +53,6 @@ else
 
   function scp1r { scp -r bscheuer@unix.andrew.cmu.edu:~/private/$1 $2 }
   function scp2r { scp -r $1 bscheuer@unix.andrew.cmu.edu:~/private/$2 }
-
-  alias qt="open /Users/brian/Applications/qutebrowser.app"
 fi
 
 function cs { builtin cd "$@" && ls }
