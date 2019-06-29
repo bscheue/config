@@ -8,4 +8,4 @@ config.bind('M', 'hint links spawn --userscript ~/config/scripts/mpv-hint.sh {hi
 
 config.set('tabs.close_mouse_button', 'right')
 config.set('tabs.background', True)
-
+config.set('content.autoplay', False)
