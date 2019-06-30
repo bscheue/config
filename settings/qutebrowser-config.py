@@ -9,3 +9,4 @@ config.bind('M', 'hint links spawn --userscript ~/config/scripts/mpv-hint.sh {hi
 config.set('tabs.close_mouse_button', 'right')
 config.set('tabs.background', True)
 config.set('content.autoplay', False)
+config.set('editor.command', ["/usr/local/Cellar/macvim/8.1-155/MacVim.app", "-g", "-f", "{file}", "-c", "normal {line}G{column0}l"])
