@@ -86,7 +86,3 @@
 	path = dotfiles/.vim/bundle/vim-textobj-parameter
 	url = https://github.com/sgur/vim-textobj-parameter.git
   ignore = dirty
-[submodule "dotfiles/.vim/dotfiles/.vim/bundle/vim-q"]
-	path = dotfiles/.vim/dotfiles/.vim/bundle/vim-q
-	url = https://github.com/romainl/vim-qf
-  ignore = dirty
