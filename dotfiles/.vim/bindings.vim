@@ -40,4 +40,4 @@ cnoremap <Down> <C-n>
 nnoremap <Leader>m :write <bar> silent make! <bar> silent redraw! <CR>
 
 " jump to arbitary buffer
-nnoremap gb :ls<CR>:b<Space>
+nnoremap gb :ls<CR>:buffer<Space>
