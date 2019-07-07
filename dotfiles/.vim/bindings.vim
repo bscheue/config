@@ -28,6 +28,8 @@ nnoremap <silent> Y y$
 
 " move working directory to the directory of the current file
 command! Here lcd %:p:h
+" display full path to directory containing current file
+command! Where echo expand('%:p:h')
 
 " fold away lines that are the same between files
 command! Onlydiff setlocal diff foldmethod=diff scrollbind nowrap foldlevel=1
