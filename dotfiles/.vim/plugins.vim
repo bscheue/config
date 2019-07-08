@@ -13,7 +13,6 @@ Plugin 'KeitaNakamura/tex-conceal.vim'
   autocmd FileType tex setlocal conceallevel=2
   let g:tex_conceal="abdgm"
 
-
 Plugin 'jez/vim-superman'
   nnoremap K :!vman <cword><CR>
 
@@ -39,6 +38,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 
 Plugin 'godlygeek/tabular'
+
 Plugin 'plasticboy/vim-markdown'
   let g:vim_markdown_strikethrough = 1
   let g:vim_markdown_math = 1
@@ -61,6 +61,8 @@ Plugin 'sgur/vim-textobj-parameter'
 Plugin 'Julian/vim-textobj-variable-segment'
 
 Plugin 'romainl/vim-qf'
+
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 
