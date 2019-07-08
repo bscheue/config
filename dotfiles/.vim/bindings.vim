@@ -26,14 +26,6 @@ nnoremap <silent> <leader><CR> i<CR><ESC>
 
 nnoremap <silent> Y y$
 
-" move working directory to the directory of the current file
-command! Here lcd %:p:h
-" display full path to directory containing current file
-command! Where echo expand('%:p:h')
-
-" fold away lines that are the same between files
-command! Onlydiff setlocal diff foldmethod=diff scrollbind nowrap foldlevel=1
-
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 cnoremap <Up> <C-p>
@@ -46,3 +38,14 @@ nnoremap gb :ls<CR>:buffer<Space>
 
 " quickly toggle between alternate buffer
 nnoremap <BS> <C-^>
+
+" move working directory to the directory of the current file
+command! Here lcd %:p:h
+" display full path to directory containing current file
+command! Where echo expand('%:p:h')
+
+" fold away lines that are the same between files
+command! Onlydiff setlocal diff foldmethod=diff scrollbind nowrap foldlevel=1
+" commands to open a scratch buffer in a split
+command! VSC vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
+command! SC new | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
