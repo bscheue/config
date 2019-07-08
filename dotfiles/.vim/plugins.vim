@@ -14,22 +14,6 @@ Plugin 'KeitaNakamura/tex-conceal.vim'
   let g:tex_conceal="abdgm"
 
 
-Plugin 'bscheue/vim-better-sml'
-  let g:sml_auto_create_def_use='never'
-  augroup SML
-    autocmd!
-    autocmd BufRead,BufNewFile *.sig setlocal filetype=sml
-    autocmd FileType sml setlocal conceallevel=2
-    autocmd FileType sml setlocal errorformat=%f\:%l.%c-%*[0-9].%*[0-9]\ %tRROR:\ %m
-    autocmd FileType sml setlocal errorformat+=%f\:%l.%c-%*[0-9].%*[0-9]\ %tARNING:\ %m,%-G%.%#
-    " shouldn't need this, but it looks like this needs to be set manually
-    if exists('$TMUX')
-      autocmd FileType sml let g:sml_repl_backend='vimux'
-    endif
-    autocmd FileType sml execute 'SMLSetCM'
-  augroup END
-
-
 Plugin 'jez/vim-superman'
   nnoremap K :!vman <cword><CR>
 
@@ -67,10 +51,6 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'bscheue/apprentice'
 
 Plugin 'machakann/vim-swap'
-
-Plugin 'benmills/vimux'
-  let g:VimuxOrientation = "h"
-  let g:VimuxHeight = "40"
 
 Plugin 'kien/rainbow_parentheses.vim'
   nnoremap <Leader>r :RainbowParenthesesToggle<CR>

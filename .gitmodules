@@ -42,10 +42,6 @@
 	path = dotfiles/.vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
   ignore = dirty
-[submodule "vim/bundle/vim-better-sml"]
-	path = dotfiles/.vim/bundle/vim-better-sml
-  ignore = dirty
-	url = https://github.com/bscheue/vim-better-sml.git
 [submodule "vim/bundle/vim-snippets"]
 	path = dotfiles/.vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
@@ -57,10 +53,6 @@
 [submodule "vim/bundle/vim-superman"]
 	path = dotfiles/.vim/bundle/vim-superman
 	url = https://github.com/jez/vim-superman.git
-  ignore = dirty
-[submodule "dotfiles/.vim/bundle/vimux"]
-	path = dotfiles/.vim/bundle/vimux
-	url = https://github.com/benmills/vimux.git
   ignore = dirty
 [submodule "dotfiles/.vim/bundle/rainbow_parentheses.vim"]
 	path = dotfiles/.vim/bundle/rainbow_parentheses.vim
