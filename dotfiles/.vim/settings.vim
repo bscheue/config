@@ -54,6 +54,10 @@ else
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
+" for italic markdown and latex
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+
 " need this to start with block cursor shape
 autocmd VimEnter * silent exec "! echo -ne '\e[1 q'"
 " to clear message from previous command
