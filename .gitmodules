@@ -10,10 +10,6 @@
 	path = dotfiles/.vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
   ignore = dirty
-[submodule "vim/bundle/tabular"]
-	path = dotfiles/.vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular.git
-  ignore = dirty
 [submodule "vim/bundle/vim-repeat"]
 	path = dotfiles/.vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
@@ -77,4 +73,8 @@
 [submodule "dotfiles/.vim/bundle/vim-textobj-parameter"]
 	path = dotfiles/.vim/bundle/vim-textobj-parameter
 	url = https://github.com/sgur/vim-textobj-parameter.git
+  ignore = dirty
+[submodule "dotfiles/.vim/bundle/vim-speeddating"]
+	path = dotfiles/.vim/bundle/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating.git
   ignore = dirty

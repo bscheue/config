@@ -22,7 +22,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-speeddating'
   " comment current line and add new copy
   nnoremap <Leader>c yypk:Commentary<CR>j
 
@@ -36,8 +38,6 @@ Plugin 'garbas/vim-snipmate'
   smap <C-J> <Plug>snipMateNextOrTrigger
 
 Plugin 'honza/vim-snippets'
-
-Plugin 'godlygeek/tabular'
 
 Plugin 'plasticboy/vim-markdown'
   let g:vim_markdown_strikethrough = 1
@@ -64,7 +64,13 @@ Plugin 'romainl/vim-qf'
 
 Plugin 'christoomey/vim-tmux-navigator'
 
+Plugin 'markonm/traces.vim'
+
+Plugin 'tommcdo/vim-lion'
+
 call vundle#end()
+
+packadd! matchit
 
 let g:netrw_liststyle=3
 
