@@ -22,10 +22,6 @@
 	path = dotfiles/.vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
   ignore = dirty
-[submodule "vim/bundle/vim-markdown"]
-	path = dotfiles/.vim/bundle/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown.git
-  ignore = dirty
 [submodule "vim/bundle/vim-vinegar"]
 	path = dotfiles/.vim/bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
@@ -57,22 +53,6 @@
 [submodule "dotfiles/.vim/bundle/vim-swap"]
 	path = dotfiles/.vim/bundle/vim-swap
 	url = https://github.com/machakann/vim-swap.git
-  ignore = dirty
-[submodule "dotfiles/.vim/bundle/vim-textobj-comment"]
-	path = dotfiles/.vim/bundle/vim-textobj-comment
-	url = https://github.com/glts/vim-textobj-comment.git
-  ignore = dirty
-[submodule "dotfiles/.vim/bundle/vim-textobj-variable-segment"]
-	path = dotfiles/.vim/bundle/vim-textobj-variable-segment
-	url = https://github.com/Julian/vim-textobj-variable-segment.git
-  ignore = dirty
-[submodule "dotfiles/.vim/bundle/vim-textobj-user"]
-	path = dotfiles/.vim/bundle/vim-textobj-user
-	url = https://github.com/kana/vim-textobj-user.git
-  ignore = dirty
-[submodule "dotfiles/.vim/bundle/vim-textobj-parameter"]
-	path = dotfiles/.vim/bundle/vim-textobj-parameter
-	url = https://github.com/sgur/vim-textobj-parameter.git
   ignore = dirty
 [submodule "dotfiles/.vim/bundle/vim-speeddating"]
 	path = dotfiles/.vim/bundle/vim-speeddating

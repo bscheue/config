@@ -50,9 +50,6 @@ Plugin 'machakann/vim-swap'
 Plugin 'kien/rainbow_parentheses.vim'
   nnoremap <Leader>r :RainbowParenthesesToggle<CR>
 
-Plugin 'kana/vim-textobj-user'
-Plugin 'Julian/vim-textobj-variable-segment'
-
 Plugin 'romainl/vim-qf'
 
 Plugin 'christoomey/vim-tmux-navigator'
