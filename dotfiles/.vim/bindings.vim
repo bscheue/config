@@ -19,6 +19,11 @@ nnoremap <C-Right> <C-w>>
 nnoremap <C-Up> <C-w>+
 nnoremap <C-Down> <C-w>-
 
+" make it easier to change conceallevel with unimpaired inspired bindings
+nnoremap yom :setlocal conceallevel=<C-R>=&conceallevel ? 0 : 2 <CR><CR>
+nnoremap [om :setlocal conceallevel=2<CR>
+nnoremap ]om :setlocal conceallevel=0<CR>
+
 " make it easier to split line in normal mode
 nnoremap <silent> <leader><CR> i<CR><ESC>
 
@@ -39,11 +44,13 @@ nnoremap <BS> <C-^>
 
 " move working directory to the directory of the current file
 command! Here lcd %:p:h
+
 " display full path to directory containing current file
 command! Where echo expand('%:p:h')
 
 " fold away lines that are the same between files
 command! Onlydiff setlocal diff foldmethod=diff scrollbind nowrap foldlevel=1
+
 " commands to open a scratch buffer in a split
 command! VSC vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
 command! SC new | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile

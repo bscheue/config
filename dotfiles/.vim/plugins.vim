@@ -23,8 +23,8 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-commentary'
   " comment current line and add new copy
   nnoremap <Leader>c yypk:Commentary<CR>j
 
@@ -39,15 +39,6 @@ Plugin 'garbas/vim-snipmate'
 
 Plugin 'honza/vim-snippets'
 
-Plugin 'plasticboy/vim-markdown'
-  let g:vim_markdown_strikethrough = 1
-  let g:vim_markdown_math = 1
-  let g:vim_markdown_new_list_item_indent = 2
-  let g:vim_markdown_autowrite = 1
-  let g:vim_markdown_edit_url_in = 'vsplit'
-  autocmd FileType markdown setlocal conceallevel=2
-  autocmd FileType markdown setlocal nofoldenable
-
 Plugin 'bscheue/apprentice'
 
 Plugin 'machakann/vim-swap'
@@ -56,8 +47,6 @@ Plugin 'kien/rainbow_parentheses.vim'
   nnoremap <Leader>r :RainbowParenthesesToggle<CR>
 
 Plugin 'kana/vim-textobj-user'
-Plugin 'glts/vim-textobj-comment'
-Plugin 'sgur/vim-textobj-parameter'
 Plugin 'Julian/vim-textobj-variable-segment'
 
 Plugin 'romainl/vim-qf'
