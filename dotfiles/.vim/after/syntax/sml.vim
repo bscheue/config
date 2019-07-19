@@ -1,12 +1,10 @@
-highlight conceal ctermfg=green ctermbg=NONE
-
-" Fix wonky highlighting for => operator and add type arrow
 syntax match smlOperator  "=>\|->"
 
 " Highlight type variables
 syntax match smlType "'\<\w\+\>"
 
-syntax keyword smlKeyword  rec as
+syntax keyword smlKeyword rec as
 
+" highlight operators not typically highlighted
 syntax match smlKeychar /\<o\>\|\$\|<|\|:/
 
