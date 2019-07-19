@@ -9,8 +9,6 @@ noremap <silent> $ g$
 noremap <silent> ^ g^
 noremap <silent> _ g_
 
-nnoremap <Leader>n <Esc>:nohlsearch<CR>
-
 " for split pane navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
