@@ -42,6 +42,10 @@ Plugin 'honza/vim-snippets'
 Plugin 'bscheue/apprentice'
 
 Plugin 'machakann/vim-swap'
+  omap i, <Plug>(swap-textobject-i)
+  xmap i, <Plug>(swap-textobject-i)
+  omap a, <Plug>(swap-textobject-a)
+  xmap a, <Plug>(swap-textobject-a)
 
 Plugin 'kien/rainbow_parentheses.vim'
   nnoremap <Leader>r :RainbowParenthesesToggle<CR>
