@@ -38,7 +38,7 @@ set ttyfast  "Speed up vim
 set nostartofline "Vertical movement preserves horizontal position
 
 set number " add line numbering
-set laststatus=2
+
 " Strip whitespace from end of lines when writing file
 autocmd BufWritePre * :%s/\s\+$//e
 
