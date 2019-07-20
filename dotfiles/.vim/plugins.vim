@@ -44,8 +44,8 @@ Plugin 'machakann/vim-swap'
   omap a, <Plug>(swap-textobject-a)
   xmap a, <Plug>(swap-textobject-a)
 
-Plugin 'kien/rainbow_parentheses.vim'
-  nnoremap <Leader>r :RainbowParenthesesToggle<CR>
+Plugin 'junegunn/rainbow_parentheses.vim'
+  nnoremap <Leader>r :RainbowParentheses!!<CR>
 
 Plugin 'romainl/vim-qf'
 
