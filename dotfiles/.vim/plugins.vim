@@ -10,9 +10,6 @@ Plugin 'lervag/vimtex'
 Plugin 'KeitaNakamura/tex-conceal.vim'
   let g:tex_conceal="abdgm"
 
-Plugin 'jez/vim-superman'
-  nnoremap K :!vman <cword><CR>
-
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
    command! Gwc Gwrite | Gcommit

@@ -28,9 +28,6 @@ source $ZSH/oh-my-zsh.sh
 PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 export PATH
 
-export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
-compdef vman="man" # get tab completion
-
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else

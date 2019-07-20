@@ -42,10 +42,6 @@
 	path = dotfiles/.vim/bundle/undotree
 	url = https://github.com/mbbill/undotree.git
   ignore = dirty
-[submodule "vim/bundle/vim-superman"]
-	path = dotfiles/.vim/bundle/vim-superman
-	url = https://github.com/jez/vim-superman.git
-  ignore = dirty
 [submodule "dotfiles/.vim/bundle/vim-swap"]
 	path = dotfiles/.vim/bundle/vim-swap
 	url = https://github.com/machakann/vim-swap.git
