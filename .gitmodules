@@ -50,3 +50,7 @@
 	path = dotfiles/.vim/bundle/vim-speeddating
 	url = https://github.com/tpope/vim-speeddating.git
   ignore = dirty
+[submodule "dotfiles/.vim/bundle/vim-rsi"]
+	path = dotfiles/.vim/bundle/vim-rsi
+	url = https://github.com/tpope/vim-rsi
+  ignore = dirty

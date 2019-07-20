@@ -18,6 +18,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-commentary'
   " comment current line and add new copy
   nnoremap <Leader>c :t.<CR>k:Commentary<CR>j
