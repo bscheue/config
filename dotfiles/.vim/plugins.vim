@@ -20,7 +20,7 @@ Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-commentary'
   " comment current line and add new copy
-  nnoremap <Leader>c yypk:Commentary<CR>j
+  nnoremap <Leader>c :t.<CR>k:Commentary<CR>j
 
 Plugin 'mbbill/undotree'
   nnoremap <Leader>u :UndotreeToggle<CR>
