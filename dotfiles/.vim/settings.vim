@@ -112,4 +112,3 @@ set complete-=i
 
 set foldopen+=jump
 
-autocmd BufRead,BufNewFile *.sig setlocal filetype=sml

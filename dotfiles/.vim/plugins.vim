@@ -4,13 +4,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'lervag/vimtex'
-  nnoremap <Leader>b <Esc>:w<CR>:VimtexCompile<CR>:VimtexErrors<CR>
   let g:vimtex_view_method = 'skim'
   let g:tex_flavor = 'latex'
-  autocmd FileType tex setlocal signcolumn=no
 
 Plugin 'KeitaNakamura/tex-conceal.vim'
-  autocmd FileType tex setlocal conceallevel=2
   let g:tex_conceal="abdgm"
 
 Plugin 'jez/vim-superman'
