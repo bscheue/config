@@ -24,6 +24,14 @@ nnoremap yom :setlocal conceallevel=<C-R>=&conceallevel ? 0 : 2 <CR><CR>
 nnoremap [om :setlocal conceallevel=2<CR>
 nnoremap ]om :setlocal conceallevel=0<CR>
 
+" custom text objects
+for char in [ '_', '.', '/', '*', '+', '-', '#' ]
+    execute 'xnoremap i' . char . ' :<C-u>normal! T' . char . 'vt' . char . '<CR>'
+    execute 'onoremap i' . char . ' :normal vi' . char . '<CR>'
+    execute 'xnoremap a' . char . ' :<C-u>normal! F' . char . 'vf' . char . '<CR>'
+    execute 'onoremap a' . char . ' :normal va' . char . '<CR>'
+endfor
+
 " make it easier to split line in normal mode
 nnoremap <silent> <leader><CR> i<CR><ESC>
 
