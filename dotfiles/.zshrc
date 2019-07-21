@@ -41,6 +41,8 @@ else
   alias ls='gls --color=auto'
   alias ll='ls -al'
 
+  alias latexpv='latexmk -pdf -pvc -quiet'
+
   # for running github io page locally
   export RBENV_ROOT=/usr/local/var/rbenv
   eval "$(rbenv init -)"

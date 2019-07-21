@@ -3,13 +3,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'lervag/vimtex'
-  let g:vimtex_view_method = 'skim'
-  let g:tex_flavor = 'latex'
-
-Plugin 'KeitaNakamura/tex-conceal.vim'
-  let g:tex_conceal="abdgm"
-
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
    command! Gwc Gwrite | Gcommit

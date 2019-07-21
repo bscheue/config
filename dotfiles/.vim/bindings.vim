@@ -25,7 +25,7 @@ nnoremap [om :setlocal conceallevel=2<CR>
 nnoremap ]om :setlocal conceallevel=0<CR>
 
 " custom text objects
-for char in [ '_', '.', '/', '*', '+', '-', '#' ]
+for char in [ '_', '.', '/', '*', '+', '-', '#', '$' ]
     execute 'xnoremap i' . char . ' :<C-u>normal! T' . char . 'vt' . char . '<CR>'
     execute 'onoremap i' . char . ' :normal vi' . char . '<CR>'
     execute 'xnoremap a' . char . ' :<C-u>normal! F' . char . 'vf' . char . '<CR>'

@@ -1,7 +1,3 @@
-[submodule "vim/bundle/tex-conceal.vim"]
-	path = dotfiles/.vim/bundle/tex-conceal.vim
-	url = https://github.com/KeitaNakamura/tex-conceal.vim.git
-  ignore = dirty
 [submodule "vim/bundle/Vundle.vim"]
 	path = dotfiles/.vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
@@ -25,10 +21,6 @@
 [submodule "vim/bundle/vim-vinegar"]
 	path = dotfiles/.vim/bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
-  ignore = dirty
-[submodule "vim/bundle/vimtex"]
-	path = dotfiles/.vim/bundle/vimtex
-	url = https://github.com/lervag/vimtex.git
   ignore = dirty
 [submodule "vim/bundle/vim-commentary"]
 	path = dotfiles/.vim/bundle/vim-commentary
