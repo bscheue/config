@@ -9,7 +9,7 @@ if exists(":CompilerSet") != 2		" older Vim always used :setlocal
 endif
 
 CompilerSet errorformat=%f\:%l.%c-%*[0-9].%*[0-9]\ %tRROR:\ %m
-CompilerSet errorformat+=%f\:%l.%c-%*[0-9].%*[0-9]\ %tARNING:\ %m,%-G%.%#
+CompilerSet errorformat+=%f\:%l.%c-%*[0-9].%*[0-9]\ %tARNING:\ %m
 if filereadable("sources.cm")
   CompilerSet makeprg=rlwrap\ sml\ -m\ sources.cm
 else
