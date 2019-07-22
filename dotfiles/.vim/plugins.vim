@@ -39,8 +39,6 @@ Plugin 'junegunn/rainbow_parentheses.vim'
   nnoremap <Leader>r :RainbowParentheses!!<CR>
 
 Plugin 'romainl/vim-qf'
-  nnoremap <Leader>q <Plug>(qf_qf_toggle)
-  nnoremap <Leader>l <Plug>(qf_loc_toggle)
   let g:qf_auto_resize = 0
 
 Plugin 'christoomey/vim-tmux-navigator'
