@@ -19,11 +19,6 @@ nnoremap <C-Right> <C-w>>
 nnoremap <C-Up> <C-w>+
 nnoremap <C-Down> <C-w>-
 
-" make it easier to change conceallevel with unimpaired inspired bindings
-nnoremap yom :setlocal conceallevel=<C-R>=&conceallevel ? 0 : 2 <CR><CR>
-nnoremap [om :setlocal conceallevel=2<CR>
-nnoremap ]om :setlocal conceallevel=0<CR>
-
 " custom text objects
 for char in [ '_', '.', '/', '*', '+', '-', '#', '$' ]
     execute 'xnoremap i' . char . ' :<C-u>normal! T' . char . 'vt' . char . '<CR>'

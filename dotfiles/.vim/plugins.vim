@@ -6,12 +6,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
    command! Gwc Gwrite | Gcommit
-Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-unimpaired'
+Plugin 'bscheue/vim-unimpaired'
 Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-speeddating'
-Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-commentary'
   " comment current line and add new copy
   nnoremap <Leader>c :t.<CR>k:Commentary<CR>j
@@ -24,8 +21,6 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
   imap <C-J> <Plug>snipMateNextOrTrigger
   smap <C-J> <Plug>snipMateNextOrTrigger
-
-Plugin 'honza/vim-snippets'
 
 Plugin 'bscheue/apprentice'
 
