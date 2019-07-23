@@ -42,6 +42,8 @@ else
   alias ll='ls -al'
 
   alias latexpv='latexmk -pdf -pvc -quiet'
+  # prefer exuberant ctags to the one that ships with mac
+  alias ctags="`brew --prefix`/bin/ctags"
 
   # for running github io page locally
   export RBENV_ROOT=/usr/local/var/rbenv
