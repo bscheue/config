@@ -24,6 +24,7 @@ alias j="jump"
 
 source $ZSH/oh-my-zsh.sh
 
+fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 export PATH
