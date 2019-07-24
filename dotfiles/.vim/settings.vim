@@ -40,7 +40,14 @@ set nostartofline "Vertical movement preserves horizontal position
 set number " add line numbering
 
 " Strip whitespace from end of lines when writing file
-autocmd BufWritePre * :%s/\s\+$//e
+function! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 set cul!
 
