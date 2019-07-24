@@ -12,40 +12,40 @@ CompilerSet makeprg=latexmk\ -pdf\ -pv\ %
 
 " error formatting adapted from: https://github.com/lervag/vimtex/blob/master/autoload/vimtex/compiler/latexmk.vim
 " Push file to file stack
-setlocal errorformat=%-P**%f
-setlocal errorformat+=%-P**\"%f\"
-setlocal errorformat+=%-P(./%f
+CompilerSet errorformat=%-P**%f
+CompilerSet errorformat+=%-P**\"%f\"
+CompilerSet errorformat+=%-P(./%f
 
   " Match errors
-setlocal errorformat+=%E!\ LaTeX\ %trror:\ %m
-setlocal errorformat+=%E%f:%l:\ %m
-setlocal errorformat+=%E!\ %m
+CompilerSet errorformat+=%E!\ LaTeX\ %trror:\ %m
+CompilerSet errorformat+=%E%f:%l:\ %m
+CompilerSet errorformat+=%E!\ %m
 
   " More info for undefined control sequences
-setlocal errorformat+=%Z<argument>\ %m
+CompilerSet errorformat+=%Z<argument>\ %m
 
 " More info for some errors
-setlocal errorformat+=%C
-setlocal errorformat+=%C%.%.%l%m
-setlocal errorformat+=%C%.%#
+CompilerSet errorformat+=%C
+CompilerSet errorformat+=%C%.%.%l%m
+CompilerSet errorformat+=%C%.%#
 
-setlocal errorformat+=%-WLaTeX\ Font\ Warning:\ %m
-setlocal errorformat+=%-WLaTeX\ %.%#Warning:\ %.%#eference%.%#undefined%.%#line\ %l%.%#
-setlocal errorformat+=%-WLaTeX\ %.%#Warning:\ %.%#undefined\ references.
-setlocal errorformat+=%+WLaTeX\ %.%#Warning:\ %.%#line\ %l%.%#
-setlocal errorformat+=%+WLaTeX\ %.%#Warning:\ %m
-setlocal errorformat+=%+WOverfull\ %\\%\\hbox%.%#\ at\ lines\ %l--%*\\d
-setlocal errorformat+=%+WOverfull\ %\\%\\hbox%.%#\ at\ line\ %l
-setlocal errorformat+=%+WOverfull\ %\\%\\vbox%.%#\ at\ line\ %l
-setlocal errorformat+=%+WUnderfull\ %\\%\\hbox%.%#\ at\ lines\ %l--%*\\d
-setlocal errorformat+=%+WUnderfull\ %\\%\\vbox%.%#\ at\ line\ %l
-setlocal errorformat+=%+WPackage\ %.%#\ Warning:\ %m\ on\ input\ line\ %l.
-setlocal errorformat+=%+WPackage\ %.%#\ Warning:\ %m
-setlocal errorformat+=%-Z(%.%#)\ %m\ on\ input\ line\ %l.
-setlocal errorformat+=%-C(%.%#)\ %m
+CompilerSet errorformat+=%-WLaTeX\ Font\ Warning:\ %m
+CompilerSet errorformat+=%-WLaTeX\ %.%#Warning:\ %.%#eference%.%#undefined%.%#line\ %l%.%#
+CompilerSet errorformat+=%-WLaTeX\ %.%#Warning:\ %.%#undefined\ references.
+CompilerSet errorformat+=%+WLaTeX\ %.%#Warning:\ %.%#line\ %l%.%#
+CompilerSet errorformat+=%+WLaTeX\ %.%#Warning:\ %m
+CompilerSet errorformat+=%+WOverfull\ %\\%\\hbox%.%#\ at\ lines\ %l--%*\\d
+CompilerSet errorformat+=%+WOverfull\ %\\%\\hbox%.%#\ at\ line\ %l
+CompilerSet errorformat+=%+WOverfull\ %\\%\\vbox%.%#\ at\ line\ %l
+CompilerSet errorformat+=%+WUnderfull\ %\\%\\hbox%.%#\ at\ lines\ %l--%*\\d
+CompilerSet errorformat+=%+WUnderfull\ %\\%\\vbox%.%#\ at\ line\ %l
+CompilerSet errorformat+=%+WPackage\ %.%#\ Warning:\ %m\ on\ input\ line\ %l.
+CompilerSet errorformat+=%+WPackage\ %.%#\ Warning:\ %m
+CompilerSet errorformat+=%-Z(%.%#)\ %m\ on\ input\ line\ %l.
+CompilerSet errorformat+=%-C(%.%#)\ %m
 
 " Ignore unmatched lines
-setlocal errorformat+=%-G%.%#
+CompilerSet errorformat+=%-G%.%#
 
 let &cpo = s:keepcpo
 unlet s:keepcpo
