@@ -1,7 +1,5 @@
 let mapleader = " "
 
-inoremap jj <Esc>
-
 noremap <silent> k gk
 noremap <silent> j gj
 noremap <silent> 0 g0

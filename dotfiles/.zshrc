@@ -77,8 +77,6 @@ bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
 
-bindkey -M viins 'jj' vi-cmd-mode
-
 function zle-line-init zle-keymap-select {
     if [ "$TERM" = "xterm-256color" ]; then
         if [ $KEYMAP = vicmd ]; then
