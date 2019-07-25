@@ -46,6 +46,10 @@ else
   # prefer exuberant ctags to the one that ships with mac
   alias ctags="`brew --prefix`/bin/ctags"
 
+  alias smlnj="rlwrap sml"
+
+  alias new="open -n /Applications/Alacritty.app"
+
   # for running github io page locally
   export RBENV_ROOT=/usr/local/var/rbenv
   eval "$(rbenv init -)"
@@ -59,7 +63,6 @@ fi
 
 function cs { builtin cd "$@" && ls }
 
-alias smlnj="rlwrap sml"
 
 if type 'python3' > /dev/null ; then
   alias python='python3'
