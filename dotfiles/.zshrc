@@ -13,7 +13,7 @@ setopt sharehistory      # share history across terminals
 setopt incappendhistory  # immediately append to the history file, not just when a term is killed
 setopt appendhistory
 
-fpath+=~/.zsh/functions/zsh_functions
+fpath+=~/.zsh/functions
 
 PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 PATH+=:/Users/brian/smlnj/bin

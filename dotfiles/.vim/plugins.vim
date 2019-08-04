@@ -44,7 +44,10 @@ Plugin 'tommcdo/vim-lion'
 
 call vundle#end()
 
-packadd! matchit
+try
+  packadd! matchit
+catch
+endtry
 
 let g:netrw_liststyle=3
 
