@@ -26,3 +26,23 @@
 	path = dotfiles/.vim/bundle/vim-swap
 	url = https://github.com/machakann/vim-swap.git
   ignore = dirty
+[submodule "dotfiles/.zsh/plugins/zsh-autosuggestions"]
+	path = dotfiles/.zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+  ignore = dirty
+[submodule "dotfiles/.zsh/plugins/zshmarks"]
+	path = dotfiles/.zsh/plugins/zshmarks
+	url = https://github.com/jocelynmallon/zshmarks.git
+  ignore = dirty
+[submodule "dotfiles/.zsh/plugins/zsh-history-substring-search"]
+	path = dotfiles/.zsh/plugins/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search
+  ignore = dirty
+[submodule "dotfiles/.zsh/plugins/zsh-start"]
+	path = dotfiles/.zsh/plugins/zsh-start
+	url = https://github.com/bscheue/zsh-start.git
+  ignore = dirty
+[submodule "dotfiles/.zsh/plugins/zsh-syntax-highlighting"]
+	path = dotfiles/.zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+  ignore = dirty

@@ -1,51 +1,66 @@
-# Path to oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
-
-ZSH_THEME=""
-
 export TERM="xterm-256color"
 
-# the following line toggles case sensitive completion
-CASE_SENSITIVE="true"
+# aliases
+alias -g ...=../../
+alias -g ....=../../../
+alias -g .....=../../../../
 
-DISABLE_AUTO_UPDATE="true"
+# zsh doesn't set a history file by default, so set one
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt sharehistory      # share history across terminals
+setopt incappendhistory  # immediately append to the history file, not just when a term is killed
+setopt appendhistory
 
-ZSH_START_MARKS=1
-ZSH_AUTOSUGGEST_USE_ASYNC=1
-
-plugins=(
-  git
-  zshmarks
-  start
-  zsh-autosuggestions
-)
-
-alias j="jump"
-
-source $ZSH/oh-my-zsh.sh
-
-fpath+=${ZDOTDIR:-~}/.zsh_functions
+fpath+=~/.zsh/functions/zsh_functions
 
 PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
+PATH+=:/Users/brian/smlnj/bin
 export PATH
 
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-else
-  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  export PATH="/usr/local/bin:$PATH"
-  export MANPATH=/opt/local/share/man:$MANPATH
-  export PATH="$PATH:/Users/brian/smlnj/bin"
-  export SMLNJ_HOME="/Users/brian/smlnj"
+export MANPATH=/opt/local/share/man:$MANPATH
 
-  eval $(gdircolors ~/.dircolors/.nord_dir_colors)
+source ~/.zsh/plugins/zshmarks/zshmarks.plugin.zsh
+  alias j="jump"
+ZSH_START_MARKS=1
+source ~/.zsh/plugins/zsh-start/start.plugin.zsh
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+  bindkey '^P' history-substring-search-up
+  bindkey '^N' history-substring-search-down
+
+# improved tab completion
+zmodload -i zsh/complist
+# use the same colors for tab completion as used by ls
+source ~/.zsh/colors/ls_colors.zsh
+zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
+zstyle ':completion:*:*:*:*:*' menu select
+autoload -Uz compinit
+compinit
+unsetopt menu_complete # do not autoselect the first completion entry
+unsetopt flowcontrol
+setopt auto_menu # show completion menu on successive tab press
+setopt complete_in_word
+setopt always_to_end # cursor is moved to end of word after full completion is inserted
+
+# improved history search menu
+autoload -Uz history-beginning-search-menu
+zle -N history-beginning-search-menu
+bindkey '^X^X' history-beginning-search-menu
+
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+else
   alias ls='gls --color=auto'
-  alias ll='ls -al'
+
+  alias vim='mvim -v'
 
   alias latexpv='latexmk -pdf -pvc -quiet'
-  # prefer exuberant ctags to the one that ships with mac
+  # prefer exuberant ctags to the tags command that ships with mac
   alias ctags="`brew --prefix`/bin/ctags"
 
+  export SMLNJ_HOME="/Users/brian/smlnj"
   alias smlnj="rlwrap sml"
 
   alias new="open -n /Applications/Alacritty.app"
@@ -63,54 +78,20 @@ fi
 
 function cs { builtin cd "$@" && ls }
 
-
 if type 'python3' > /dev/null ; then
   alias python='python3'
 fi
 
-bindkey -M menuselect '^[[Z' reverse-menu-complete
-
-bindkey -v
-
-bindkey '^P' up-line-or-search
-bindkey '^N' down-line-or-search
-bindkey '^?' backward-delete-char
-bindkey '^h' backward-delete-char
-bindkey '^w' backward-kill-word
-bindkey '^r' history-incremental-search-backward
-
-
-function zle-line-init zle-keymap-select {
-    if [ "$TERM" = "xterm-256color" ]; then
-        if [ $KEYMAP = vicmd ]; then
-            # the command mode for vi
-            echo -ne "\e[0 q"
-        else
-            # the insert mode for vi
-            echo -ne "\e[6 q"
-        fi
-    fi
-    zle reset-prompt
-}
-
-zle -N zle-line-init
-zle -N zle-keymap-select
-
-bindkey -M vicmd 'k' up-line-or-search
-bindkey -M vicmd 'j' down-line-or-search
-
-# note that this must appear after the above lines
 autoload -U promptinit; promptinit
 PURE_PROMPT_SYMBOL=λ
-PURE_PROMPT_VICMD_SYMBOL=Λ
 prompt pure
 
+autoload -U edit-command-line
+zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
-
-# using ctrl p and n for substring search
-# so use arrow keys for regular command history search
-bindkey '^[[A' up-history
-bindkey '^[[B' down-history
 
 bindkey '^s' autosuggest-accept
 bindkey '^ ' autosuggest-execute
+
+# needs to be sourced last
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
