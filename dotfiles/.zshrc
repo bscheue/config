@@ -51,6 +51,7 @@ zle -N history-beginning-search-menu
 bindkey '^X^X' history-beginning-search-menu
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  VISUAL=vim
 else
   alias ls='gls --color=auto'
 
