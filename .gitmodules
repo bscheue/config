@@ -46,3 +46,43 @@
 	path = dotfiles/.zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
   ignore = dirty
+[submodule "dotfiles/.vim/bundle/apprentice"]
+	path = dotfiles/.vim/bundle/apprentice
+	url = https://github.com/bscheue/Apprentice.git
+  ignore = dirty
+[submodule "dotfiles/.vim/bundle/vim-addon-mw-utils"]
+	path = dotfiles/.vim/bundle/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+  ignore = dirty
+[submodule "dotfiles/.vim/bundle/vim-snipmate"]
+	path = dotfiles/.vim/bundle/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+  ignore = dirty
+[submodule "dotfiles/.vim/bundle/tlib_vim"]
+	path = dotfiles/.vim/bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
+  ignore = dirty
+[submodule "dotfiles/.vim/bundle/vim-lion"]
+	path = dotfiles/.vim/bundle/vim-lion
+	url = https://github.com/tommcdo/vim-lion.git
+  ignore = dirty
+[submodule "dotfiles/.vim/bundle/traces.vim"]
+	path = dotfiles/.vim/bundle/traces.vim
+	url = https://github.com/markonm/traces.vim.git
+  ignore = dirty
+[submodule "dotfiles/.vim/bundle/vim-qf"]
+	path = dotfiles/.vim/bundle/vim-qf
+	url = https://github.com/romainl/vim-qf.git
+  ignore = dirty
+[submodule "dotfiles/.vim/bundle/vim-unimpaired"]
+	path = dotfiles/.vim/bundle/vim-unimpaired
+	url = https://github.com/bscheue/vim-unimpaired.git
+  ignore = dirty
+[submodule "dotfiles/.vim/bundle/rainbow_parentheses.vim"]
+	path = dotfiles/.vim/bundle/rainbow_parentheses.vim
+	url = https://github.com/junegunn/rainbow_parentheses.vim.git
+  ignore = dirty
+[submodule "dotfiles/.vim/bundle/vim-tmux-navigator"]
+	path = dotfiles/.vim/bundle/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
+  ignore = dirty
