@@ -105,7 +105,7 @@ PURE_PROMPT_SYMBOL=λ
 PURE_PROMPT_VICMD_SYMBOL=Λ
 prompt pure
 
-export KEYTIMEOUT=25
+bindkey '\C-x\C-e' edit-command-line
 
 # using ctrl p and n for substring search
 # so use arrow keys for regular command history search
