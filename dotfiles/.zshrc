@@ -5,6 +5,9 @@ alias -g ...=../../
 alias -g ....=../../../
 alias -g .....=../../../../
 
+# automatically push directories to stack after cd
+setopt autopushd
+
 # zsh doesn't set a history file by default, so set one
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
