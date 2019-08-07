@@ -1,6 +1,9 @@
 setlocal conceallevel=2
 compiler latexmk
 
+" don't automatically open qf list since log file is used instead
+let g:qf_auto_open_quickfix = 0
+
 function! RedrawScreen(channel)
     redraw!
 endfunction
@@ -14,7 +17,7 @@ function! ForwardSearch()
 endfunction
 
 nnoremap <Leader>f :silent call ForwardSearch()<CR>
-nnoremap <Leader>e :silent cfile! %:t:r.log<CR>
+nnoremap <Leader>e :cfile %:t:r.log <bar> copen<CR>
 
 " should switch to proper autocmd
 if (expand('%') =~ ".*\.xtx")

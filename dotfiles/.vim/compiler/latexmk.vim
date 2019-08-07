@@ -14,7 +14,6 @@ CompilerSet makeprg=latexmk\ -pdf\ -pv\ %
 " Push file to file stack
 CompilerSet errorformat=%-P**%f
 CompilerSet errorformat+=%-P**\"%f\"
-CompilerSet errorformat+=%-P(./%f
 
   " Match errors
 CompilerSet errorformat+=%E!\ LaTeX\ %trror:\ %m
