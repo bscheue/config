@@ -16,3 +16,7 @@ endfunction
 nnoremap <Leader>f :silent call ForwardSearch()<CR>
 nnoremap <Leader>e :silent cfile! %:t:r.log<CR>
 
+" should switch to proper autocmd
+if (expand('%') =~ ".*\.xtx")
+  setlocal makeprg=latexmk\ -pdf\ -pv\ --xelatex\ %
+endif
