@@ -94,7 +94,6 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
 
-bindkey '^s' autosuggest-accept
 bindkey '^ ' autosuggest-execute
 
 # needs to be sourced last
