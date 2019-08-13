@@ -62,7 +62,7 @@ else
 
   alias latexpv='latexmk -pdf -pvc -quiet'
   # prefer exuberant ctags to the tags command that ships with mac
-  alias ctags="`brew --prefix`/bin/ctags"
+  alias -g ctags="`brew --prefix`/bin/ctags"
 
   export SMLNJ_HOME="/Users/brian/smlnj"
   alias smlnj="rlwrap sml"
@@ -81,6 +81,9 @@ else
 fi
 
 function cs { builtin cd "$@" && ls }
+
+# needs to be a function instead of an alias to avoid improper substitution
+function gtags { git ls-files | entr ctags --tag-relative -f .git/tags --languages=-javascript $(git ls-files) }
 
 if type 'python3' > /dev/null ; then
   alias python='python3'
