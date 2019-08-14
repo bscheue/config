@@ -5,7 +5,6 @@ syntax on
 
 set textwidth=0
 set mouse=a
-set encoding=utf-8 "UTF-8 character encoding
 
 set tabstop=2  "2 space tabs
 set shiftwidth=2  "2 space shift
