@@ -38,7 +38,9 @@ cnoremap <Down> <C-n>
 nnoremap <Leader>m :write <bar> silent make! <bar> silent redraw! <CR>
 
 " jump to arbitary buffer
-nnoremap gb :ls<CR>:buffer<Space>
+nnoremap gbb :ls<CR>:buffer<Space>
+nnoremap gbs :ls<CR>:sbuffer<Space>
+nnoremap gbv :ls<CR>:vertical sbuffer<Space>
 
 " quickly toggle between alternate buffer
 nnoremap <BS> <C-^>
