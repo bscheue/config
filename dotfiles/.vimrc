@@ -39,7 +39,6 @@ nnoremap gbv :ls<CR>:vertical sbuffer<Space>
 " toggle between alternate buffer
 nnoremap <BS> <C-^>
 " }}}
-
 " commands {{{
 " move working directory to the directory of the current file
 command! Here lcd %:p:h
@@ -54,7 +53,6 @@ command! Onlydiff setlocal diff foldmethod=diff scrollbind nowrap foldlevel=1
 command! VSC vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
 command! SC new | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
 " }}}
-
 " functions {{{
 function! SynStack()
   if !exists("*synstack")
@@ -71,7 +69,6 @@ function! StripTrailingWhitespace()
     call cursor(l, c)
 endfunc
 " }}}
-
 " settings {{{
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
@@ -181,7 +178,6 @@ set complete-=i
 
 set foldopen+=jump
 " }}}
-
 " plugins {{{
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
