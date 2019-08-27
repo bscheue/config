@@ -110,7 +110,10 @@ set nostartofline "Vertical movement preserves horizontal position
 
 set number " add line numbering
 
-autocmd BufWritePre * :call StripTrailingWhitespace()
+augroup prewrite
+  autocmd!
+  autocmd BufWritePre * :call StripTrailingWhitespace()
+augroup end
 
 set cul!
 
@@ -131,13 +134,19 @@ endif
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
-" need this to start with block cursor shape
-autocmd VimEnter * silent exec "! echo -ne '\e[1 q'"
-" to clear message from previous command
-autocmd VimEnter * echo ""
+augroup cursorshape
+  autocmd!
+  " need this to start with block cursor shape
+  autocmd VimEnter * silent exec "! echo -ne '\e[1 q'"
+  " to clear message from previous command
+  autocmd VimEnter * echo ""
+augroup end
 
-" resize windows to be same proportion after resizing terminal
-autocmd VimResized * wincmd =
+augroup ausize
+  autocmd!
+  " resize windows to be same proportion after resizing terminal
+  autocmd VimResized * wincmd =
+augroup end
 
 set wildmenu " allow tab completion cycling
 set wildmode=longest:full,full
