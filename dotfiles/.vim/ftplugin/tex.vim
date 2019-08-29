@@ -1,4 +1,5 @@
 setlocal conceallevel=2
+
 compiler latexmk
 
 " don't automatically open qf list since log file is used instead
@@ -15,9 +16,6 @@ function! ForwardSearch()
                    \ '-b', '-g', current_line, pdf_name]
   let job = job_start(command, {'close_cb': 'RedrawScreen'})
 endfunction
-
-nnoremap <buffer> <Leader>f :silent call ForwardSearch()<CR>
-nnoremap <buffer> <Leader>e :cfile %:t:r.log <bar> copen<CR>
 
 " should switch to proper autocmd
 if (expand('%') =~# '.*\.xtx')
@@ -52,5 +50,12 @@ function! s:ChangeSurroundingEnvironment()
   execute '.,/end{' . expand('<cword>') . '/s/{' . expand('<cword>') . '}/{' . name . '}'
 endfunction
 
+" fold by section
+set foldmethod=expr
+set foldexpr=getline(v:lnum)=~'.section'?'>1':1
+
+nnoremap <buffer> <Leader>f :silent call ForwardSearch()<CR>
+nnoremap <buffer> <Leader>e :cfile %:t:r.log <bar> copen<CR>
 nnoremap <script> <buffer> <silent> cse
   \ ?\\begin{?e<CR>l:call <SID>ChangeSurroundingEnvironment()<CR>:nohlsearch<CR>2<c-o>
+
