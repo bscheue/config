@@ -52,7 +52,7 @@ endfunction
 
 " fold by section
 set foldmethod=expr
-set foldexpr=getline(v:lnum)=~'.section'?'>1':1
+set foldexpr=getline(v:lnum)=~'^.section'?'>1':1
 
 nnoremap <buffer> <Leader>f :silent call ForwardSearch()<CR>
 nnoremap <buffer> <Leader>e :cfile %:t:r.log <bar> copen<CR>
