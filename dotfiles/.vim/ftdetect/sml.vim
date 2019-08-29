@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile *.sig setlocal filetype=sml
+autocmd BufRead,BufNewFile *.sig set filetype=sml
