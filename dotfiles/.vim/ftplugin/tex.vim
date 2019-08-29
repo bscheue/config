@@ -24,13 +24,13 @@ endif
 
 " jump sections
 noremap <script> <buffer> <silent> ]]
-        \ :call search('\\section', '')<CR>
+        \ :call search('^\\section\\|^\\task', '')<CR>
 noremap <script> <buffer> <silent> [[
-        \ :call search('\\section', 'b')<CR>
+        \ :call search('^\\section\\|^\\task', 'b')<CR>
 xnoremap <script> <buffer> <silent> ]]
-        \ :<c-u>call search('\\section', '')<CR>
+        \ :<c-u>call search('^\\section\\|^\\task', '')<CR>
 xnoremap <script> <buffer> <silent> [[
-        \ :<c-u>call search('\\section', 'b')<CR>
+        \ :<c-u>call search('^\\section\\|^\\task', 'b')<CR>
 
 " environment text objects
 xnoremap <script> <buffer> <silent> ie
@@ -52,7 +52,13 @@ endfunction
 
 " fold by section
 set foldmethod=expr
-set foldexpr=getline(v:lnum)=~'^.section'?'>1':1
+function! GetTexFold(lnum)
+  if getline(a:lnum)=~'^.\(section\|task\)'
+    return '>1'
+  endif
+  return 1
+endfunction
+set foldexpr=GetTexFold(v:lnum)
 
 nnoremap <buffer> <Leader>f :silent call ForwardSearch()<CR>
 nnoremap <buffer> <Leader>e :cfile %:t:r.log <bar> copen<CR>
