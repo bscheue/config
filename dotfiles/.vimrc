@@ -123,10 +123,7 @@ if exists('$TMUX')
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    try
-      let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-    catch
-    endtry
+    let &t_SR = "\<Esc>]50;CursorShape=2\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
@@ -188,56 +185,31 @@ set complete-=i
 set foldopen+=jump
 " }}}
 " plugins {{{
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" for fugitive
+command! Gwc Gwrite | Gcommit
+" for commentary (comment current line and add new copy)
+nnoremap <Leader>c :t.<CR>k:Commentary<CR>j
 
-Plugin 'VundleVim/Vundle.vim'
+" for undotree
+nnoremap <Leader>u :UndotreeToggle<CR>
 
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-   command! Gwc Gwrite | Gcommit
-Plugin 'tpope/vim-repeat'
-Plugin 'bscheue/vim-unimpaired'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-commentary'
-  " comment current line and add new copy
-  nnoremap <Leader>c :t.<CR>k:Commentary<CR>j
+" for snipmate
+imap <C-J> <Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
 
-Plugin 'mbbill/undotree'
-  nnoremap <Leader>u :UndotreeToggle<CR>
+" for vim-swap
+omap i, <Plug>(swap-textobject-i)
+xmap i, <Plug>(swap-textobject-i)
+omap a, <Plug>(swap-textobject-a)
+xmap a, <Plug>(swap-textobject-a)
 
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-  imap <C-J> <Plug>snipMateNextOrTrigger
-  smap <C-J> <Plug>snipMateNextOrTrigger
+" for rainbow parens
+nnoremap <Leader>r :RainbowParentheses!!<CR>
 
-Plugin 'bscheue/apprentice'
+" for romainl-qf
+let g:qf_auto_resize = 0
 
-Plugin 'machakann/vim-swap'
-  omap i, <Plug>(swap-textobject-i)
-  xmap i, <Plug>(swap-textobject-i)
-  omap a, <Plug>(swap-textobject-a)
-  xmap a, <Plug>(swap-textobject-a)
-
-Plugin 'junegunn/rainbow_parentheses.vim'
-  nnoremap <Leader>r :RainbowParentheses!!<CR>
-
-Plugin 'romainl/vim-qf'
-  let g:qf_auto_resize = 0
-
-Plugin 'christoomey/vim-tmux-navigator'
-
-Plugin 'markonm/traces.vim'
-
-Plugin 'tommcdo/vim-lion'
-
-call vundle#end()
-
-try
-  packadd! matchit
-catch
-endtry
+packadd! matchit
 
 let g:netrw_liststyle=3
 

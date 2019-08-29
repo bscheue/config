@@ -1,29 +1,25 @@
-[submodule "vim/bundle/Vundle.vim"]
-	path = dotfiles/.vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
-  ignore = dirty
 [submodule "vim/bundle/vim-surround"]
-	path = dotfiles/.vim/bundle/vim-surround
+	path = dotfiles/.vim/pack/all/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
   ignore = dirty
 [submodule "vim/bundle/vim-repeat"]
-	path = dotfiles/.vim/bundle/vim-repeat
+	path = dotfiles/.vim/pack/all/start/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
   ignore = dirty
 [submodule "vim/bundle/vim-fugitive"]
-	path = dotfiles/.vim/bundle/vim-fugitive
+	path = dotfiles/.vim/pack/all/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
   ignore = dirty
 [submodule "vim/bundle/vim-commentary"]
-	path = dotfiles/.vim/bundle/vim-commentary
+	path = dotfiles/.vim/pack/all/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
   ignore = dirty
 [submodule "vim/bundle/undotree"]
-	path = dotfiles/.vim/bundle/undotree
+	path = dotfiles/.vim/pack/all/start/undotree
 	url = https://github.com/mbbill/undotree.git
   ignore = dirty
 [submodule "dotfiles/.vim/bundle/vim-swap"]
-	path = dotfiles/.vim/bundle/vim-swap
+	path = dotfiles/.vim/pack/all/start/vim-swap
 	url = https://github.com/machakann/vim-swap.git
   ignore = dirty
 [submodule "dotfiles/.zsh/plugins/zsh-autosuggestions"]
@@ -47,42 +43,46 @@
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
   ignore = dirty
 [submodule "dotfiles/.vim/bundle/apprentice"]
-	path = dotfiles/.vim/bundle/apprentice
+	path = dotfiles/.vim/pack/all/start/apprentice
 	url = https://github.com/bscheue/Apprentice.git
   ignore = dirty
 [submodule "dotfiles/.vim/bundle/vim-addon-mw-utils"]
-	path = dotfiles/.vim/bundle/vim-addon-mw-utils
+	path = dotfiles/.vim/pack/all/start/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
   ignore = dirty
 [submodule "dotfiles/.vim/bundle/vim-snipmate"]
-	path = dotfiles/.vim/bundle/vim-snipmate
+	path = dotfiles/.vim/pack/all/start/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate.git
   ignore = dirty
 [submodule "dotfiles/.vim/bundle/tlib_vim"]
-	path = dotfiles/.vim/bundle/tlib_vim
+	path = dotfiles/.vim/pack/all/start/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
   ignore = dirty
 [submodule "dotfiles/.vim/bundle/vim-lion"]
-	path = dotfiles/.vim/bundle/vim-lion
+	path = dotfiles/.vim/pack/all/start/vim-lion
 	url = https://github.com/tommcdo/vim-lion.git
   ignore = dirty
 [submodule "dotfiles/.vim/bundle/traces.vim"]
-	path = dotfiles/.vim/bundle/traces.vim
+	path = dotfiles/.vim/pack/all/start/traces.vim
 	url = https://github.com/markonm/traces.vim.git
   ignore = dirty
 [submodule "dotfiles/.vim/bundle/vim-qf"]
-	path = dotfiles/.vim/bundle/vim-qf
+	path = dotfiles/.vim/pack/all/start/vim-qf
 	url = https://github.com/romainl/vim-qf.git
   ignore = dirty
 [submodule "dotfiles/.vim/bundle/vim-unimpaired"]
-	path = dotfiles/.vim/bundle/vim-unimpaired
+	path = dotfiles/.vim/pack/all/start/vim-unimpaired
 	url = https://github.com/bscheue/vim-unimpaired.git
   ignore = dirty
 [submodule "dotfiles/.vim/bundle/rainbow_parentheses.vim"]
-	path = dotfiles/.vim/bundle/rainbow_parentheses.vim
+	path = dotfiles/.vim/pack/all/start/rainbow_parentheses.vim
 	url = https://github.com/junegunn/rainbow_parentheses.vim.git
   ignore = dirty
 [submodule "dotfiles/.vim/bundle/vim-tmux-navigator"]
-	path = dotfiles/.vim/bundle/vim-tmux-navigator
+	path = dotfiles/.vim/pack/all/start/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
+  ignore = dirty
+[submodule "dotfiles/.vim/pack/all/start/vim-abolish"]
+	path = dotfiles/.vim/pack/all/start/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
   ignore = dirty
