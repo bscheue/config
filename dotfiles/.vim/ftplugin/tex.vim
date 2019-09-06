@@ -1,4 +1,5 @@
 setlocal conceallevel=2
+let g:rainbow#pairs = [['(', ')'], ['{', '}'], ['[', ']']]
 
 compiler latexmk
 
