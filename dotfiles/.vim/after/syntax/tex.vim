@@ -57,18 +57,18 @@ syntax match texMathSymbol '\^z\>' contained conceal cchar=ᶻ
 
 syn match texMathSymbol '_a\>' contained conceal cchar=ₐ
 syn match texMathSymbol '_e\>' contained conceal cchar=ₑ
-syn match texMathSymbol '_h\>' contained conceal cchar=ₕ
+" syn match texMathSymbol '_h\>' contained conceal cchar=ₕ
 syn match texMathSymbol '_i\>' contained conceal cchar=ᵢ
 syn match texMathSymbol '_j\>' contained conceal cchar=ⱼ
-syn match texMathSymbol '_k\>' contained conceal cchar=ₖ
-syn match texMathSymbol '_l\>' contained conceal cchar=ₗ
-syn match texMathSymbol '_m\>' contained conceal cchar=ₘ
-syn match texMathSymbol '_n\>' contained conceal cchar=ₙ
+" syn match texMathSymbol '_k\>' contained conceal cchar=ₖ
+" syn match texMathSymbol '_l\>' contained conceal cchar=ₗ
+" syn match texMathSymbol '_m\>' contained conceal cchar=ₘ
+" syn match texMathSymbol '_n\>' contained conceal cchar=ₙ
 syn match texMathSymbol '_o\>' contained conceal cchar=ₒ
-syn match texMathSymbol '_p\>' contained conceal cchar=ₚ
+" syn match texMathSymbol '_p\>' contained conceal cchar=ₚ
 syn match texMathSymbol '_r\>' contained conceal cchar=ᵣ
-syn match texMathSymbol '_s\>' contained conceal cchar=ₛ
-syn match texMathSymbol '_t\>' contained conceal cchar=ₜ
+" syn match texMathSymbol '_s\>' contained conceal cchar=ₛ
+" syn match texMathSymbol '_t\>' contained conceal cchar=ₜ
 syn match texMathSymbol '_u\>' contained conceal cchar=ᵤ
 syn match texMathSymbol '_v\>' contained conceal cchar=ᵥ
 syn match texMathSymbol '_x\>' contained conceal cchar=ₓ
@@ -99,7 +99,7 @@ let s:conceal = (has('conceal') && get(g:, 'tex_conceal', 'b') =~# 'b')
 
 " below taken from: https://github.com/KeitaNakamura/tex-conceal.vim
 syn match texMathSymbol '\\pathspace' contained conceal cchar=Ω
-syn match texMathSymbol '\\surfaces' contained conceal cchar=𝓜
+" syn match texMathSymbol '\\surfaces' contained conceal cchar=𝓜
 
 " more reasonably sized symbols that were already defined
 syn match texMathSymbol '\\Rightarrow\>' contained conceal cchar=⇒
@@ -267,7 +267,7 @@ syn match texMathSymbol '\\mathscr{Y}' contained conceal cchar=𝓨
 syn match texMathSymbol '\\mathscr{Z}' contained conceal cchar=𝓩
 
 syn match texStatement '``' contained conceal cchar=“
-syn match texStatement '\'\'' contained conceal cchar=”
+" syn match texStatement '\'\'' contained conceal cchar=”
 syn match texStatement '\\item\>' contained conceal cchar=•
 syn match texMathSymbol '\\dd' contained conceal cchar=d
 syn match texDelimiter '\\{' contained conceal cchar={
@@ -299,4 +299,9 @@ syn region texItalStyle  matchgroup=texTypeStyle start="\\emph\s*{" end="}" conc
 
 set ambiwidth=single
 hi texBoldMathText cterm=bold gui=bold
-" end code from tex conceal
+
+call TexNewMathZone("Al", "align", 1)
+call TexNewMathZone("Pf", "prooftree", 1)
+
+syn clear texSuperscript
+syn clear texSubscript
