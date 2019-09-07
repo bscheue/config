@@ -33,6 +33,23 @@ xnoremap <script> <buffer> <silent> ]]
 xnoremap <script> <buffer> <silent> [[
         \ :<c-u>call search('^\\section\\|^\\task', 'b')<CR>
 
+" jump to top and bottom of environment
+noremap <script> <buffer> <silent> ]M
+        \ ?begin<CR>:normal %<CR>
+noremap <script> <buffer> <silent> [M
+        \ ?begin<CR>:nohlsearch<CR>
+" should add xnoremap
+
+" jump to $ environments
+noremap <script> <buffer> <silent> ]m
+        \ /\$<CR>
+noremap <script> <buffer> <silent> [m
+        \ ?\$<CR>
+xnoremap <script> <buffer> <silent> ]m
+        \ /\$<CR>
+xnoremap <script> <buffer> <silent> [m
+        \ ?\$<CR>
+
 " environment text objects
 xnoremap <script> <buffer> <silent> ie
       \ :<c-u>call search('\\begin', 'b') <bar> normal vV%koj<CR>
