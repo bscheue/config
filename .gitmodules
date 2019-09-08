@@ -86,3 +86,7 @@
 	path = dotfiles/.vim/pack/all/start/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
   ignore = dirty
+[submodule "dotfiles/.vim/pack/all/start/vim-cool"]
+	path = dotfiles/.vim/pack/all/start/vim-cool
+	url = https://github.com/romainl/vim-cool
+  ignore = dirty
