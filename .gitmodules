@@ -90,3 +90,7 @@
 	path = dotfiles/.vim/pack/all/start/vim-cool
 	url = https://github.com/romainl/vim-cool
   ignore = dirty
+[submodule "dotfiles/.vim/pack/all/start/vim-toggle-windows"]
+	path = dotfiles/.vim/pack/all/start/vim-toggle-windows
+	url = https://github.com/bscheue/vim-toggle-windows
+  ignore = dirty

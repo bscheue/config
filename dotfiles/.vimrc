@@ -52,6 +52,9 @@ command! Onlydiff setlocal diff foldmethod=diff scrollbind nowrap foldlevel=1
 " commands to open a scratch buffer in a split
 command! VSC vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
 command! SC new | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
+
+" open terminal with fish instead of default bash
+command! Fish term ++close fish
 " }}}
 " functions {{{
 function! SynStack()
@@ -183,6 +186,8 @@ set formatoptions+=j
 set complete-=i
 
 set foldopen+=jump
+
+set history=1000
 " }}}
 " plugins {{{
 " for fugitive
@@ -208,6 +213,11 @@ nnoremap <Leader>r :RainbowParentheses!!<CR>
 
 " for romainl-qf
 let g:qf_auto_resize = 0
+
+" for vim-toggle
+nmap <Leader>q <Plug>ToggleQfWindow
+nmap <Leader>l <Plug>ToggleLocWindow
+nmap <Leader>p <Plug>TogglePreviewWindow
 
 packadd! matchit
 
