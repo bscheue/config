@@ -172,9 +172,6 @@ set statusline+=\ %4l
 set statusline+=\ /
 set statusline+=\ %L,
 set statusline+=\ %3c
-set statusline+=\ ::
-set statusline+=\ %3p
-set statusline+=\ %%
 set statusline+=\ ››\ %*
 
 " disable audio and visual bells
@@ -209,7 +206,7 @@ omap a, <Plug>(swap-textobject-a)
 xmap a, <Plug>(swap-textobject-a)
 
 " for rainbow parens
-nnoremap <Leader>r :RainbowParentheses!!<CR>
+nnoremap \r :RainbowParentheses!!<CR>
 
 " for romainl-qf
 let g:qf_auto_resize = 0

@@ -94,3 +94,6 @@
 	path = dotfiles/.vim/pack/all/start/vim-toggle-windows
 	url = https://github.com/bscheue/vim-toggle-windows
   ignore = dirty
+[submodule "dotfiles/.vim/pack/all/start/vim-qlist"]
+	path = dotfiles/.vim/pack/all/start/vim-qlist
+	url = https://github.com/romainl/vim-qlist
