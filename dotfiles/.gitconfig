@@ -27,14 +27,17 @@
 	changed = yellow bold
 	untracked = red bold
 [diff]
-	tool = vimdiff
+	tool = diffmerge
 [difftool]
   prompt = false
 [merge]
-  tool = vimdiff
+  tool = diffmerge
   conflictstyle = diff3
   prompt = false
 [alias]
   lg = log --format='%w(72,0,8)%C(auto)%h%d %s'
   lga = log --date=short --format='%w(72,0,8)%C(auto)%h %C(green)%cd \
           %<(20,trunc)%aN%C(auto)%d%n%w(72,8,8)%s'
+	ctags = !.git/hooks/ctags
+[init]
+	templatedir = ~/.git_template
