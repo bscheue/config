@@ -17,6 +17,16 @@ gabbr -a ... ../../
 gabbr -a .... ../../../
 gabbr -a ..... ../../../../
 
+abbr gc git commit
+abbr ga git add
+abbr gl git pull
+abbr glg git log
+abbr gp git push
+abbr gch git checkout
+
+abbr ts tig status
+abbr tlg tig log
+
 alias jd="cd ~/config/dotfiles"
 alias jv="cd ~/config/dotfiles/.vim"
 

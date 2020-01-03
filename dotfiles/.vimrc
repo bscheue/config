@@ -36,8 +36,20 @@ nnoremap gbb :ls<CR>:buffer<Space>
 nnoremap gbs :ls<CR>:sbuffer<Space>
 nnoremap gbv :ls<CR>:vertical sbuffer<Space>
 
-" toggle between alternate buffer
+" open files located in the same dir as the current file
+nnoremap <leader>ew :edit <C-R>=expand("%:.:h") . "/"<CR><C-z>
+" find files located in the same dir as the current file
+nnoremap <leader>fw :find <C-R>=expand("%:.:h") . "/"<CR>**/
+
+nnoremap <leader>ff :find **/
+
+" switch between alternate buffer
 nnoremap <BS> <C-^>
+
+" tig
+nnoremap <leader>ts :!tig status<CR>
+nnoremap <leader>tb :!tig blame %<CR>
+
 " }}}
 " commands {{{
 " move working directory to the directory of the current file
@@ -62,7 +74,7 @@ function! SynStack()
     return
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+endfunction
 
 " Strip whitespace from end of lines when writing file
 function! StripTrailingWhitespace()
@@ -70,7 +82,7 @@ function! StripTrailingWhitespace()
     let c = col(".")
     %s/\s\+$//e
     call cursor(l, c)
-endfunc
+endfunction
 " }}}
 " settings {{{
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
@@ -118,29 +130,24 @@ augroup prewrite
   autocmd BufWritePre * :call StripTrailingWhitespace()
 augroup end
 
-set cul!
+set cursorline
 
 if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
+  set t_ZH=[3m
+  set t_ZR=[23m
 else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+  " for italic markdown and latex
+  let &t_ZH="\e[3m"
+  let &t_ZR="\e[23m"
 endif
-
-" for italic markdown and latex
-let &t_ZH="\e[3m"
-let &t_ZR="\e[23m"
-
-augroup cursorshape
-  autocmd!
-  " need this to start with block cursor shape
-  autocmd VimEnter * silent exec "! echo -ne '\e[1 q'"
-  " to clear message from previous command
-  autocmd VimEnter * echo ""
-augroup end
 
 augroup ausize
   autocmd!
@@ -185,10 +192,12 @@ set complete-=i
 set foldopen+=jump
 
 set history=1000
+
+set wildcharm=<C-z>
+
+set tags+=.git/tags;$HOME
 " }}}
 " plugins {{{
-" for fugitive
-command! Gwc Gwrite | Gcommit
 " for commentary (comment current line and add new copy)
 nnoremap <Leader>c :t.<CR>k:Commentary<CR>j
 

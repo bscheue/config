@@ -6,10 +6,6 @@
 	path = dotfiles/.vim/pack/all/start/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
   ignore = dirty
-[submodule "vim/bundle/vim-fugitive"]
-	path = dotfiles/.vim/pack/all/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-  ignore = dirty
 [submodule "vim/bundle/vim-commentary"]
 	path = dotfiles/.vim/pack/all/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
@@ -97,3 +93,12 @@
 [submodule "dotfiles/.vim/pack/all/start/vim-qlist"]
 	path = dotfiles/.vim/pack/all/start/vim-qlist
 	url = https://github.com/romainl/vim-qlist
+  ignore = dirty
+[submodule "dotfiles/.vim/pack/all/start/vim-backscratch"]
+	path = dotfiles/.vim/pack/all/start/vim-backscratch
+	url = https://github.com/hauleth/vim-backscratch
+  ignore = dirty
+[submodule "dotfiles/.vim/pack/all/start/vim-tinyMRU"]
+	path = dotfiles/.vim/pack/all/start/vim-tinyMRU
+	url = https://github.com/romainl/vim-tinyMRU
+  ignore = dirty
