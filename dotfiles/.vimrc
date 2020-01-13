@@ -1,6 +1,5 @@
 " vim:foldmethod=marker
 " mappings {{{
-let mapleader = " "
 " for split pane navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -20,7 +19,7 @@ for char in [ '_', '.', '/', '*', '+', '-', '#', '$', '\|' ]
 endfor
 
 " make it easier to split line in normal mode
-nnoremap <silent> <leader><CR> i<CR><ESC>
+nnoremap <silent> <space><CR> i<CR><ESC>
 
 nnoremap <silent> Y y$
 
@@ -29,7 +28,7 @@ cnoremap <C-n> <Down>
 cnoremap <Up> <C-p>
 cnoremap <Down> <C-n>
 
-nnoremap <Leader>m :write <bar> silent make! <bar> silent redraw! <CR>
+nnoremap <space>m :write <bar> silent make! <bar> silent redraw! <CR>
 
 " improve buffer jumping
 nnoremap gbb :ls<CR>:buffer<Space>
@@ -37,18 +36,24 @@ nnoremap gbs :ls<CR>:sbuffer<Space>
 nnoremap gbv :ls<CR>:vertical sbuffer<Space>
 
 " open files located in the same dir as the current file
-nnoremap <leader>ew :edit <C-R>=expand("%:.:h") . "/"<CR><C-z>
+nnoremap <space>ew :edit <C-R>=expand("%:.:h") . "/"<CR><C-z>
 " find files located in the same dir as the current file
-nnoremap <leader>fw :find <C-R>=expand("%:.:h") . "/"<CR>**/
+nnoremap <space>fw :find <C-R>=expand("%:.:h") . "/"<CR>**/
 
-nnoremap <leader>ff :find **/
+nnoremap <space>ff :find **/
 
 " switch between alternate buffer
 nnoremap <BS> <C-^>
 
+" git
+nnoremap <space>gd :!git diff %<CR>
+
 " tig
-nnoremap <leader>ts :!tig status<CR>
-nnoremap <leader>tb :!tig blame %<CR>
+nnoremap <space>ts :!tig status<CR>
+nnoremap <space>tb :!tig blame %<CR>
+
+" start new undoable edit before doing <c-u>
+inoremap <C-u> <C-g>u<C-u>
 
 " }}}
 " commands {{{
@@ -123,8 +128,6 @@ set linebreak  "Intelligently wrap long files
 set ttyfast  "Speed up vim
 set nostartofline "Vertical movement preserves horizontal position
 
-set number " add line numbering
-
 augroup prewrite
   autocmd!
   autocmd BufWritePre * :call StripTrailingWhitespace()
@@ -166,19 +169,19 @@ set statusline=
 set statusline+=%#function#
 set statusline+=\ %*
 set statusline+=\ ‹‹
-set statusline+=\ %t\%*
+set statusline+=\ %t\%* " file name
 set statusline+=\ ››
 set statusline+=\ %#keyword#
-set statusline+=\ %2y
-set statusline+=\ %m
-set statusline+=\ %r
+set statusline+=\ %w " preview window
+set statusline+=\ %m " modifiable
+set statusline+=\ %r " read only
 set statusline+=%=
 set statusline+=%#variable#
 set statusline+=\ ‹‹
-set statusline+=\ %4l
+set statusline+=\ %4l " current row
 set statusline+=\ /
-set statusline+=\ %L,
-set statusline+=\ %3c
+set statusline+=\ %L, " number of rows in buffer
+set statusline+=\ %3c " current column
 set statusline+=\ ››\ %*
 
 " disable audio and visual bells
@@ -199,10 +202,10 @@ set tags+=.git/tags;$HOME
 " }}}
 " plugins {{{
 " for commentary (comment current line and add new copy)
-nnoremap <Leader>c :t.<CR>k:Commentary<CR>j
+nnoremap <space>c :t.<CR>k:Commentary<CR>j
 
 " for undotree
-nnoremap <Leader>u :UndotreeToggle<CR>
+nnoremap <space>u :UndotreeToggle<CR>
 
 " for snipmate
 imap <C-J> <Plug>snipMateNextOrTrigger
@@ -221,9 +224,9 @@ nnoremap \r :RainbowParentheses!!<CR>
 let g:qf_auto_resize = 0
 
 " for vim-toggle
-nmap <Leader>q <Plug>ToggleQfWindow
-nmap <Leader>l <Plug>ToggleLocWindow
-nmap <Leader>p <Plug>TogglePreviewWindow
+nmap <space>q <Plug>ToggleQfWindow
+nmap <space>l <Plug>ToggleLocWindow
+nmap <space>p <Plug>TogglePreviewWindow
 
 packadd! matchit
 

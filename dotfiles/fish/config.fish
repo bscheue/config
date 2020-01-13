@@ -2,11 +2,14 @@ set -x TERM "xterm-256color"
 set -x VISUAL vim
 set -x EDITOR vim
 set -x RLWRAP_EDITOR "vim '+call cursor(%L, %C)'"
-bind \cx\ce edit_command_buffer
-bind \cg  accept-autosuggestion execute
+
+set -x GOPATH $HOME/gobook
 
 set PATH /Users/brian/smlnj/bin $PATH
 set PATH /Users/brian/.cargo/bin $PATH
+
+bind \cx\ce edit_command_buffer
+bind \cg  accept-autosuggestion execute
 
 set -ax MANPATH /opt/local/share/man
 set MANPATH /usr/local/opt/erlang/lib/erlang/man $MANPATH
@@ -23,9 +26,13 @@ abbr gl git pull
 abbr glg git log
 abbr gp git push
 abbr gch git checkout
+abbr gst git status
 
-abbr ts tig status
+abbr tst tig status
 abbr tlg tig log
+
+abbr tns tmux new-session -s
+abbr tas tmux attach-session -t
 
 alias jd="cd ~/config/dotfiles"
 alias jv="cd ~/config/dotfiles/.vim"
