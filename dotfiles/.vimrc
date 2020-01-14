@@ -70,8 +70,6 @@ command! Onlydiff setlocal diff foldmethod=diff scrollbind nowrap foldlevel=1
 command! VSC vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
 command! SC new | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
 
-" open terminal with fish instead of default bash
-command! Fish term ++close fish
 " }}}
 " functions {{{
 function! SynStack()

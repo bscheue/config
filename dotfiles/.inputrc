@@ -1,1 +1,6 @@
 "\C-x\C-e":   rlwrap-call-editor
+"\C-f":    alias-expand-line
+"\C-p": history-search-backward
+"\C-n": history-search-forward
+# use shift tab to go in reverse direction in tab completion options
+"\e[Z": "\e-1\C-i"
