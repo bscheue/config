@@ -51,9 +51,13 @@ nnoremap <space>gd :!git diff %<CR>
 " tig
 nnoremap <space>ts :!tig status<CR>
 nnoremap <space>tb :!tig blame %<CR>
+nnoremap <space>tl :!tig log %<CR>
 
 " start new undoable edit before doing <c-u>
 inoremap <C-u> <C-g>u<C-u>
+
+" view register contents and set up put
+nnoremap \p :<C-u>registers<CR>:normal! "p<Left>
 
 " }}}
 " commands {{{
@@ -195,6 +199,8 @@ set foldopen+=jump
 set history=1000
 
 set wildcharm=<C-z>
+set wildignore=*.aux,*.fdb_latexmk,*.fls,*.log,*.out,*.synctex.gz,*.pdf
+set wildignore+=*.o
 
 set tags+=.git/tags;$HOME
 " }}}

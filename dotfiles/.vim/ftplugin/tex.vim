@@ -72,14 +72,19 @@ nnoremap <buffer> <silent> cse
   \ :<c-u>silent call <SID>ChangeSurroundingEnvironment()<CR>
 
 " fold by section
-set foldmethod=expr
+setlocal foldmethod=expr
 function! GetTexFold(lnum)
-  if getline(a:lnum)=~'^.\(section\|task\)'
+  let line = getline(a:lnum)
+  if a:lnum == 1
     return '>1'
+  elseif line =~'^.\(section\|task\)'
+    return '>1'
+  elseif line =~'^.\(subsection\|part\)'
+    return '>2'
   endif
-  return 1
+  return "="
 endfunction
-set foldexpr=GetTexFold(v:lnum)
+setlocal foldexpr=GetTexFold(v:lnum)
 
 nnoremap <buffer> <space>ef
   \ :cfile %:t:r.log <bar> cwindow<CR>
@@ -94,6 +99,7 @@ nnoremap <buffer> <silent> <space>bm
 nnoremap <buffer> <silent> <space>bk
   \ :<c-u>if exists("b:_texbg") <bar>
   \ call job_stop(b:_texbg)<CR>
+  \ unlet b:_texbg <bar>
   \ else <bar>
   \ echom "no latex continuous compilation for this buffer is running" <bar>
   \ endif<CR>

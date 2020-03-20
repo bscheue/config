@@ -1,1 +1,1 @@
-set makeprg=go\ build\ %
+setlocal makeprg=go\ build\ %

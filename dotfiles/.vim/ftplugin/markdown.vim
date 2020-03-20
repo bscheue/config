@@ -7,4 +7,4 @@ noremap <buffer> <silent> ]]
 noremap <buffer> <silent> [[
    \ :call search('^#', 'b')<CR>
 
-nnoremap <space><space>t :0read ~/.vim/skeleton/skeleton.md<CR>Go<ESC>
+nnoremap <buffer> <space><space>t :0read ~/.vim/skeleton/skeleton.md<CR>Go<ESC>
