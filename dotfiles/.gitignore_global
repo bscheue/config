@@ -1,8 +1,16 @@
+# ignore latex build files
 *.aux
 *.fdb_latexmk
 *.fls
 *.log
 *.out
 *.synctex.gz
+
+
 tags
 *.swp
+# for ignoring session files
+s.vim
+
+# for sml:
+.cm
