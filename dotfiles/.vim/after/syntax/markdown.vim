@@ -1,1 +1,0 @@
-highlight markdownItalic cterm=italic

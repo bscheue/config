@@ -31,16 +31,14 @@ cnoremap <Down> <C-n>
 nnoremap <space>m :write <bar> silent make! <bar> silent redraw! <CR>
 
 " improve buffer jumping
-nnoremap gbb :ls<CR>:buffer<Space>
-nnoremap gbs :ls<CR>:sbuffer<Space>
-nnoremap gbv :ls<CR>:vertical sbuffer<Space>
+nnoremap gbb :buffer<Space>
+nnoremap gbs :sbuffer<Space>
+nnoremap gbv :vertical sbuffer<Space>
 
 " open files located in the same dir as the current file
 nnoremap <space>ew :edit <C-R>=expand("%:.:h") . "/"<CR><C-z>
 " find files located in the same dir as the current file
 nnoremap <space>fw :find <C-R>=expand("%:.:h") . "/"<CR>**/
-
-nnoremap <space>ff :find **/
 
 " switch between alternate buffer
 nnoremap <BS> <C-^>
@@ -59,6 +57,12 @@ inoremap <C-u> <C-g>u<C-u>
 " view register contents and set up put
 nnoremap \p :<C-u>registers<CR>:normal! "p<Left>
 
+nnoremap \i :<C-u>t.<CR>:s/1/2/g<CR>
+
+" make it easier to use the system clipboard
+nnoremap "" "+
+xnoremap "" "+
+
 " }}}
 " commands {{{
 " move working directory to the directory of the current file
@@ -66,13 +70,6 @@ command! Here lcd %:p:h
 
 " display full path to directory containing current file
 command! Where echo expand('%:p:h')
-
-" fold away lines that are the same between files
-command! Onlydiff setlocal diff foldmethod=diff scrollbind nowrap foldlevel=1
-
-" commands to open a scratch buffer in a split
-command! VSC vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
-command! SC new | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
 
 " }}}
 " functions {{{
@@ -92,8 +89,6 @@ function! StripTrailingWhitespace()
 endfunction
 " }}}
 " settings {{{
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-
 filetype plugin indent on
 syntax on
 
@@ -107,8 +102,6 @@ set expandtab  " Expand tabs into spaces
 set autoindent  "autoindent on new lines
 
 set showmatch  "Highlight matching braces
-
-set ruler  "Show bottom ruler
 
 set equalalways  "Split windows equal size
 
@@ -136,23 +129,6 @@ augroup prewrite
 augroup end
 
 set cursorline
-
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-
-  set t_ZH=[3m
-  set t_ZR=[23m
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
-  " for italic markdown and latex
-  let &t_ZH="\e[3m"
-  let &t_ZR="\e[23m"
-endif
 
 augroup ausize
   autocmd!
@@ -191,6 +167,7 @@ set noerrorbells
 set novisualbell
 set vb t_vb=
 
+" if it makes sense remove comment leader when joining lines
 set formatoptions+=j
 set complete-=i
 
@@ -203,6 +180,8 @@ set wildignore=*.aux,*.fdb_latexmk,*.fls,*.log,*.out,*.synctex.gz,*.pdf
 set wildignore+=*.o
 
 set tags+=.git/tags;$HOME
+
+set splitright
 " }}}
 " plugins {{{
 " for commentary (comment current line and add new copy)
@@ -231,6 +210,9 @@ let g:qf_auto_resize = 0
 nmap <space>q <Plug>ToggleQfWindow
 nmap <space>l <Plug>ToggleLocWindow
 nmap <space>p <Plug>TogglePreviewWindow
+
+" for traces
+let g:traces_preserve_view_state=1
 
 packadd! matchit
 

@@ -9,10 +9,10 @@ endfunction
 
 function! ForwardSearch()
   let current_line = line('.')
-  let pdf_name = expand('%:t:r') . '.pdf'
-  let command = ['/Applications/Skim.app/Contents/SharedSupport/displayline',
-                   \ '-b', '-g', current_line, pdf_name]
-  let _job = job_start(command, {'close_cb': 'RedrawScreen'})
+  let pdf_name = expand('%:r') . '.pdf'
+  let forwardsearch = ['/Applications/Skim.app/Contents/SharedSupport/displayline',
+                   \ '-g', current_line, pdf_name]
+  let _job = job_start(forwardsearch, {'close_cb': 'RedrawScreen'})
 endfunction
 
 nnoremap <buffer> <silent> <space>f :call ForwardSearch()<CR>
@@ -21,33 +21,6 @@ nnoremap <buffer> <silent> <space>f :call ForwardSearch()<CR>
 if (expand('%') =~# '.*\.xtx')
   setlocal makeprg=latexmk\ -pdf\ -pv\ --xelatex\ %
 endif
-
-" jump sections
-noremap <buffer> <silent> ]]
-        \ :call search('^\\section\\|^\\task', '')<CR>
-noremap <buffer> <silent> [[
-        \ :call search('^\\section\\|^\\task', 'b')<CR>
-xnoremap <buffer> <silent> ]]
-        \ :<c-u>call search('^\\section\\|^\\task', '')<CR>
-xnoremap <buffer> <silent> [[
-        \ :<c-u>call search('^\\section\\|^\\task', 'b')<CR>
-
-" jump to top and bottom of environment
-noremap <buffer> <silent> ]M
-        \ ?begin<CR>:normal %<CR>
-noremap <buffer> <silent> [M
-        \ ?begin<CR>:nohlsearch<CR>
-" should add xnoremap
-
-" jump to $ environments
-noremap <buffer> <silent> ]m
-        \ /\$<CR>
-noremap <buffer> <silent> [m
-        \ ?\$<CR>
-xnoremap <buffer> <silent> ]m
-        \ /\$<CR>
-xnoremap <buffer> <silent> [m
-        \ ?\$<CR>
 
 " environment text objects
 xnoremap <buffer> <silent> ie
@@ -89,17 +62,22 @@ setlocal foldexpr=GetTexFold(v:lnum)
 nnoremap <buffer> <space>ef
   \ :cfile %:t:r.log <bar> cwindow<CR>
 
-nnoremap <buffer> <silent> <space>bm
-  \ :<c-u>if exists("b:_texbg") <bar>
-  \ echom "latex continuous compilation for this buffer is already running" <bar>
-  \ else <bar>
-  \ let b:_texbg = job_start('latexmk -pdf -pvc -quiet ' . expand('%')) <bar>
-  \ endif<CR>
+function! StartBackgroundBuild()
+  if exists("b:_texbg")
+    echom "latex continuous compilation for this buffer is already running"
+  else
+    let b:_texbg = job_start('latexmk -cd -pdf -pvc -quiet ' . expand('%'))
+  endif
+endfunction
 
-nnoremap <buffer> <silent> <space>bk
-  \ :<c-u>if exists("b:_texbg") <bar>
-  \ call job_stop(b:_texbg)<CR>
-  \ unlet b:_texbg <bar>
-  \ else <bar>
-  \ echom "no latex continuous compilation for this buffer is running" <bar>
-  \ endif<CR>
+function! KillBackgroundBuild()
+  if exists("b:_texbg")
+    call job_stop(b:_texbg)
+    unlet b:_texbg
+  else
+    echom "no latex continuous compilation for this buffer is running"
+  endif
+endfunction
+
+command! -buffer -bar LatexStartBackgroundBuild call StartBackgroundBuild()
+command! -buffer -bar LatexKillBackgroundBuild call KillBackgroundBuild()

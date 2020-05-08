@@ -8,7 +8,7 @@ if exists(":CompilerSet") != 2		" older Vim always used :setlocal
   command -nargs=* CompilerSet setlocal <args>
 endif
 
-CompilerSet makeprg=latexmk\ -pdf\ -pv\ %
+CompilerSet makeprg=latexmk\ -cd\ -pdf\ -pv\ %
 
 " error formatting adapted from: https://github.com/lervag/vimtex/blob/master/autoload/vimtex/compiler/latexmk.vim
 " Push file to file stack

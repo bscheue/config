@@ -4,7 +4,7 @@ syntax match smlOperator  "=>\|->\|<=\|>=\|>>="
 syntax match smlType "'\<\w\+\>"
 
 " highlight operators not typically highlighted
-syntax match smlKeychar /\<o\>\|\$\|<|\|:/
+syntax match smlKeychar /\<o\>\|\$\||>\|:/
 
 syntax clear smlKeyword
 
