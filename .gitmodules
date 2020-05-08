@@ -18,26 +18,6 @@
 	path = dotfiles/.vim/pack/all/start/vim-swap
 	url = https://github.com/machakann/vim-swap.git
   ignore = dirty
-[submodule "dotfiles/.zsh/plugins/zsh-autosuggestions"]
-	path = dotfiles/.zsh/plugins/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions
-  ignore = dirty
-[submodule "dotfiles/.zsh/plugins/zshmarks"]
-	path = dotfiles/.zsh/plugins/zshmarks
-	url = https://github.com/jocelynmallon/zshmarks.git
-  ignore = dirty
-[submodule "dotfiles/.zsh/plugins/zsh-history-substring-search"]
-	path = dotfiles/.zsh/plugins/zsh-history-substring-search
-	url = https://github.com/zsh-users/zsh-history-substring-search
-  ignore = dirty
-[submodule "dotfiles/.zsh/plugins/zsh-start"]
-	path = dotfiles/.zsh/plugins/zsh-start
-	url = https://github.com/bscheue/zsh-start.git
-  ignore = dirty
-[submodule "dotfiles/.zsh/plugins/zsh-syntax-highlighting"]
-	path = dotfiles/.zsh/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-  ignore = dirty
 [submodule "dotfiles/.vim/bundle/apprentice"]
 	path = dotfiles/.vim/pack/all/start/apprentice
 	url = https://github.com/bscheue/Apprentice.git
@@ -73,10 +53,6 @@
 [submodule "dotfiles/.vim/bundle/rainbow_parentheses.vim"]
 	path = dotfiles/.vim/pack/all/start/rainbow_parentheses.vim
 	url = https://github.com/junegunn/rainbow_parentheses.vim.git
-  ignore = dirty
-[submodule "dotfiles/.vim/bundle/vim-tmux-navigator"]
-	path = dotfiles/.vim/pack/all/start/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator.git
   ignore = dirty
 [submodule "dotfiles/.vim/pack/all/start/vim-abolish"]
 	path = dotfiles/.vim/pack/all/start/vim-abolish
