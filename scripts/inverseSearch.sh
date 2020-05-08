@@ -8,7 +8,7 @@ line="$2"
 [ "${line}" == "" ] && line=1
 
 exec osascript << EOF
-  tell application "Alacritty"
+  tell application "kitty"
     # skim runs this script immediately after clicking, so delay slightly
     # to avoid accidentally including the shift in command
     # (since script is triggered on shift command click)
