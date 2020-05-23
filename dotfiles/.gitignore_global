@@ -8,6 +8,8 @@
 
 
 tags
+.tags
+
 *.swp
 # for ignoring session files
 s.vim

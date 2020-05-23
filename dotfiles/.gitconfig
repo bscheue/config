@@ -1,8 +1,3 @@
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [user]
 	name = Brian Scheuermann
 	email = bscheuer@andrew.cmu.edu
@@ -27,17 +22,22 @@
 	changed = yellow bold
 	untracked = red bold
 [diff]
-	tool = diffmerge
+	tool = kitty
+	guitool = kitty.gui
 [difftool]
-  prompt = false
+	prompt = false
+	trustExitCode = true
+[difftool "kitty"]
+	cmd = kitty +kitten diff $LOCAL $REMOTE
+[difftool "kitty.gui"]
+	cmd = kitty kitty +kitten diff $LOCAL $REMOTE
+[difftool]
+	prompt = false
 [merge]
-  tool = diffmerge
-  conflictstyle = diff3
-  prompt = false
+	tool = meld
+[mergetool "meld"]
+	cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 [alias]
-  lg = log --format='%w(72,0,8)%C(auto)%h%d %s'
-  lga = log --date=short --format='%w(72,0,8)%C(auto)%h %C(green)%cd \
-          %<(20,trunc)%aN%C(auto)%d%n%w(72,8,8)%s'
 	ctags = !.git/hooks/ctags
 [init]
 	templatedir = ~/.git_template
