@@ -1,0 +1,200 @@
+" vim:foldmethod=marker
+" mappings {{{
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-l> <c-w>l
+nnoremap <c-k> <c-w>k
+nnoremap <s-left> <c-w><
+nnoremap <s-right> <c-w>>
+nnoremap <s-up> <c-w>+
+nnoremap <s-down> <c-w>-
+
+" make it easier to split line in normal mode
+nnoremap <silent> <space><CR> i<CR><ESC>
+
+nnoremap <silent> Y y$
+
+nnoremap <space>m :write <bar> silent make! <bar> silent redraw! <CR>
+
+nnoremap gbb :buffer<space>
+nnoremap gbs :sbuffer<space>
+nnoremap gbv :vertical sbuffer<space>
+
+" open files located in the same dir as the current file
+nnoremap <space>ew :edit <c-r>=expand("%:.:h") . "/"<CR><c-z>
+
+nnoremap <BS> <c-^>
+
+nnoremap <space>gd :!git diff %<CR>
+
+nnoremap <space>tb :!tig blame %<CR>
+nnoremap <space>tl :!tig log %<CR>
+
+" view register contents and set up put
+nnoremap \p :<c-u>registers<CR>:normal! "p<Left>
+
+nnoremap \i :<c-u>t.<CR>:s/\d\+/\=(submatch(0)+1)/g<CR>
+
+nnoremap "" "+
+xnoremap "" "+
+
+cnoremap <c-p> <Up>
+cnoremap <c-n> <Down>
+cnoremap <Up> <c-p>
+cnoremap <Down> <c-n>
+
+" start new undoable edit before doing <c-u>
+inoremap <c-u> <c-g>u<c-u>
+
+" custom text objects
+for char in [ '_', '.', '/', '*', '+', '-', '#', '$', '\|' ]
+    execute 'xnoremap i' . char . ' :<c-u>normal! T' . char . 'vt' . char . '<CR>'
+    execute 'onoremap i' . char . ' :normal vi' . char . '<CR>'
+    execute 'xnoremap a' . char . ' :<c-u>normal! F' . char . 'vf' . char . '<CR>'
+    execute 'onoremap a' . char . ' :normal va' . char . '<CR>'
+endfor
+
+" number text object (integer and float)
+function! VisualNumber()
+	call search('\d\([^0-9\.]\|$\)', 'cW')
+	normal v
+	call search('\(^\|[^0-9\.]\d\)', 'becW')
+endfunction
+
+xnoremap in :<c-u>call VisualNumber()<CR>
+onoremap in :<c-u>normal vin<CR>
+
+" }}}
+" commands {{{
+command! Here lcd %:p:h
+command! Where echo expand('%:p:h')
+" }}}
+" functions {{{
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunction
+
+" Strip whitespace from end of lines when writing file
+function! StripTrailingWhitespace()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfunction
+" }}}
+" augroups {{{
+augroup Whitespace
+  autocmd!
+  autocmd BufWritePre * call StripTrailingWhitespace()
+augroup end
+
+augroup Winresize
+  autocmd!
+  autocmd VimResized * wincmd =
+augroup end
+" }}}
+" settings {{{
+filetype plugin indent on
+syntax on
+
+set autoindent
+set backspace=indent,eol,start
+set clipboard=exclude:.* "Don't clobber the system clipboard unless told
+set completeopt=longest,menuone,menu,preview
+set cursorline
+set equalalways
+set expandtab
+set foldopen+=jump
+set formatoptions=cjqr
+set hidden
+set history=1000
+set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2
+set lazyredraw  "Don't redraw while executing macros and other untyped commands
+set linebreak  "Only wrap on 'good' characters for wrapping
+set mouse=a
+set noerrorbells " disable audio and visual bells
+set scrolloff=5
+set shell=/usr/local/bin/bash\ --login
+set shiftwidth=2
+set showmatch
+set smartcase
+set softtabstop=2
+set splitright
+set statusline=\ ‹‹\ %t\ ››\ %#keyword#\ %m%w%r%=%*\ ‹‹\ %4l\ /\ %L,\ %3c\ ››\ "
+set tags+=.tags;$HOME
+set title
+set visualbell t_vb=
+set wildcharm=<c-z>
+set wildignore=*.aux,*.fdb_latexmk,*.fls,*.log,*.out,*.synctex.gz,*.pdf,*.o
+set wildmenu
+set wildmode=longest:full,full
+" }}}
+" plugins {{{
+" for commentary (comment current line and add new copy)
+nnoremap <space>c :t.<CR>k:Commentary<CR>j
+
+" for undotree
+nnoremap <space>u :UndotreeToggle<CR>
+
+" for snipmate
+imap <c-j> <Plug>snipMateNextOrTrigger
+smap <c-j> <Plug>snipMateNextOrTrigger
+
+" for vim-swap
+omap i, <Plug>(swap-textobject-i)
+xmap i, <Plug>(swap-textobject-i)
+omap a, <Plug>(swap-textobject-a)
+xmap a, <Plug>(swap-textobject-a)
+
+" for rainbow parens
+nnoremap \r :RainbowParentheses!!<CR>
+
+" for romainl-qf
+let g:qf_auto_resize = 0
+
+" for vim-toggle-windows
+nmap <space>q <Plug>ToggleQfWindow
+nmap <space>l <Plug>ToggleLocWindow
+nmap <space>p <Plug>TogglePreviewWindow
+nmap <space>h <Plug>ToggleHelpWindow
+
+" for vim-cases
+" camel case
+nmap ]c <Plug>CasesCamelForward-n
+nmap [c <Plug>CasesCamelBackward-n
+omap ]c <Plug>CasesCamelForward-o
+omap [c <Plug>CasesCamelBackward-o
+
+xmap ]c <Plug>CasesCamelForward-x
+xmap [c <Plug>CasesCamelBackward-x
+
+xmap ic <Plug>CasesCamelObj-x
+omap ic <Plug>CasesCamelObj-o
+
+" snake case
+nmap ]_ <Plug>CasesSnakeForward-n
+nmap [_ <Plug>CasesSnakeBackward-n
+omap ]_ <Plug>CasesSnakeForward-o
+omap [_ <Plug>CasesSnakeBackward-o
+
+xmap ]_ <Plug>CasesSnakeForward-x
+xmap [_ <Plug>CasesSnakeBackward-x
+
+xmap i_ <Plug>CasesSnakeInnerObj-x
+xmap a_ <Plug>CasesSnakeOuterObj-x
+
+" for traces
+let g:traces_preserve_view_state=1
+
+packadd! matchit
+
+let g:netrw_liststyle=3
+
+colorscheme apprentice
+" }}}
