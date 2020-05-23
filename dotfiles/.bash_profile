@@ -7,12 +7,10 @@ export VISUAL=vim
 export EDITOR=vim
 export RLWRAP_EDITOR="vim '+call cursor(%L, %C)'"
 
-# export SMLNJ_HOME="/Users/brian/smlnj"
 export RBENV_ROOT="/usr/local/var/rbenv"
 
 export GOPATH=$HOME/gobook
 
-# export PATH=/Users/brian/smlnj/bin:$PATH
 export PATH=/usr/local/smlnj/bin:"$PATH"
 export PATH=/Users/brian/.cargo/bin:$PATH
 

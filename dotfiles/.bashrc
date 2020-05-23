@@ -1,4 +1,3 @@
-source ~/config/scripts/git-prompt.sh
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="verbose git"
 GIT_PS1_SHOWDIRTYSTATE=1
@@ -13,7 +12,6 @@ bind "set show-all-if-ambiguous on"
 bind "set completion-ignore-case on"
 bind "set menu-complete-display-prefix on"
 
-# enable **
 shopt -s globstar
 shopt -s cdspell
 shopt -s extglob

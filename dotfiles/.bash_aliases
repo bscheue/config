@@ -1,11 +1,6 @@
 alias cddot="cd ~/config/dotfiles"
 alias cdvim="cd ~/config/dotfiles/.vim"
 
-PAR=~/Documents/S20/15418
-HOT=~/Documents/S20/15417
-LIN=~/Documents/S20/21341
-TA=~/Documents/ta15150
-
 alias vim="mvim -v"
 alias latexpv="latexmk -pdf -pvc -quiet"
 alias smlnj="rlwrap -M .sml -m \\\\n sml"
@@ -61,14 +56,6 @@ function gpoc() {
   git push origin $(git rev-parse --abbrev-ref HEAD)
 }
 
-function cdhot() {
-  cd $HOT/$(ls $HOT | grep "^p." | tail -n1)
-}
-
-function cdlin() {
-  cd $LIN/$(ls $LIN | grep "^hw.." | tail -n1)
-}
-
 function findd() {
   SEARCH="$1"
   DIRS="${@:2}"
@@ -79,4 +66,22 @@ function grepd() {
   SEARCH="$1"
   DIRS="${@:2}"
   grep -s -r "$SEARCH" ${DIRS:-.}
+}
+
+# from: https://gist.github.com/premek/6e70446cfc913d3c929d7cdbfe896fef
+# Usage: mv oldfilename
+# If you call mv without the second parameter it will prompt you to edit the filename on command line.
+# Original mv is called when it's called with more than one argument.
+function mv() {
+  if [ "$#" -ne 1 ]; then
+    command mv "$@"
+    return
+  fi
+  if [ ! -f "$1" ]; then
+    command file "$@"
+    return
+  fi
+
+  read -ei "$1" newfilename
+  mv "$1" "$newfilename"
 }

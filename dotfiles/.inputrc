@@ -4,3 +4,6 @@
 "\C-n": history-search-forward
 # use shift tab to go in reverse direction in tab completion options
 "\e[Z": "\e-1\C-i"
+
+# Append char to indicate type
+set visible-stats On
