@@ -127,7 +127,7 @@ set smartcase
 set softtabstop=2
 set splitright
 set statusline=\ ‹‹\ %t\ ››\ %#keyword#\ %m%w%r%=%*\ ‹‹\ %4l\ /\ %L,\ %3c\ ››\ "
-set tags+=.tags;$HOME
+set tags+=tags;$HOME
 set title
 set visualbell t_vb=
 set wildcharm=<c-z>

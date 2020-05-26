@@ -6,11 +6,13 @@ GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\n\[\033[34m\]\w\[\033[0m\] $(__git_ps1 "[%s]")\n\[\033[1;31m\]\[\033[00;35m\]λ\[\033[0m\] '
 PROMPT_COMMAND='history -a; '${PROMPT_COMMAND}
 
-# make tab cycle through commands after listing
-bind '"\t":menu-complete'
-bind "set show-all-if-ambiguous on"
-bind "set completion-ignore-case on"
-bind "set menu-complete-display-prefix on"
+if [[ ${SHELLOPTS} =~ (vi|emacs) ]]
+then
+  bind '"\t":menu-complete'
+  bind "set show-all-if-ambiguous on"
+  bind "set completion-ignore-case on"
+  bind "set menu-complete-display-prefix on"
+fi
 
 shopt -s globstar
 shopt -s cdspell
