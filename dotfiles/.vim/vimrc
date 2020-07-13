@@ -1,27 +1,22 @@
 " vim:foldmethod=marker
 " mappings {{{
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-l> <c-w>l
-nnoremap <c-k> <c-w>k
-nnoremap <s-left> <c-w><
-nnoremap <s-right> <c-w>>
-nnoremap <s-up> <c-w>+
-nnoremap <s-down> <c-w>-
-
-" make it easier to split line in normal mode
 nnoremap <silent> <space><CR> i<CR><ESC>
 
 nnoremap <silent> Y y$
 
 nnoremap <space>m :write <bar> silent make! <bar> silent redraw! <CR>
 
-nnoremap gbb :buffer<space>
-nnoremap gbs :sbuffer<space>
-nnoremap gbv :vertical sbuffer<space>
-
-" open files located in the same dir as the current file
-nnoremap <space>ew :edit <c-r>=expand("%:.:h") . "/"<CR><c-z>
+nnoremap ,b :buffer *
+nnoremap ,Bv :vertical sbuffer *
+nnoremap ,Bs :sbuffer *
+nnoremap ,f :find *
+nnoremap ,s :sfind *
+nnoremap ,v :vertical sfind *
+nnoremap ,t :tabfind *
+nnoremap ,F :find <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
+nnoremap ,S :sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
+nnoremap ,V :vertical sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
+nnoremap ,T :tabfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
 
 nnoremap <BS> <c-^>
 
@@ -31,7 +26,7 @@ nnoremap <space>tb :!tig blame %<CR>
 nnoremap <space>tl :!tig log %<CR>
 
 " view register contents and set up put
-nnoremap \p :<c-u>registers<CR>:normal! "p<Left>
+nnoremap \p :<c-u>registers<CR>:normal! "p<left>
 
 nnoremap \i :<c-u>t.<CR>:s/\d\+/\=(submatch(0)+1)/g<CR>
 
@@ -43,7 +38,6 @@ cnoremap <c-n> <Down>
 cnoremap <Up> <c-p>
 cnoremap <Down> <c-n>
 
-" start new undoable edit before doing <c-u>
 inoremap <c-u> <c-g>u<c-u>
 
 " custom text objects
@@ -64,10 +58,14 @@ endfunction
 xnoremap in :<c-u>call VisualNumber()<CR>
 onoremap in :<c-u>normal vin<CR>
 
+noremap \/ /\<\><left><left>
+nnoremap <space>s :<c-u>s/<c-r><c-w>//g<left><left>
+nnoremap \<c-]> :ltag <c-r><c-w> <bar> lwindow <CR>
 " }}}
 " commands {{{
 command! Here lcd %:p:h
 command! Where echo expand('%:p:h')
+command! -range GB echo join(systemlist("git -C " . shellescape(expand('%:p:h')) . " blame -L <line1>,<line2> " . expand('%:t')), "\n")
 " }}}
 " functions {{{
 function! SynStack()
@@ -102,10 +100,9 @@ syntax on
 
 set autoindent
 set backspace=indent,eol,start
-set clipboard=exclude:.* "Don't clobber the system clipboard unless told
+set clipboard=exclude:.*
 set completeopt=longest,menuone,menu,preview
 set cursorline
-set equalalways
 set expandtab
 set foldopen+=jump
 set formatoptions=cjqr
@@ -115,10 +112,10 @@ set hlsearch
 set ignorecase
 set incsearch
 set laststatus=2
-set lazyredraw  "Don't redraw while executing macros and other untyped commands
-set linebreak  "Only wrap on 'good' characters for wrapping
+set lazyredraw
+set linebreak
 set mouse=a
-set noerrorbells " disable audio and visual bells
+set noerrorbells
 set scrolloff=5
 set shell=/usr/local/bin/bash\ --login
 set shiftwidth=2
@@ -126,7 +123,7 @@ set showmatch
 set smartcase
 set softtabstop=2
 set splitright
-set statusline=\ ‹‹\ %t\ ››\ %#keyword#\ %m%w%r%=%*\ ‹‹\ %4l\ /\ %L,\ %3c\ ››\ "
+set statusline=%f\ %m%w%r%=%*\ %4l\ /\ %L,\ %3c\ "
 set tags+=tags;$HOME
 set title
 set visualbell t_vb=
@@ -193,6 +190,7 @@ xmap a_ <Plug>CasesSnakeOuterObj-x
 let g:traces_preserve_view_state=1
 
 packadd! matchit
+packadd! cfilter
 
 let g:netrw_liststyle=3
 
