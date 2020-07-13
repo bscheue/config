@@ -3,7 +3,7 @@ GIT_PS1_SHOWUPSTREAM="verbose git"
 GIT_PS1_SHOWDIRTYSTATE=1
 
 # set prompt
-export PS1='\n\[\033[34m\]\w\[\033[0m\] $(__git_ps1 "[%s]")\n\[\033[1;31m\]\[\033[00;35m\]λ\[\033[0m\] '
+export PS1='\n\[\033[34m\]\w\[\033[0m\] $(__git_ps1 "[%s]")\n\[\033[37m\]\u@\h\[\033[0m\]\$ '
 PROMPT_COMMAND='history -a; '${PROMPT_COMMAND}
 
 if [[ ${SHELLOPTS} =~ (vi|emacs) ]]

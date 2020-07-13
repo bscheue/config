@@ -16,6 +16,8 @@ alias gp="git push "
 alias gch="git checkout "
 alias gchb="git checkout -b "
 alias gst="git status "
+alias gcr="git commit --amend --no-edit"
+alias gca="git commit --amend"
 
 alias tst="tig status "
 alias tlg="tig log "
@@ -48,12 +50,16 @@ function bd() {
 }
 
 mkcd() {
-	mkdir -p "$*"
-	cd "$*"
+  mkdir -p "$*"
+  cd "$*"
 }
 
 function gpoc() {
   git push origin $(git rev-parse --abbrev-ref HEAD)
+}
+
+function gloc() {
+  git pull origin $(git rev-parse --abbrev-ref HEAD)
 }
 
 function findd() {
