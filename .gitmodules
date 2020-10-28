@@ -82,3 +82,9 @@
 	path = dotfiles/.vim/pack/all/start/vim-cases
 	url = https://github.com/bscheue/vim-cases
 	gnore = dirty
+[submodule "dotfiles/.vim/pack/all/start/vim-elixir"]
+	path = dotfiles/.vim/pack/all/start/vim-elixir
+	url = https://github.com/elixir-editors/vim-elixir
+[submodule "dotfiles/.vim/pack/all/start/vim-to-github"]
+	path = dotfiles/.vim/pack/all/start/vim-to-github
+	url = https://github.com/bscheue/vim-to-github

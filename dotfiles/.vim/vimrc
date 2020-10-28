@@ -1,22 +1,29 @@
 " vim:foldmethod=marker
-" mappings {{{
+"{{{ mappings
+nnoremap <s-left> <c-w><
+nnoremap <s-right> <c-w>>
+nnoremap <s-up> <c-w>+
+nnoremap <s-down> <c-w>-
+
 nnoremap <silent> <space><CR> i<CR><ESC>
 
 nnoremap <silent> Y y$
 
 nnoremap <space>m :write <bar> silent make! <bar> silent redraw! <CR>
+nmap <silent> ,m <space>m:cnext<CR>
 
-nnoremap ,b :buffer *
-nnoremap ,Bv :vertical sbuffer *
-nnoremap ,Bs :sbuffer *
-nnoremap ,f :find *
-nnoremap ,s :sfind *
-nnoremap ,v :vertical sfind *
-nnoremap ,t :tabfind *
-nnoremap ,F :find <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
-nnoremap ,S :sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
-nnoremap ,V :vertical sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
-nnoremap ,T :tabfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
+for s:direction in ['', 'v', 's']
+    for s:mapping in [
+      \ ['b', 'buffer *'],
+      \ ['f', 'find *'],
+      \ ['F', "find <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>"],
+      \ ['t', 'tag '],
+      \ ['T', 'tselect ']
+    \ ]
+      let s:prefix = s:direction =~ 'v' ? 'vertical s' : s:direction
+      execute 'nnoremap ,' . s:direction . s:mapping[0] . ' :<c-u>' . s:prefix . s:mapping[1]
+  endfor
+endfor
 
 nnoremap <BS> <c-^>
 
@@ -25,7 +32,6 @@ nnoremap <space>gd :!git diff %<CR>
 nnoremap <space>tb :!tig blame %<CR>
 nnoremap <space>tl :!tig log %<CR>
 
-" view register contents and set up put
 nnoremap \p :<c-u>registers<CR>:normal! "p<left>
 
 nnoremap \i :<c-u>t.<CR>:s/\d\+/\=(submatch(0)+1)/g<CR>
@@ -33,22 +39,26 @@ nnoremap \i :<c-u>t.<CR>:s/\d\+/\=(submatch(0)+1)/g<CR>
 nnoremap "" "+
 xnoremap "" "+
 
-cnoremap <c-p> <Up>
-cnoremap <c-n> <Down>
-cnoremap <Up> <c-p>
-cnoremap <Down> <c-n>
-
 inoremap <c-u> <c-g>u<c-u>
 
-" custom text objects
-for char in [ '_', '.', '/', '*', '+', '-', '#', '$', '\|' ]
-    execute 'xnoremap i' . char . ' :<c-u>normal! T' . char . 'vt' . char . '<CR>'
-    execute 'onoremap i' . char . ' :normal vi' . char . '<CR>'
-    execute 'xnoremap a' . char . ' :<c-u>normal! F' . char . 'vf' . char . '<CR>'
-    execute 'onoremap a' . char . ' :normal va' . char . '<CR>'
+for s:char in [ '_', '.', '/', '*', '+', '-', '#', '$', '\|', '`' ]
+    execute 'xnoremap <silent> i' . s:char . ' :<c-u>normal! T' . s:char . 'vt' . s:char . '<CR>'
+    execute 'onoremap <silent> i' . s:char . ' :normal vi' . s:char . '<CR>'
+    execute 'xnoremap <silent> a' . s:char . ' :<c-u>normal! F' . s:char . 'vf' . s:char . '<CR>'
+    execute 'onoremap <silent> a' . s:char . ' :normal va' . s:char . '<CR>'
 endfor
 
-" number text object (integer and float)
+for s:tuple in [ ['d', '"', '\'], ['e', "'", '\'] ]
+    let s:name = s:tuple[0]
+    let s:start = s:tuple[1]
+    let s:end = s:tuple[2]
+
+    execute 'xnoremap <silent> i' . s:name . ' :<c-u>normal! T' . s:start . 'vt' . s:end . '<CR>'
+    execute 'onoremap <silent> i' . s:name . ' :normal vi' . s:name . '<CR>'
+    execute 'xnoremap <silent> a' . s:name . ' :<c-u>normal! F' . s:start . 'hvf' . s:end . 'l<CR>'
+    execute 'onoremap <silent> a' . s:name . ' :normal va' . s:name . '<CR>'
+endfor
+
 function! VisualNumber()
 	call search('\d\([^0-9\.]\|$\)', 'cW')
 	normal v
@@ -58,9 +68,36 @@ endfunction
 xnoremap in :<c-u>call VisualNumber()<CR>
 onoremap in :<c-u>normal vin<CR>
 
+xnoremap il g_o^
+onoremap il :<C-u>normal vil<CR>
+xnoremap al $o0
+onoremap al :<C-u>normal val<CR>
+
+xnoremap af GoggV
+onoremap af :<c-u>normal va%<CR>
+
+xnoremap ir i[
+xnoremap ar a[
+onoremap ir :normal vi[<CR>
+onoremap ar :normal va[<CR>
+
 noremap \/ /\<\><left><left>
-nnoremap <space>s :<c-u>s/<c-r><c-w>//g<left><left>
+noremap \? ?\<\><left><left>
+nnoremap <space>s :<c-u>%s/<c-r><c-w>//g<left><left>
+nnoremap \s :<c-u>s/<c-r><c-w>//g<left><left>
+
 nnoremap \<c-]> :ltag <c-r><c-w> <bar> lwindow <CR>
+nnoremap <silent> <space><c-]> :vertical stag <c-r><c-w><CR>
+nnoremap <silent> <space>g<c-]> :vertical stselect <c-r><c-w><CR>
+
+cnoremap <expr> <Tab> getcmdtype() =~ '/' ? "<C-g>" : getcmdtype() =~ '?' ? "<C-t>" : "<C-z>"
+cnoremap <expr> <S-Tab> getcmdtype() =~ '/' ? "<C-t>" : getcmdtype() =~ '?' ? "<C-g>" : "<C-z>"
+
+nnoremap <silent> ,r ciw<c-r>0<ESC>
+nnoremap <silent> <space>f i<CR><ESC>^d0:.!black --quiet -<CR>
+
+inoremap <expr> <S-CR> InsertPair()
+
 " }}}
 " commands {{{
 command! Here lcd %:p:h
@@ -81,6 +118,18 @@ function! StripTrailingWhitespace()
   let c = col(".")
   %s/\s\+$//e
   call cursor(l, c)
+endfunction
+
+function! InsertPair()
+  let cchar = strcharpart(getline('.')[col('.') - 2:], 0, 1)
+  if cchar == '{'
+    return  "\<CR>}\<c-c>O"
+  elseif cchar == '('
+    return  "\<CR>(\<c-c>O"
+  elseif cchar == '['
+    return  "\<CR>[\<c-c>O"
+  endif
+  return "\<CR>"
 endfunction
 " }}}
 " augroups {{{
@@ -125,16 +174,28 @@ set softtabstop=2
 set splitright
 set statusline=%f\ %m%w%r%=%*\ %4l\ /\ %L,\ %3c\ "
 set tags+=tags;$HOME
+set ttimeoutlen=100
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
 set title
 set visualbell t_vb=
 set wildcharm=<c-z>
-set wildignore=*.aux,*.fdb_latexmk,*.fls,*.log,*.out,*.synctex.gz,*.pdf,*.o
+set wildignore+=*.aux,*.fdb_latexmk,*.fls,*.log,*.out,*.synctex.gz,*.pdf,*.o,*__pycache__/*,tags
 set wildmenu
 set wildmode=longest:full,full
 " }}}
 " plugins {{{
 " for commentary (comment current line and add new copy)
 nnoremap <space>c :t.<CR>k:Commentary<CR>j
+
+" for surround
+" use "d" for escaped double quotes
+let g:surround_100 = "\\\"\r\\\""
+" use "e" for escaped single quotes
+let g:surround_101 = "\\'\r\\'"
 
 " for undotree
 nnoremap <space>u :UndotreeToggle<CR>
@@ -151,6 +212,7 @@ xmap a, <Plug>(swap-textobject-a)
 
 " for rainbow parens
 nnoremap \r :RainbowParentheses!!<CR>
+let g:rainbow#pairs = [['(', ')'], ['{', '}'], ['[', ']']]
 
 " for romainl-qf
 let g:qf_auto_resize = 0
@@ -193,6 +255,15 @@ packadd! matchit
 packadd! cfilter
 
 let g:netrw_liststyle=3
+
+function! MyHighlights() abort
+    highlight Comment ctermfg=lightgray
+endfunction
+
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme * call MyHighlights()
+augroup END
 
 colorscheme apprentice
 " }}}
