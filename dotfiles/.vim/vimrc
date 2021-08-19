@@ -1,12 +1,5 @@
 " vim:foldmethod=marker
 "{{{ mappings
-nnoremap <s-left> <c-w><
-nnoremap <s-right> <c-w>>
-nnoremap <s-up> <c-w>+
-nnoremap <s-down> <c-w>-
-
-nnoremap <silent> <space><CR> i<CR><ESC>
-
 nnoremap <silent> Y y$
 
 nnoremap <space>m :write <bar> silent make! <bar> silent redraw! <CR>
@@ -28,13 +21,8 @@ endfor
 nnoremap <BS> <c-^>
 
 nnoremap <space>gd :!git diff %<CR>
+nnoremap <silent> <space>gl :call setbufvar(winbufnr(popup_atcursor(split(system("git log -n 1 -L " . line(".") . ",+1:" . expand("%:p")), "\n"), { "padding": [1,1,1,1], "pos": "botleft", "wrap": 0 })), "&filetype", "git")<CR>
 
-nnoremap <space>tb :!tig blame %<CR>
-nnoremap <space>tl :!tig log %<CR>
-
-nnoremap \p :<c-u>registers<CR>:normal! "p<left>
-
-nnoremap \i :<c-u>t.<CR>:s/\d\+/\=(submatch(0)+1)/g<CR>
 
 nnoremap "" "+
 xnoremap "" "+
@@ -74,7 +62,7 @@ xnoremap al $o0
 onoremap al :<C-u>normal val<CR>
 
 xnoremap af GoggV
-onoremap af :<c-u>normal va%<CR>
+onoremap af :<c-u>normal vaf<CR>
 
 xnoremap ir i[
 xnoremap ar a[
@@ -83,8 +71,6 @@ onoremap ar :normal va[<CR>
 
 noremap \/ /\<\><left><left>
 noremap \? ?\<\><left><left>
-nnoremap <space>s :<c-u>%s/<c-r><c-w>//g<left><left>
-nnoremap \s :<c-u>s/<c-r><c-w>//g<left><left>
 
 nnoremap \<c-]> :ltag <c-r><c-w> <bar> lwindow <CR>
 nnoremap <silent> <space><c-]> :vertical stag <c-r><c-w><CR>
@@ -93,7 +79,6 @@ nnoremap <silent> <space>g<c-]> :vertical stselect <c-r><c-w><CR>
 cnoremap <expr> <Tab> getcmdtype() =~ '/' ? "<C-g>" : getcmdtype() =~ '?' ? "<C-t>" : "<C-z>"
 cnoremap <expr> <S-Tab> getcmdtype() =~ '/' ? "<C-t>" : getcmdtype() =~ '?' ? "<C-g>" : "<C-z>"
 
-nnoremap <silent> ,r ciw<c-r>0<ESC>
 nnoremap <silent> <space>f i<CR><ESC>^d0:.!black --quiet -<CR>
 
 inoremap <expr> <S-CR> InsertPair()
@@ -112,7 +97,6 @@ function! SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunction
 
-" Strip whitespace from end of lines when writing file
 function! StripTrailingWhitespace()
   let l = line(".")
   let c = col(".")
@@ -131,6 +115,26 @@ function! InsertPair()
   endif
   return "\<CR>"
 endfunction
+
+function! CommentAndCopy(type, ...)
+  if a:0
+    silent exe "normal! gvygvgc`>p"
+  elseif a:type == 'line'
+    silent exe "normal '[V']ygvgc']p"
+  else
+    silent exe "normal `[v`]ygvgc`]p"
+  endif
+endfunction
+
+nnoremap <silent> ,c :set opfunc=CommentAndCopy<CR>g@
+vnoremap <silent> ,c :<c-u>call CommentAndCopy(visualmode(), 1)<CR>
+
+function! Substitute(type, ...)
+  let cur = getpos("''")
+  call cursor(cur[1], cur[2])
+  call feedkeys(":'[,']s/" . expand('<cword>') . "//g\<left>\<left>")
+endfunction
+nmap <silent> ,s m':set opfunc=Substitute<CR>g@
 " }}}
 " augroups {{{
 augroup Whitespace
@@ -166,7 +170,7 @@ set linebreak
 set mouse=a
 set noerrorbells
 set scrolloff=5
-set shell=/usr/local/bin/bash\ --login
+set shell=/usr/local/bin/bash\ --norc
 set shiftwidth=2
 set showmatch
 set smartcase
@@ -188,9 +192,6 @@ set wildmenu
 set wildmode=longest:full,full
 " }}}
 " plugins {{{
-" for commentary (comment current line and add new copy)
-nnoremap <space>c :t.<CR>k:Commentary<CR>j
-
 " for surround
 " use "d" for escaped double quotes
 let g:surround_100 = "\\\"\r\\\""
@@ -216,6 +217,9 @@ let g:rainbow#pairs = [['(', ')'], ['{', '}'], ['[', ']']]
 
 " for romainl-qf
 let g:qf_auto_resize = 0
+
+" for traces
+let g:traces_abolish_integration = 1
 
 " for vim-toggle-windows
 nmap <space>q <Plug>ToggleQfWindow

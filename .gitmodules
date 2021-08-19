@@ -88,3 +88,6 @@
 [submodule "dotfiles/.vim/pack/all/start/vim-to-github"]
 	path = dotfiles/.vim/pack/all/start/vim-to-github
 	url = https://github.com/bscheue/vim-to-github
+[submodule "dotfiles/.vim/pack/all/start/vim-github-review"]
+	path = dotfiles/.vim/pack/all/start/vim-github-review
+	url = https://github.com/bscheue/vim-github-review
