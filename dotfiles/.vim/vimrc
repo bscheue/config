@@ -109,9 +109,9 @@ function! InsertPair()
   if cchar == '{'
     return  "\<CR>}\<c-c>O"
   elseif cchar == '('
-    return  "\<CR>(\<c-c>O"
+    return  "\<CR>)\<c-c>O"
   elseif cchar == '['
-    return  "\<CR>[\<c-c>O"
+    return  "\<CR>]\<c-c>O"
   endif
   return "\<CR>"
 endfunction
@@ -129,10 +129,20 @@ endfunction
 nnoremap <silent> ,c :set opfunc=CommentAndCopy<CR>g@
 vnoremap <silent> ,c :<c-u>call CommentAndCopy(visualmode(), 1)<CR>
 
+" add commas to the end of each number in selection
+function! AddCommas(type, ...)
+  let cur = getpos("''")
+  call cursor(cur[1], cur[2])
+  call feedkeys(":'[,']s/\\d\\ze /\\0,\<CR>")
+endfunction
+
+nnoremap <silent> ,d m':set opfunc=AddCommas<CR>g@
+vnoremap <silent> ,d :<c-u>call AddCommas(visualmode(), 1)<CR>
+
 function! Substitute(type, ...)
   let cur = getpos("''")
   call cursor(cur[1], cur[2])
-  call feedkeys(":'[,']s/" . expand('<cword>') . "//g\<left>\<left>")
+  call feedkeys(":'[,']s/\\<" . expand('<cword>') . "\\>/")
 endfunction
 nmap <silent> ,s m':set opfunc=Substitute<CR>g@
 " }}}
@@ -159,6 +169,8 @@ set cursorline
 set expandtab
 set foldopen+=jump
 set formatoptions=cjqr
+set gdefault
+set grepprg=ag\ --vimgrep
 set hidden
 set history=1000
 set hlsearch

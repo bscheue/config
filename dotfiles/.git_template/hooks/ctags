@@ -1,6 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 PATH="/usr/local/bin:$PATH"
+
+if [ grep "no branch" <(git branch | grep '*' | sed 's/* //') ]
+then
+  exit 0
+fi
+
 trap 'rm -f "$$.tags"' EXIT
 git ls-files | \
   ctags --tag-relative -L - -f"$$.tags" --languages=-javascript,sql
