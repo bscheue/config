@@ -2,7 +2,7 @@
 set -e
 PATH="/usr/local/bin:$PATH"
 
-if [ grep "no branch" <(git branch | grep '*' | sed 's/* //') ]
+if grep "no branch" <(git branch | grep '*' | sed 's/* //')
 then
   exit 0
 fi
